@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetNature : Soins & Produits Naturels pour Animaux</title>
+    <meta name="description" content="Guides, avis et comparatifs de soins naturels pour chien et chat : arthrose, digestion, probiotiques, CBD et hygiène.">
+    <link rel="canonical" href="https://vetnature.fr/" />
+    <style>
+        :root {
+            --primary: #1e4d3b;
+            --primary-light: #2e7d5e;
+            --accent: #e67e22;
+            --bg-light: #f7f9f8;
+            --text: #2c3e50;
+            --gray: #6c757d;
+            --border: #e2e8f0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: var(--text); background-color: var(--bg-light); }
+
+        header { background-color: #ffffff; border-bottom: 1px solid var(--border); }
+        .header-container { max-width: 1200px; margin: 0 auto; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.6rem; font-weight: 800; color: var(--primary); text-decoration: none; cursor: pointer; }
+        .logo span { color: var(--accent); }
+
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); color: white; padding: 35px 20px; text-align: center; }
+        .hero h1 { font-size: 2.1rem; margin-bottom: 8px; }
+        .hero p { font-size: 1.05rem; opacity: 0.9; max-width: 650px; margin: 0 auto; }
+
+        .subnav-bar { 
+            background-color: #ffffff; 
+            border-bottom: 1px solid var(--border); 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06); 
+            padding: 8px 0;
+        }
+
+        .subnav-wrapper {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .subnav-wrapper::before {
+            content: "➔";
+            transform: rotate(180deg);
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 45px;
+            background: linear-gradient(-90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 0.9rem;
+            pointer-events: none;
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .subnav-wrapper::after {
+            content: "➔";
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 45px;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 0.9rem;
+            pointer-events: none;
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .subnav-wrapper.has-left::before { opacity: 1; }
+        .subnav-wrapper.has-right::after { opacity: 1; }
+
+        .subnav-container { 
+            display: flex; 
+            overflow-x: auto; 
+            white-space: nowrap; 
+            padding: 4px 35px; 
+            gap: 8px;
+            scrollbar-width: none; 
+        }
+        .subnav-container::-webkit-scrollbar { display: none; }
+        
+        .subnav-container a { 
+            color: var(--primary); 
+            text-decoration: none; 
+            padding: 8px 14px; 
+            font-weight: 700; 
+            font-size: 0.85rem; 
+            border-radius: 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            cursor: pointer; 
+            transition: all 0.25s ease; 
+            display: inline-block; 
+            flex-shrink: 0;
+        }
+        .subnav-container a:hover { 
+            color: var(--primary); 
+            background: #ffffff;
+            border-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(30, 77, 59, 0.15);
+        }
+        .subnav-container a.active { 
+            color: #ffffff; 
+            background: linear-gradient(135deg, var(--accent) 0%, #d35400 100%);
+            border-color: var(--accent);
+            box-shadow: 0 3px 8px rgba(230, 126, 34, 0.35);
+        }
+
+        .container { max-width: 1200px; margin: 25px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 320px; gap: 30px; }
+        @media (max-width: 850px) { .container { grid-template-columns: 1fr; } }
+
+        .article-page { display: none; }
+        .article-page.active { display: block; }
+
+        article { background: white; padding: 30px; border-radius: 8px; border: 1px solid var(--border); }
+        article h1 { font-size: 1.8rem; color: var(--primary); margin-bottom: 15px; line-height: 1.3; }
+        article h2 { font-size: 1.3rem; color: var(--primary-light); margin: 25px 0 10px 0; }
+        article p { margin-bottom: 15px; }
+        article ul { margin: 15px 0 20px 20px; }
+        article li { margin-bottom: 8px; }
+
+        .article-meta { font-size: 0.85rem; color: var(--gray); margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid var(--border); }
+
+        .cta-box { background-color: #e8f5e9; border-left: 4px solid var(--primary-light); padding: 20px; border-radius: 4px; margin: 25px 0; }
+        .cta-box h3 { color: var(--primary); margin-bottom: 8px; }
+
+        .lead-gen-box { background-color: #ebf8ff; border: 1px solid #bee3f8; border-left: 4px solid #3182ce; padding: 20px; border-radius: 4px; margin: 30px 0; }
+        .lead-gen-box h3 { color: #2b6cb0; margin-bottom: 8px; }
+
+        .btn { display: inline-block; background-color: var(--accent); color: white; padding: 10px 18px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: background 0.2s; cursor: pointer; border: none; font-size: 0.9rem; }
+        .btn:hover { background-color: #d35400; }
+        .btn-blue { background-color: #3182ce; }
+        .btn-blue:hover { background-color: #2b6cb0; }
+
+        /* Style des Tableaux Comparatifs */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9rem;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .comparison-table th {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 700;
+        }
+        .comparison-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        .btn-table {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #ffffff !important;
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-decoration: none !important;
+            font-weight: bold;
+            font-size: 0.8rem;
+            transition: background 0.2s;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .btn-table:hover {
+            background-color: #d35400;
+        }
+
+        aside .widget { background: white; padding: 20px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 20px; }
+        aside h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid var(--primary-light); }
+
+        .promo-badge {
+            background: #feebc8;
+            color: #c05621;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .sidebar-menu { list-style: none; }
+        .sidebar-menu li { margin-bottom: 8px; }
+        .sidebar-menu a { color: var(--text); text-decoration: none; font-size: 0.88rem; cursor: pointer; display: block; padding: 3px 0; }
+        .sidebar-menu a:hover, .sidebar-menu a.active { color: var(--primary-light); font-weight: bold; }
+
+        .medical-disclaimer { font-size: 0.8rem; color: var(--gray); border-top: 1px solid var(--border); padding-top: 15px; margin-top: 30px; font-style: italic; }
+
+        footer { background-color: #ffffff; border-top: 1px solid var(--border); color: #71717a; padding: 20px; font-size: 0.72rem; margin-top: 40px; line-height: 1.4; text-align: center; }
+        .footer-container { max-width: 1200px; margin: 0 auto; }
+
+        .legal-toggle-btn { background: none; border: none; color: #71717a; font-size: 0.75rem; text-decoration: underline; cursor: pointer; padding: 5px 10px; }
+        .legal-toggle-btn:hover { color: var(--primary); }
+
+        .legal-content { display: none; text-align: left; margin-top: 15px; padding-top: 15px; border-top: 1px dashed var(--border); }
+        .legal-content.active { display: block; }
+
+        footer h2 { color: #3f3f46; font-size: 0.8rem; font-weight: 700; margin-bottom: 6px; text-transform: uppercase; }
+        footer h3 { color: var(--primary); font-size: 0.74rem; margin-top: 8px; margin-bottom: 2px; }
+        footer p { margin-bottom: 5px; }
+        footer a { color: #71717a; text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a onclick="showArticle('art-1')" class="logo">Vet<span>Nature</span></a>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>Conseils & Soins Naturels pour Animaux</h1>
+        <p>Guides indépendants et comparatifs pour la santé de vos compagnons au quotidien.</p>
+    </div>
+
+    <div class="subnav-bar">
+        <div class="subnav-wrapper" id="subnavWrapper">
+            <div class="subnav-container" id="subnavContainer">
+                <a id="nav-art-1" onclick="showArticle('art-1')" class="active">Arthrose & Mobilité</a>
+                <a id="nav-art-2" onclick="showArticle('art-2')">Digestion & Transit</a>
+                <a id="nav-art-3" onclick="showArticle('art-3')">Stress & Comportement</a>
+                <a id="nav-art-4" onclick="showArticle('art-4')">Soin des Yeux</a>
+                <a id="nav-art-5" onclick="showArticle('art-5')">Hygiène Dentaire</a>
+                <a id="nav-art-6" onclick="showArticle('art-6')">Top 5 Compléments</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <main>
+            <!-- GUIDE 1 : ARTHROSE ET MOBILITÉ -->
+            <div id="art-1" class="article-page active">
+                <article>
+                    <h1>Comment soulager naturellement l'arthrose de votre chien âgé ?</h1>
+                    <div class="article-meta">Publié le 18 Septembre 2026 • Temps de lecture : 7 min • Par Rédaction VetNature</div>
+                    
+                    <p>L'arthrose est l'une des causes majeures de baisse de mobilité et de boiterie chez le chien senior. Si cette dégradation du cartilage articulaire est irréversible, elle n'est pas une fatalité : des solutions naturelles ciblées permettent d'apaiser rapidement les inflammations, de préserver le cartilage restant et de redonner de la vitalité à votre compagnon sans alourdir son organisme.</p>
+                    
+                    <div class="cta-box">
+                        <h3>🦴 Recommandation N°1 : La formule Articulations & Mobilité</h3>
+                        <p>Pour régénérer le cartilage et agir directement sur la raideur matinale, nous recommandons la formule concentrée en <b>Glucosamine, Chondroïtine et Harpagophytum d'Animigo</b>.</p>
+                        <a href="https://votre-lien-affilie-animigo.com" target="_blank" rel="sponsored nofollow" class="btn">Voir la fiche & les avis sur Animigo</a>
+                    </div>
+
+                    <h2>1. Les 4 actifs naturels indispensables contre l'arthrose canine</h2>
+                    <p>Pour être efficace, un traitement naturel de l'arthrose doit combiner une action anti-inflammatoire et un apport nutritif pour le cartilage :</p>
+                    <ul>
+                        <li><b>La Glucosamine & la Chondroïtine :</b> Ces deux molécules sont les briques essentielles du cartilage. Elles ralentissent sa dégradation et stimulent la production de liquide synovial (le lubrifiant des articulations).</li>
+                        <li><b>L'Harpagophytum (Griffe du diable) :</b> Plante reconnue pour ses puissantes propriétés analgésiques et anti-inflammatoires, idéale pour apaiser les poussées d'arthrose sans effets secondaires gastriques.</li>
+                        <li><b>L'Huile de Saumon (Riche en Oméga-3 EPA/DHA) :</b> Les acides gras Oméga-3 diminuent la production de molécules inflammatoires dans l'organisme et apportent de la souplesse aux articulations.</li>
+                        <li><b>Le Curcuma :</b> Un antioxydant naturel majeur qui aide à neutraliser le stress oxydatif responsable du vieillissement cellulaire prématuré.</li>
+                    </ul>
+
+                    <h2>2. Comparatif 2026 : Les meilleurs compléments Articulations</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Produit</th>
+                                <th>Actifs principaux</th>
+                                <th>Format & Usage</th>
+                                <th>Prix indicatif</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Animigo Articulations</b></td>
+                                <td>Glucosamine, Chondroïtine, Harpagophytum</td>
+                                <td>Comprimés appétents</td>
+                                <td>~24.99 €</td>
+                                <td><a href="https://votre-lien-affilie-animigo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Animigo</a></td>
+                            </tr>
+                            <tr>
+                                <td><b>HomeoAnimo Mobilité</b></td>
+                                <td>Formule plantes & homéopathie</td>
+                                <td>Gouttes / Poudre</td>
+                                <td>~29.90 €</td>
+                                <td><a href="https://votre-lien-affilie-homeoanimo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
+                            </tr>
+                            <tr>
+                                <td><b>Wanimo VetoCare</b></td>
+                                <td>Huile de Saumon pure d'Islande</td>
+                                <td>Flacon pompe</td>
+                                <td>~15.50 €</td>
+                                <td><a href="https://votre-lien-affilie-wanimo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Wanimo</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>3. 3 réflexes du quotidien pour aider votre chien senior</h2>
+                    <ul>
+                        <li><b>Un couchage orthopédique :</b> Un lit en mousse à mémoire de forme réduit les points de pression et facilite les levers matinaux.</li>
+                        <li><b>Garder une activité physique douce :</b> Préférez plusieurs petites promenades de 15 minutes sur terrain plat plutôt qu'une longue randonnée épuisante.</li>
+                        <li><b>Maintenir un poids de forme :</b> Chaque gramme en trop surcharge directement les articulations fragilisées.</li>
+                    </ul>
+
+                    <div class="lead-gen-box">
+                        <h3>💡 Anticiper les frais vétérinaires liés au grand âge</h3>
+                        <p>Suivi articulaire, radiographies de contrôle, bilans sanguins... Les soins des animaux âgés peuvent peser lourdement sur le budget. Pensez à souscrire une mutuelle santé pour couvrir jusqu'à 80 % de vos dépenses de santé animale.</p>
+                        <a href="https://votre-lien-affilie-santevet.com" target="_blank" rel="sponsored nofollow" class="btn btn-blue">Obtenir votre devis gratuit Santévet</a>
+                    </div>
+
+                    <div class="medical-disclaimer">
+                        <b>Avertissement médical :</b> Les conseils présentés dans cet article sont fournis à titre informatif et ne remplacent en aucun cas une consultation auprès d'un docteur vétérinaire. En cas de boiterie soudaine, de refus de se lever ou de gémissements de douleur, consultez rapidement votre cabinet vétérinaire.
+                    </div>
+                </article>
+            </div>
+
+            <!-- GUIDE 2 : DIGESTION ET TRANSIT -->
+            <div id="art-2" class="article-page">
+                <article>
+                    <h1>Troubles digestifs chez le chien et le chat : Solutions, Probiotiques & Transit</h1>
+                    <div class="article-meta">Publié le 18 Septembre 2026 • Temps de lecture : 6 min • Par Rédaction VetNature</div>
+                    <p>Vomissements occasionnels, gaz malodorants, selles molles ou sensibilité intestinale... Les troubles digestifs touchent un grand nombre d'animaux. Rétablir leur flore intestinale est essentiel pour leur santé générale et leur immunité.</p>
+
+                    <div class="cta-box">
+                        <h3>🌿 Recommandation N°1 Digestion</h3>
+                        <p>Pour rééquilibrer le microbiome intestinal de votre animal, optez pour le complexe <b>Probiotiques & Prébiotiques Bio d'Animigo</b>.</p>
+                        <a href="https://votre-lien-affilie-animigo-digestion.com" target="_blank" rel="sponsored nofollow" class="btn">Découvrir le soin Digestion sur Animigo</a>
+                    </div>
+
+                    <h2>1. Comment restaurer la flore intestinale de votre compagnon ?</h2>
+                    <p>Une bonne santé digestive repose sur des ingrédients ciblés :</p>
+                    <ul>
+                        <li><b>Probiotiques & Prébiotiques :</b> Bactéries bénéfiques pour réensemencer la flore intestinale et nourrir les micro-organismes protecteurs.</li>
+                        <li><b>Argile Verte & Psyllium :</b> Absorbe l'excès d'eau, régule le transit et apaise les muqueuses de l'estomac.</li>
+                        <li><b>Charbon Actif :</b> Idéal pour capter les toxines et réduire la formation de gaz intestinaux en cas d'inconfort temporaire.</li>
+                        <li><b>Alimentation hypoallergénique :</b> L'utilisation de croquettes adaptées facilite la digestion et prévient les intolérances.</li>
+                    </ul>
+
+                    <h2>2. Comparatif des meilleurs produits Digestion 2026</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Produit</th>
+                                <th>Usage / Effet</th>
+                                <th>Prix indicatif</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Animigo Probiotiques</b></td>
+                                <td>Rééquilibrage de la flore & transit</td>
+                                <td>~21.99 €</td>
+                                <td><a href="https://votre-lien-affilie-animigo-digestion.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Animigo</a></td>
+                            </tr>
+                            <tr>
+                                <td><b>HomeoAnimo Transit</b></td>
+                                <td>Gastrite, gaz & selles molles</td>
+                                <td>~27.50 €</td>
+                                <td><a href="https://votre-lien-affilie-homeoanimo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
+                            </tr>
+                            <tr>
+                                <td><b>Wanimo Croquettes Digestives</b></td>
+                                <td>Hypoallergénique & grande digestibilité</td>
+                                <td>~34.90 €</td>
+                                <td><a href="https://votre-lien-affilie-wanimo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Wanimo</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="medical-disclaimer">
+                        <b>Avertissement médical :</b> Si les vomissements ou les diarrhées persistent plus de 24h à 48h, consultez rapidement votre vétérinaire.
+                    </div>
+                </article>
+            </div>
+
+            <!-- GUIDE 3 : STRESS ET COMPORTEMENT -->
+            <div id="art-3" class="article-page">
+                <article>
+                    <h1>Calmer l'anxiété et le stress chez le chien et le chat : Méthodes Naturelles</h1>
+                    <div class="article-meta">Publié le 18 Septembre 2026 • Temps de lecture : 6 min • Par Rédaction VetNature</div>
+                    <p>Voyages en voiture, feux d'artifice, orages, peur de la solitude ou malpropreté urinaire chez le chat : le stress peut impacter lourdement le comportement et le bien-être de vos compagnons.</p>
+
+                    <div class="cta-box">
+                        <h3>💧 Recommandation N°1 Anti-Stress</h3>
+                        <p>Pour apaiser rapidement les crises d'anxiété ou l'hyperactivité, nous recommandons l'<b>Huile de CBD 5% spécial animaux de chez HomeoAnimo</b>.</p>
+                        <a href="https://votre-lien-affilie-homeoanimo-cbd.com" target="_blank" rel="sponsored nofollow" class="btn">Voir l'Huile CBD Apaisante</a>
+                    </div>
+
+                    <h2>1. Les meilleures solutions naturelles apaisantes</h2>
+                    <ul>
+                        <li><b>CBD Vétérinaire (sans THC) :</b> Régule les récepteurs du stress et soulage l'anxiété de séparation et les douleurs associées.</li>
+                        <li><b>L-Théanine & Camomille :</b> Apaisent le système nerveux en douceur, sans provoquer d'effet de somnolence.</li>
+                        <li><b>Phéromones de synthèse :</b> Diffuseurs d'ambiance pour rassurer le chat (malpropreté, territoire) ou le chien dans son environnement.</li>
+                    </ul>
+
+                    <h2>2. Comparatif des solutions Anti-Stress 2026</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Solution</th>
+                                <th>Type de Produit</th>
+                                <th>Prix indicatif</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>HomeoAnimo CBD 5%</b></td>
+                                <td>Huile apaisante naturelle bio</td>
+                                <td>~32.99 €</td>
+                                <td><a href="https://votre-lien-affilie-homeoanimo-cbd.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir le produit</a></td>
+                            </tr>
+                            <tr>
+                                <td><b>Animigo Calming Treats</b></td>
+                                <td>Friandises relaxantes aux plantes</td>
+                                <td>~19.99 €</td>
+                                <td><a href="https://votre-lien-affilie-animigo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir le produit</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="medical-disclaimer">
+                        <b>Avertissement médical :</b> En cas d'anxiété sévère accompagnée de comportements destructeurs, un suivi avec un comportementaliste vétérinaire est vivement conseillé.
+                    </div>
+                </article>
+            </div>
+
+            <!-- GUIDE 4 : SOIN DES YEUX -->
+            <div id="art-4" class="article-page">
+                <article>
+                    <h1>Soin des Yeux : Nettoyer les Yeux Rouges et Traces de Larmes</h1>
+                    <div class="article-meta">Publié le 18 Septembre 2026 • Temps de lecture : 4 min • Par Rédaction VetNature</div>
+                    <p>Les accumulations de sécrétions oculaires favorisent le développement des bactéries et provoquent des irritations chroniques, particulièrement chez les races à museau court.</p>
+
+                    <div class="cta-box">
+                        <h3>👁️ Lotion Oculaire Douce au Bleuet</h3>
+                        <p>Éliminez les croûtes et les traces de larmes grâce à la <b>Lotion de soin oculaire naturelle</b>.</p>
+                        <a href="https://votre-lien-affilie-yeux.com" target="_blank" rel="sponsored nofollow" class="btn">Voir la Lotion Oculaire</a>
+                    </div>
+                    <div class="medical-disclaimer"><b>Avertissement médical :</b> Tout œil fermé ou douloureux nécessite un contrôle vétérinaire urgent.</div>
+                </article>
+            </div>
+
+            <!-- GUIDE 5 : HYGIÈNE DENTAIRE -->
+            <div id="art-5" class="article-page">
+                <article>
+                    <h1>Hygiène Dentaire : Éliminer la Plaque, le Tartre et la Mauvaise Haleine</h1>
+                    <div class="article-meta">Publié le 18 Septembre 2026 • Temps de lecture : 4 min • Par Rédaction VetNature</div>
+                    <p>Le tartre déposé sur les dents entraîne gingivites, déchaussements et mauvaise haleine. Une prévention quotidienne permet d'éviter un détartrage sous anesthésie générale.</p>
+
+                    <div class="cta-box">
+                        <h3>🦷 Poudre Anti-Tartre aux Algues</h3>
+                        <p>La <b>Poudre d'algues purifiante</b> à saupoudrer sur la nourriture ramollit le tartre naturellement grâce aux enzymes salivaires.</p>
+                        <a href="https://votre-lien-affilie-dentaire.com" target="_blank" rel="sponsored nofollow" class="btn">Voir la Poudre Dentaire</a>
+                    </div>
+                    <div class="medical-disclaimer"><b>Avertissement médical :</b> Un contrôle annuel de la dentition est vivement recommandé.</div>
+                </article>
+            </div>
+
+            <!-- GUIDE 6 : TOP 5 COMPLÉMENTS -->
+            <div id="art-6" class="article-page">
+                <article>
+                    <h1>Top 5 des meilleurs compléments alimentaires naturels pour animaux</h1>
+                    <div class="article-meta">Publié le 18 Septembre 2026 • Temps de lecture : 6 min • Par Rédaction VetNature</div>
+                    <p>Face à la multiplicité des offres, notre équipe a sélectionné et comparé les 5 meilleurs soins naturels pour chiens et chats selon leur composition, leur efficacité constatée et leur rapport qualité/prix.</p>
+
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Rang</th>
+                                <th>Produit & Usage</th>
+                                <th>Point fort</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>🥇 1</b></td>
+                                <td><b>Glucosamine & Chondroïtine</b> (Animigo)<br><i>Mobilité & Arthrose</i></td>
+                                <td>Formule 3-en-1 très concentrée</td>
+                                <td><a href="https://votre-lien-affilie-animigo-articulations.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir l'offre</a></td>
+                            </tr>
+                            <tr>
+                                <td><b>🥈 2</b></td>
+                                <td><b>Probiotiques Intestinaux</b> (Animigo)<br><i>Flore & Digestion</i></td>
+                                <td>Rétablit rapidement le transit</td>
+                                <td><a href="https://votre-lien-affilie-animigo-probiotiques.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir l'offre</a></td>
+                            </tr>
+                            <tr>
+                                <td><b>🥉 3</b></td>
+                                <td><b>Huile de CBD Bio 5%</b><br><i>Stress & Douleurs</i></td>
+                                <td>Sans effet accoutumant</td>
+                                <td><a href="https://votre-lien-affilie-cbd.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir l'offre</a></td>
+                            </tr>
+                            <tr>
+                                <td><b>4</b></td>
+                                <td><b>Poudre d'Algues Dentaire</b><br><i>Anti-Tartre</i></td>
+                                <td>S'ajoute directement sur la ration</td>
+                                <td><a href="https://votre-lien-affilie-dentaire.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir l'offre</a></td>
+                            </tr>
+                            <tr>
+                                <td><b>5</b></td>
+                                <td><b>Lotion Oculaire Bio Bleuets</b><br><i>Soin des Yeux</i></td>
+                                <td>Nettoyage ultra-doux des paupières</td>
+                                <td><a href="https://votre-lien-affilie-yeux.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir l'offre</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="lead-gen-box">
+                        <h3>💡 Protection Santé Global Chien & Chat</h3>
+                        <p>Les compléments alimentaires préviennent les maladies, mais ne remplacent pas les urgences vétérinaires. Comparez les mutuelles pour être remboursé jusqu'à 80 %.</p>
+                        <a href="https://votre-lien-affilie-santevet.com" target="_blank" rel="sponsored nofollow" class="btn btn-blue">Obtenir un devis gratuit Santévet</a>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <aside>
+            <div class="widget">
+                <h3>Code Promo Partenaire</h3>
+                <span class="promo-badge">-10% AVEC LE CODE VET10</span>
+                <p>Valable sur votre première commande de compléments alimentaires chez nos partenaires.</p>
+            </div>
+
+            <div class="widget">
+                <h3>Nos 6 Guides Santé</h3>
+                <ul class="sidebar-menu">
+                    <li><a id="side-art-1" onclick="showArticle('art-1')" class="active">🦴 1. Arthrose & Mobilité</a></li>
+                    <li><a id="side-art-2" onclick="showArticle('art-2')">🌿 2. Digestion & Transit</a></li>
+                    <li><a id="side-art-3" onclick="showArticle('art-3')">🐾 3. Stress & Comportement</a></li>
+                    <li><a id="side-art-4" onclick="showArticle('art-4')">👁️ 4. Soin des Yeux</a></li>
+                    <li><a id="side-art-5" onclick="showArticle('art-5')">🦷 5. Hygiène Dentaire</a></li>
+                    <li><a id="side-art-6" onclick="showArticle('art-6')">⭐ 6. Top 5 Compléments</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 VetNature — Tous droits réservés.</p>
+            <button class="legal-toggle-btn" onclick="toggleLegal()">Voir les Mentions Légales & Affiliation</button>
+            <div id="legal-box" class="legal-content">
+                <h2>Mentions Légales & Transparence</h2>
+                
+                <h3>1. Éditeur du site</h3>
+                <p>Le site <strong>VetNature</strong> est édité par <strong>Pascal LE FAOU</strong>.<br>
+                Adresse : 2115 Avenue Max Decout, 33810 Ambès, France.<br>
+                Email : <a href="mailto:vetnature33@gmail.com">vetnature33@gmail.com</a></p>
+
+                <h3>2. Hébergement</h3>
+                <p>Le site est hébergé par GitHub Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.</p>
+
+                <h3>3. Propriété intellectuelle</h3>
+                <p>L'ensemble des contenus (textes, images, illustrations, structures) présents sur ce site est protégé par les lois relatives au droit d'auteur et à la propriété intellectuelle. Toute reproduction ou représentation totale ou partielle sans autorisation préalable écrite est strictement interdite.</p>
+
+                <h3>4. Transparence et Liens d'affiliation</h3>
+                <p>Le site VetNature participe à plusieurs programmes d'affiliation. Cela signifie que certains liens sortants vers des sites marchands partenaires sont des liens affiliés. Si vous effectuez un achat en cliquant sur l'un de ces liens, l'éditeur peut percevoir une commission sans aucun surcoût pour vous. Ces commissions permettent de financer la rédaction des guides et la maintenance technique du site.</p>
+
+                <h3>5. Protection des données personnelles & Cookies</h3>
+                <p>Conformément au RGPD et à la loi Informatique et Libertés, le site VetNature respecte la vie privée de ses utilisateurs. Ce site ne collecte aucune donnée personnelle à votre insu. Aucun cookie tiers de suivi publicitaire intrusif n'est déposé sans votre consentement.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const container = document.getElementById('subnavContainer');
+        const wrapper = document.getElementById('subnavWrapper');
+
+        function updateScrollIndicators() {
+            const scrollLeft = container.scrollLeft;
+            const maxScrollLeft = container.scrollWidth - container.clientWidth;
+
+            if (scrollLeft > 10) {
+                wrapper.classList.add('has-left');
+            } else {
+                wrapper.classList.remove('has-left');
+            }
+
+            if (scrollLeft < maxScrollLeft - 10) {
+                wrapper.classList.add('has-right');
+            } else {
+                wrapper.classList.remove('has-right');
+            }
+        }
+
+        container.addEventListener('scroll', updateScrollIndicators);
+        window.addEventListener('resize', updateScrollIndicators);
+        document.addEventListener('DOMContentLoaded', updateScrollIndicators);
+
+        function showArticle(articleId) {
+            const articles = document.querySelectorAll('.article-page');
+            articles.forEach(a => a.classList.remove('active'));
+
+            const subNavLinks = document.querySelectorAll('.subnav-container a');
+            subNavLinks.forEach(l => l.classList.remove('active'));
+
+            const sideLinks = document.querySelectorAll('.sidebar-menu a');
+            sideLinks.forEach(l => l.classList.remove('active'));
+
+            const targetArticle = document.getElementById(articleId);
+            if (targetArticle) {
+                targetArticle.classList.add('active');
+            }
+
+            const targetNav = document.getElementById('nav-' + articleId);
+            if (targetNav) {
+                targetNav.classList.add('active');
+                targetNav.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+
+            const targetSide = document.getElementById('side-' + articleId);
+            if (targetSide) {
+                targetSide.classList.add('active');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(updateScrollIndicators, 300);
+        }
+
+        function toggleLegal() {
+            const legalBox = document.getElementById('legal-box');
+            legalBox.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
