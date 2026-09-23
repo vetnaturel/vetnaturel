@@ -45,52 +45,6 @@
             margin: 0 auto;
         }
 
-        .subnav-wrapper::before {
-            content: "➔";
-            transform: rotate(180deg);
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 45px;
-            background: linear-gradient(-90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 10px;
-            color: var(--accent);
-            font-weight: bold;
-            font-size: 0.9rem;
-            pointer-events: none;
-            z-index: 2;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .subnav-wrapper::after {
-            content: "➔";
-            position: absolute;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            width: 45px;
-            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 10px;
-            color: var(--accent);
-            font-weight: bold;
-            font-size: 0.9rem;
-            pointer-events: none;
-            z-index: 2;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .subnav-wrapper.has-left::before { opacity: 1; }
-        .subnav-wrapper.has-right::after { opacity: 1; }
-
         .subnav-container { 
             display: flex; 
             overflow-x: auto; 
@@ -156,7 +110,6 @@
         .btn-blue { background-color: #3182ce; }
         .btn-blue:hover { background-color: #2b6cb0; }
 
-        /* Style des Tableaux Comparatifs */
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
@@ -316,7 +269,7 @@
                         <li><b>La Glucosamine et la Chondroïtine :</b> Briques de construction du cartilage, elles ralentissent sa destruction et stimulent la production de liquide synovial, assurant une meilleure lubrification des articulations.</li>
                         <li><b>L'Harpagophytum (Griffe du Diable) :</b> Cette plante médicinale possède des propriétés antalgiques reconnues pour apaiser les poussées douloureuses chroniques.</li>
                         <li><b>La Moule aux Lèvres Vertes de Nouvelle-Zélande :</b> Source naturelle de glycosaminoglycanes et d'oméga-3 uniques, elle protège durablement le cartilage.</li>
-                        <li><b>Le Curcuma et le MSM :</b> Ils neutralisent les radicals libres responsables du vieillissement cellulaire articulaire.</li>
+                        <li><b>Le Curcuma et le MSM :</b> Ils neutralisent les radicaux libres responsables du vieillissement cellulaire articulaire.</li>
                     </ul>
 
                     <h2>5. Comparatif 2026 : Les meilleurs compléments Articulations</h2>
@@ -369,34 +322,66 @@
                 </article>
             </div>
 
-            <!-- GUIDE 2 : DIGESTION ET TRANSIT -->
+            <!-- GUIDE 2 : DIGESTION ET TRANSIT (Guide Complet) -->
             <div id="art-2" class="article-page">
                 <article>
-                    <h1>Troubles digestifs chez le chien et le chat : Solutions, Probiotiques & Transit</h1>
-                    <div class="article-meta">Publié le 18 Septembre 2026 • Temps de lecture : 6 min • Par Rédaction VetNature</div>
-                    <p>Vomissements occasionnels, gaz malodorants, selles molles ou sensibilité intestinale... Les troubles digestifs touchent un grand nombre d'animaux. Rétablir leur flore intestinale est essentiel pour leur santé générale et leur immunité.</p>
+                    <h1>Troubles Digestifs du Chien et du Chat : Probiotiques, Alimentation et Traitements Naturels du Transit</h1>
+                    <div class="article-meta">Publié le 23 Septembre 2026 • Temps de lecture : 9 min • Par Rédaction VetNature</div>
+
+                    <p>La <strong>santé digestive</strong> est le véritable moteur de la vitalité et du système immunitaire de nos chiens et chats. Pourtant, diarrhées aiguës, constipation, vomissements de bile, gaz malodorants ou borborygmes (gargouillements d'estomac) font partie des motifs de consultation vétérinaire les plus fréquents. Qu'il s'agisse d'une sensibilité ponctuelle ou d'un syndrome d'intestin irritable, il existe des solutions naturelles très efficaces pour rééquilibrer le microbiote intestinal et restaurer un transit fluide et confortable.</p>
 
                     <div class="cta-box">
-                        <h3>🌿 Recommandation N°1 Digestion</h3>
-                        <p>Pour rééquilibrer le microbiome intestinal de votre animal, optez pour le complexe <b>Probiotiques & Prébiotiques Bio d'Animigo</b>.</p>
-                        <a href="https://votre-lien-affilie-animigo-digestion.com" target="_blank" rel="sponsored nofollow" class="btn">Découvrir le soin Digestion sur Animigo</a>
+                        <h3>🌿 Recommandation N°1 Digestion : Complexe Probiotiques Bio</h3>
+                        <p>Pour réensemencer la flore intestinale après une diarrhée ou un traitement antibiotique, la cure de <b>Probiotiques & Prébiotiques d'Animigo</b> offre une concentration optimale de souches bénéfiques.</p>
+                        <a href="https://votre-lien-affilie-animigo-digestion.com" target="_blank" rel="sponsored nofollow" class="btn">Découvrir les Probiotiques Animigo</a>
                     </div>
 
-                    <h2>1. Comment restaurer la flore intestinale de votre compagnon ?</h2>
-                    <p>Une bonne santé digestive repose sur des ingrédients ciblés :</p>
+                    <h2>1. Identifier les symptômes d'une perturbation digestive</h2>
+                    <p>Le système digestif des carnivores est plus court et sensible que le nôtre. Une perturbation se manifeste rapidement par :</p>
                     <ul>
-                        <li><b>Probiotiques & Prébiotiques :</b> Bactéries bénéfiques pour réensemencer la flore intestinale et nourrir les micro-organismes protecteurs.</li>
-                        <li><b>Argile Verte & Psyllium :</b> Absorbe l'excès d'eau, régule le transit et apaise les muqueuses de l'estomac.</li>
-                        <li><b>Charbon Actif :</b> Idéal pour capter les toxines et réduire la formation de gaz intestinaux en cas d'inconfort temporaire.</li>
-                        <li><b>Alimentation hypoallergénique :</b> L'utilisation de croquettes adaptées facilite la digestion et prévient les intolérances.</li>
+                        <li><b>Des selles molles ou liquides :</b> La diarrhée signale une inflammation de la muqueuse intestinale ou une accélération anormale du transit.</li>
+                        <li><b>Des flatulences et ballonnements :</b> Souvent provoqués par une fermentation excessive liée à des ingrédients mal assimilés (céréales en trop grande quantité, légumineuses).</li>
+                        <li><b>Des vomissements bilieux ou alimentaires :</b> Un estomac irrité rejette son contenu à vide (mousse jaune) ou juste après le repas.</li>
+                        <li><b>L'entérophagie (ingestion d'herbe) :</b> L'animal cherche à provoquer le vomissement ou à apaiser une acidité gastrique gênante.</li>
                     </ul>
 
-                    <h2>2. Comparatif des meilleurs produits Digestion 2026</h2>
+                    <h2>2. Les causes fréquentes des désordres intestinaux</h2>
+                    <p>Avant d'engager un traitement, il est essentiel d'analyser l'origine du problème :</p>
+                    <ul>
+                        <li><b>Une transition alimentaire trop rapide :</b> Changer de marque de croquettes sans période de transition sur 10 jours détruit le microbiote local.</li>
+                        <li><b>Une alimentation inadaptée :</b> Présence d'allergènes fréquents (bœuf, blé, soja, produits laitiers) ou excès de glucides.</li>
+                        <li><b>Le stress et l'anxiété :</b> L'axe intestin-cerveau est direct chez l'animal ; un choc émotionnel se traduit souvent par de la diarrhée.</li>
+                        <li><b>Une parasitose interne :</b> Les vers intestinaux (giardiose, ascaris) dégradent la paroi digestive et nécessitent un vermifuge régulier.</li>
+                    </ul>
+
+                    <div class="lead-gen-box">
+                        <h3>💡 Gastro-entérites répétées : Attention au budget vétérinaire</h3>
+                        <p>Analyses de selles, coproscopies, perfusions en cas de déshydratation... Les urgences digestives grimpent vite. Pensez à protéger votre animal avec une mutuelle santé adaptée.</p>
+                        <a href="https://votre-lien-affilie-santevet.com" target="_blank" rel="sponsored nofollow" class="btn btn-blue">Obtenir un devis gratuit Santévet</a>
+                    </div>
+
+                    <h2>3. Les 4 ingrédients naturels piliers de la reconstruction intestinale</h2>
+                    <p>La phytothérapie et la nutraceutique proposent des principes actifs d'une grande efficacité pour apaiser le tube digestif :</p>
+                    <ul>
+                        <li><b>Probiotiques et Prébiotiques :</b> Les probiotiques fournissent des bactéries saines (ex: <i>Enterococcus faecium</i>) tandis que les prébiotiques (FOS/MOS) servent de nourriture à ces bonnes bactéries.</li>
+                        <li><b>L'Argile Verte (Montmorillonite) et le Smectite :</b> Elles forment un pansement intestinal protecteur qui absorbe les toxines, capte l'excès d'eau et remoule les selles instantanément.</li>
+                        <li><b>Le Psyllium Blond :</b> Riche en mucilages solubles, il régule aussi bien la constipation (en retenant l'eau) que la diarrhée (en donnant de la consistance aux selles).</li>
+                        <li><b>Le Charbon Végétal Activé :</b> Puissant absorbant naturel, il capture les gaz toxiques et purifie le tractus digestif en cas d'indigestion.</li>
+                    </ul>
+
+                    <div class="lead-gen-box">
+                        <h3>Passer à une alimentation hautement digestible</h3>
+                        <p>Découvrez notre sélection de croquettes hypoallergéniques sans céréales et pâtées digestives formulées pour les estomacs très sensibles.</p>
+                        <a href="https://votre-lien-affilie-wanimo.com" target="_blank" rel="sponsored nofollow" class="btn btn-blue">Voir les aliments digestifs sur Wanimo</a>
+                    </div>
+
+                    <h2>4. Comparatif 2026 : Les meilleures solutions Transit & Digestion</h2>
                     <table class="comparison-table">
                         <thead>
                             <tr>
                                 <th>Produit</th>
-                                <th>Usage / Effet</th>
+                                <th>Ingrédients clés</th>
+                                <th>Usage recommandé</th>
                                 <th>Prix indicatif</th>
                                 <th>Action</th>
                             </tr>
@@ -404,27 +389,37 @@
                         <tbody>
                             <tr>
                                 <td><b>Animigo Probiotiques</b></td>
-                                <td>Rééquilibrage de la flore & transit</td>
+                                <td>Probiotiques, FOS, Inuline</td>
+                                <td>Cure de fond & flore intestinale</td>
                                 <td>~21.99 €</td>
                                 <td><a href="https://votre-lien-affilie-animigo-digestion.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Animigo</a></td>
                             </tr>
                             <tr>
                                 <td><b>HomeoAnimo Transit</b></td>
-                                <td>Gastrite, gaz & selles molles</td>
+                                <td>Extrait de plantes & homéopathie</td>
+                                <td>Gastrites, diarrhées aiguës, gaz</td>
                                 <td>~27.50 €</td>
                                 <td><a href="https://votre-lien-affilie-homeoanimo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
                             </tr>
                             <tr>
-                                <td><b>Wanimo Croquettes Digestives</b></td>
-                                <td>Hypoallergénique & grande digestibilité</td>
+                                <td><b>Wanimo Croquettes Gastro</b></td>
+                                <td>Protéines hydrolysées & riz</td>
+                                <td>Sensibilité digestive chronique</td>
                                 <td>~34.90 €</td>
                                 <td><a href="https://votre-lien-affilie-wanimo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Wanimo</a></td>
                             </tr>
                         </tbody>
                     </table>
 
+                    <h2>5. Conseils pratiques en cas de crise digestive aiguë</h2>
+                    <ul>
+                        <li><b>Diète hydrique raisonnée :</b> En cas de vomissements ou diarrhée soudaine, mettez l'animal à la diète solide pendant 12 à 24h tout en laissant de l'eau fraîche à disposition.</li>
+                        <li><b>Réintroduction ultra-douce :</b> Reprenez avec de petites portions de riz bien cuit (gluant) mélangé à du blanc de poulet poché sans sel.</li>
+                        <li><b>Hydratation vigilante :</b> Surveillez le pli de peau pour éviter toute déshydratation, surtout chez le chiot, le chaton ou l'animal senior.</li>
+                    </ul>
+
                     <div class="medical-disclaimer">
-                        <b>Avertissement médical :</b> Si les vomissements ou les diarrhées persistent plus de 24h à 48h, consultez rapidement votre vétérinaire.
+                        <b>Avertissement médical :</b> Si la diarrhée ou les vomissements s'accompagnent de fièvre, de léthargie, de présence de sang rouge ou noir dans les selles, ou s'ils durent plus de 48 heures, une consultation vétérinaire urgente est indispensable.
                     </div>
                 </article>
             </div>
@@ -506,7 +501,7 @@
 
                     <div class="cta-box">
                         <h3>🦷 Poudre Anti-Tartre aux Algues</h3>
-                        <p>La <b>Poudre d'algues purifiante</b> à saupoudrer sur la nourriture ramollit le tartre naturally grâce aux enzymes salivaires.</p>
+                        <p>La <b>Poudre d'algues purifiante</b> à saupoudrer sur la nourriture ramollit le tartre naturellement grâce aux enzymes salivaires.</p>
                         <a href="https://votre-lien-affilie-dentaire.com" target="_blank" rel="sponsored nofollow" class="btn">Voir la Poudre Dentaire</a>
                     </div>
                     <div class="medical-disclaimer"><b>Avertissement médical :</b> Un contrôle annuel de la dentition est vivement recommandé.</div>
@@ -582,8 +577,8 @@
             <div class="widget">
                 <h3>Nos 6 Guides Santé</h3>
                 <ul class="sidebar-menu">
-                    <li><a id="side-art-1" onclick="showArticle('art-1')" class="active">🦴 1. Arthrose & Mobilité</a></li>
-                    <li><a id="side-art-2" onclick="showArticle('art-2')">🌿 2. Digestion & Transit</a></li>
+                    <li><a id="side-art-1" onclick="showArticle('art-1')">🦴 1. Arthrose & Mobilité</a></li>
+                    <li><a id="side-art-2" onclick="showArticle('art-2')" class="active">🌿 2. Digestion & Transit</a></li>
                     <li><a id="side-art-3" onclick="showArticle('art-3')">💧 3. Stress & Comportement</a></li>
                     <li><a id="side-art-4" onclick="showArticle('art-4')">👁️ 4. Soin des Yeux</a></li>
                     <li><a id="side-art-5" onclick="showArticle('art-5')">🦷 5. Hygiène Dentaire</a></li>
