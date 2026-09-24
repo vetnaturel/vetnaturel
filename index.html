@@ -223,8 +223,8 @@
 
                     <div class="cta-box">
                         <h3>🦴 Recommandation N°1 : La formule Articulations & Mobilité</h3>
-                        <p>Pour régénérer le cartilage et agir directement sur la raideur matinale, nous recommandons la formule concentrée en <b>Glucosamine, Chondroïtine et Harpagophytum d'Animigo</b>.</p>
-                        <a href="https://votre-lien-affilie-animigo.com" target="_blank" rel="sponsored nofollow" class="btn">Voir la fiche & les avis sur Animigo</a>
+                        <p>Pour régénérer le cartilage et agir directement sur la raideur matinale, nous recommandons la gamme ciblée <b>HomeoAnimo pour l'arthrose</b>.</p>
+                        <a href="https://www.homeoanimo.com/pages/search-results-page?q=arthrose&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Voir les soins Arthrose sur HomeoAnimo</a>
                     </div>
 
                     <h2>1. Reconnaître les premiers symptômes de l'arthrose canine</h2>
@@ -293,7 +293,7 @@
                                 <td>Formule plantes & homéopathie</td>
                                 <td>Gouttes / Poudre</td>
                                 <td>~29.90 €</td>
-                                <td><a href="https://www.homeoanimo.com/?rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
+                                <td><a href="https://www.homeoanimo.com/pages/search-results-page?q=arthrose&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
                             </tr>
                             <tr>
                                 <td><b>Wanimo VetoCare</b></td>
@@ -451,7 +451,7 @@
                     </ul>
 
                     <div class="medical-disclaimer">
-                        <b>Avertissement médical :</b> Si les troubles du comportement persistent ou se traduisent par de l'agressivité envers les membres du foyer, faites appel à un vétérinaire comportementaliste qualifié.
+                        <b>Avertissement médical :</b> Si les troubles du comportement persistent ou se traduisent par de l'agressivité envers les membres du foyer, demandez conseil à un comportementaliste certifié ou à un vétérinaire spécialisé.
                     </div>
                 </article>
             </div>
@@ -459,56 +459,68 @@
 
         <aside>
             <div class="widget">
-                <h3>Thématiques populaires</h3>
-                <ul class="sidebar-menu">
-                    <li><a onclick="showArticle('art-1')">Arthrose & Mobilité</a></li>
-                    <li><a onclick="showArticle('art-2')">Digestion & Transit</a></li>
-                    <li><a onclick="showArticle('art-3')">Stress & Comportement</a></li>
-                </ul>
+                <span class="promo-badge">Offre Spéciale</span>
+                <h3>Conseils Personnalisés</h3>
+                <p style="font-size: 0.88rem; margin-bottom: 12px;">Besoin d'un avis sur le choix d'un soin naturel adapté à votre animal ? Nos guides sont régulièrement mis à jour.</p>
             </div>
+
             <div class="widget">
-                <span class="promo-badge">Partenaire recommandé</span>
-                <h3>Soins Naturels HomeoAnimo</h3>
-                <p style="font-size: 0.85rem; margin-bottom: 12px;">Découvrez la gamme complète de remèdes homéopathiques et CBD pour chiens et chats.</p>
-                <a href="https://www.homeoanimo.com/?rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn" style="width: 100%; text-align: center;">Visiter la boutique HomeoAnimo</a>
+                <h3>Navigation Rapide</h3>
+                <ul class="sidebar-menu">
+                    <li><a onclick="showArticle('art-1')">🦴 Arthrose & Mobilité</a></li>
+                    <li><a onclick="showArticle('art-2')">🌿 Digestion & Transit</a></li>
+                    <li><a onclick="showArticle('art-3')">💧 Stress & Comportement</a></li>
+                </ul>
             </div>
         </aside>
     </div>
 
     <footer>
         <div class="footer-container">
-            <p>&copy; 2026 VetNature - Tous droits réservés.</p>
-            <p>Liens d'affiliation : Cet article peut contenir des liens sponsorisés. Lorsque vous achetez via ces liens, nous pouvons percevoir une commission sans surcoût pour vous.</p>
-            <button class="legal-toggle-btn" onclick="toggleLegal()">Mentions Légales & Confidentialité</button>
-            <div id="legalContent" class="legal-content">
+            <p>&copy; 2026 VetNature.fr - Tous droits réservés.</p>
+            <p>
+                <button class="legal-toggle-btn" onclick="toggleLegal()">Mentions Légales & Informations Affiliation</button>
+            </p>
+            <div class="legal-content" id="legalContent">
                 <h2>Mentions Légales</h2>
-                <p>Éditeur du site : VetNature Éditions.</p>
-                <p>Hébergement : Serveur sécurisé HTTPS.</p>
+                <p><b>Éditeur du site :</b> VetNature.fr</p>
+                <p><b>Hébergement :</b> Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA.</p>
+                <h3>Transparence & Affiliation</h3>
+                <p>VetNature participe à plusieurs programmes d'affiliation. Lorsque vous cliquez sur un lien menant vers un site marchand (ex: HomeoAnimo, Animigo, Wanimo, Santévet) et effectuez un achat, nous pouvons percevoir une commission sans aucun surcoût pour vous. Cela nous permet de financer la rédaction et l'indépendance de nos guides.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        function showArticle(articleId) {
+        function showArticle(artId) {
             var pages = document.querySelectorAll('.article-page');
             pages.forEach(function(page) {
                 page.classList.remove('active');
             });
-            document.getElementById(articleId).classList.add('active');
+
+            var target = document.getElementById(artId);
+            if (target) {
+                target.classList.add('active');
+            }
 
             var navLinks = document.querySelectorAll('.subnav-container a');
             navLinks.forEach(function(link) {
                 link.classList.remove('active');
             });
-            var activeNav = document.getElementById('nav-' + articleId);
-            if(activeNav) activeNav.classList.add('active');
+
+            var activeNav = document.getElementById('nav-' + artId);
+            if (activeNav) {
+                activeNav.classList.add('active');
+            }
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function toggleLegal() {
-            var legal = document.getElementById('legalContent');
-            legal.classList.toggle('active');
+            var content = document.getElementById('legalContent');
+            if (content) {
+                content.classList.toggle('active');
+            }
         }
     </script>
 </body>
