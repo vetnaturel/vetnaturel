@@ -186,6 +186,62 @@
         footer h3 { color: var(--primary); font-size: 0.74rem; margin-top: 8px; margin-bottom: 2px; }
         footer p { margin-bottom: 5px; }
         footer a { color: #71717a; text-decoration: underline; }
+
+        /* --- CORRECTIF MOBILE INTEGRE --- */
+        @media (max-width: 850px) {
+            html, body {
+                overflow-x: hidden !important;
+                width: 100% !important;
+            }
+
+            .container {
+                grid-template-columns: 1fr !important;
+                padding: 0 12px !important;
+                margin: 15px auto !important;
+            }
+
+            article {
+                padding: 20px 15px !important;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem !important;
+            }
+            article h1 {
+                font-size: 1.35rem !important;
+                line-height: 1.3 !important;
+            }
+            article h2 {
+                font-size: 1.15rem !important;
+            }
+
+            .subnav-container {
+                display: flex !important;
+                overflow-x: auto !important;
+                white-space: nowrap !important;
+                -webkit-overflow-scrolling: touch !important;
+                padding: 8px 10px !important;
+            }
+            .subnav-container a {
+                font-size: 0.8rem !important;
+                padding: 6px 12px !important;
+                flex-shrink: 0 !important;
+            }
+
+            .comparison-table {
+                display: block !important;
+                width: 100% !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                white-space: nowrap !important;
+            }
+            
+            .comparison-table th, 
+            .comparison-table td {
+                padding: 8px 10px !important;
+                font-size: 0.8rem !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -207,9 +263,6 @@
                 <a id="nav-art-1" onclick="showArticle('art-1')" class="active">Arthrose & Mobilité</a>
                 <a id="nav-art-2" onclick="showArticle('art-2')">Digestion & Transit</a>
                 <a id="nav-art-3" onclick="showArticle('art-3')">Stress & Comportement</a>
-                <a id="nav-art-4" onclick="showArticle('art-4')">Soin des Yeux</a>
-                <a id="nav-art-5" onclick="showArticle('art-5')">Hygiène Dentaire</a>
-                <a id="nav-art-6" onclick="showArticle('art-6')">Top 5 Compléments</a>
             </div>
         </div>
     </div>
@@ -226,8 +279,8 @@
 
                     <div class="cta-box">
                         <h3>🦴 Recommandation N°1 : La formule Articulations & Mobilité</h3>
-                        <p>Pour régénérer le cartilage et agir directement sur la raideur matinale, nous recommandons la formule concentrée en <b>Glucosamine, Chondroïtine et Harpagophytum d'Animigo</b>.</p>
-                        <a href="https://votre-lien-affilie-animigo.com" target="_blank" rel="sponsored nofollow" class="btn">Voir la fiche & les avis sur Animigo</a>
+                        <p>Pour régénérer le cartilage et agir directement sur la raideur matinale, nous recommandons la gamme ciblée <b>HomeoAnimo pour l'arthrose</b>.</p>
+                        <a href="https://www.homeoanimo.com/pages/search-results-page?q=arthrose&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Voir les soins Arthrose sur HomeoAnimo</a>
                     </div>
 
                     <h2>1. Reconnaître les premiers symptômes de l'arthrose canine</h2>
@@ -296,7 +349,7 @@
                                 <td>Formule plantes & homéopathie</td>
                                 <td>Gouttes / Poudre</td>
                                 <td>~29.90 €</td>
-                                <td><a href="https://votre-lien-affilie-homeoanimo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
+                                <td><a href="https://www.homeoanimo.com/pages/search-results-page?q=arthrose&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
                             </tr>
                             <tr>
                                 <td><b>Wanimo VetoCare</b></td>
@@ -399,7 +452,7 @@
                                 <td>Extrait de plantes & homéopathie</td>
                                 <td>Gastrites, diarrhées aiguës, gaz</td>
                                 <td>~27.50 €</td>
-                                <td><a href="https://votre-lien-affilie-homeoanimo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
+                                <td><a href="https://www.homeoanimo.com/?rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
                             </tr>
                             <tr>
                                 <td><b>Wanimo Croquettes Gastro</b></td>
@@ -434,8 +487,8 @@
 
                     <div class="cta-box">
                         <h3>💧 Recommandation N°1 Apaisement : Huile de CBD Bio Vétérinaire</h3>
-                        <p>Pour apaiser rapidement les crises d'angoisse, les phobbies sonores ou l'agitation, l'<b>Huile de CBD 5% spécial animaux de HomeoAnimo</b> agit en douceur sur les récepteurs du système nerveux.</p>
-                        <a href="https://votre-lien-affilie-homeoanimo-cbd.com" target="_blank" rel="sponsored nofollow" class="btn">Découvrir l'Huile CBD sur HomeoAnimo</a>
+                        <p>Pour apaiser rapidement les crises d'angoisse, les phobies sonores ou l'agitation, l'<b>Huile de CBD 5% spécial animaux de HomeoAnimo</b> agit en douceur sur les récepteurs du système nerveux.</p>
+                        <a href="https://www.homeoanimo.com/?rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Découvrir l'Huile CBD sur HomeoAnimo</a>
                     </div>
 
                     <h2>1. Comment reconnaître le stress chez le chien et le chat ?</h2>
@@ -450,383 +503,11 @@
                     <ul>
                         <li><b>Changements d'environnement :</b> Déménagement, arrivée d'un bébé, adoption d'un autre animal, ou simplement modification de la disposition des meubles.</li>
                         <li><b>Phobies bruits forts :</b> Orages, pétards, travaux, aspirateur.</li>
-                        <li><b>Anxiété de séparation :</b> Incapacité à rester seul à la maison, liée à un hyper-attachement ou un manque de détachement progressif lors du jeune âge.</li>
-                        <li><b>Traumatismes ou manque de socialisation :</b> Animaux issus de refuges ayant subi des maltraitances ou n'ayant pas été habitués aux bruits extérieurs pendant leurs 12 premières semaines.</li>
-                    </ul>
-
-                    <div class="lead-gen-box">
-                        <h3>💡 Les troubles comportementaux peuvent masquer une douleur</h3>
-                        <p>Un animal agressif ou anxieux souffre parfois d'une douleur physique invisible (arthrose, infection urinaire, trouble thyroïdien). Consultez votre vétérinaire pour éliminer toute cause médicale.</p>
-                        <a href="https://votre-lien-affilie-santevet.com" target="_blank" rel="sponsored nofollow" class="btn btn-blue">Obtenir un devis mutuelle Santévet</a>
-                    </div>
-
-                    <h2>3. Les solutions naturelles les plus efficaces contre le stress</h2>
-                    <p>Plusieurs compléments et thérapies douces permettent de réguler les neurotransmetteurs responsables du calme :</p>
-                    <ul>
-                        <li><b>Le Cannabidiol (CBD Vétérinaire) :</b> Dénué de THC (sans effet psychoactif), le CBD interagit avec le système endocannabinoïde de l'animal. Il aide à réguler la réponse au stress, diminue l'anxiété de séparation et améliore la qualité du sommeil.</li>
-                        <li><b>Les Phéromones de synthèse :</b> Diffuseurs ou sprays muraux reproduisant les molécules apaisantes sécrétées par la mère (D.A.P. chez le chien, Feliway chez le chat). Très efficaces pour sécuriser un territoire.</li>
-                        <li><b>La Valériane, la Camomille et la Passiflore :</b> Plantes relaxantes qui apaisent l'agitation mentale sans engourdir l'animal.</li>
-                        <li><b>La L-Théanine et le Tryptophane :</b> Acides aminés précurseurs de la sérotonine (l'hormone du bonheur), parfaits pour rééquilibrer l'humeur lors des périodes de changement.</li>
-                    </ul>
-
-                    <div class="lead-gen-box">
-                        <h3>Trouver des diffuseurs et friandises apaisantes</h3>
-                        <p>Découvrez la sélection de compléments de relaxation, de jouets d'occupation et de diffuseurs de phéromones sélectionnés pour le bien-être de votre animal.</p>
-                        <a href="https://votre-lien-affilie-wanimo.com" target="_blank" rel="sponsored nofollow" class="btn btn-blue">Voir les soins anti-stress sur Wanimo</a>
-                    </div>
-
-                    <h2>4. Comparatif 2026 : Les meilleures solutions Anti-Stress</h2>
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>Produit</th>
-                                <th>Actifs principaux</th>
-                                <th>Format / Prise</th>
-                                <th>Prix indicatif</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>HomeoAnimo CBD 5%</b></td>
-                                <td>Huile de CBD Bio Broad Spectrum</td>
-                                <td>Gouttes sous la langue / sur nourriture</td>
-                                <td>~32.99 €</td>
-                                <td><a href="https://votre-lien-affilie-homeoanimo-cbd.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
-                            </tr>
-                            <tr>
-                                <td><b>Animigo Calming Treats</b></td>
-                                <td>L-Théanine, Camomille, Passiflore</td>
-                                <td>Friandises gourmandes</td>
-                                <td>~19.99 €</td>
-                                <td><a href="https://votre-lien-affilie-animigo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Animigo</a></td>
-                            </tr>
-                            <tr>
-                                <td><b>Wanimo Phéromones Diffuseur</b></td>
-                                <td>Analogue synthétique de phéromones</td>
-                                <td>Diffuseur prise électrique</td>
-                                <td>~28.50 €</td>
-                                <td><a href="https://votre-lien-affilie-wanimo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Wanimo</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h2>5. Aménagements et règles d'or pour un environnement serein</h2>
-                    <ul>
-                        <li><b>Créer une zone de refuge inviolable :</b> Aménagez un panier ou une niche d'intérieur au calme où personne ne vient déranger l'animal lorsqu'il s'y retire.</li>
-                        <li><b>Enrichissement de l'environnement :</b> Proposez des tapis de léchage, des jouets distributeurs de croquettes (KONG) et des arbres à chat en hauteur pour libérer la tension mentale.</li>
-                        <li><b>Ne pas punir les manifestations de peur :</b> Crier sur un chien qui a détruit un objet pendant votre absence ou sur un chat qui a uriné hors du bac ne fait qu'augmenter son niveau d'anxiété pour les fois suivantes.</li>
+                        <li><b>Anxiété de séparation :</b> Incapacité à rester seul à la maison, liée à un hyper-attachement ou un manque de détachement progressif.</li>
                     </ul>
 
                     <div class="medical-disclaimer">
-                        <b>Avertissement médical :</b> En cas de comportements d'agressivité soudaine, d'auto-mutilation ou de phobies invalidantes, la prise en charge par un vétérinaire comportementaliste est vivement recommandée en complément des produits apaisants.
-                    </div>
-                </article>
-            </div>
-
-            <!-- GUIDE 4 : SOIN DES YEUX -->
-            <div id="art-4" class="article-page">
-                <article>
-                    <h1>Soin des Yeux chez le Chien et le Chat : Prévenir les Irritations, Éliminer les Traces de Larmes & Hygiène Oculaire</h1>
-                    <div class="article-meta">Publié le 23 Septembre 2026 • Temps de lecture : 8 min • Par Rédaction VetNature</div>
-
-                    <p>Les yeux de nos animaux de compagnie sont des organes fragiles, particulièrement exposés aux agressions extérieures : poussières, vent, pollen, bactéries ou épillets. Chez certaines races, l'accumulation de larmes au coin interne de l'œil provoque des coulées brunâtres inesthétiques et des irritations de la peau. Un entretien oculaire régulier avec des nettoyants adaptés et naturels est indispensable pour maintenir des yeux clairs, propres et en bonne santé.</p>
-
-                    <div class="cta-box">
-                        <h3>👁️ Recommandation N°1 Soin des Yeux : Lotion Apaisante au Bleuet</h3>
-                        <p>Pour éliminer les croûtes, décoller le pus et atténuer les taches d'oxydation rousses sous les yeux, nous recommandons la <b>Lotion Oculaire Douce d'Animigo</b> enrichie à l'eau de bleuet et à la camomille.</p>
-                        <a href="https://votre-lien-affilie-animigo-yeux.com" target="_blank" rel="sponsored nofollow" class="btn">Voir la Lotion Oculaire sur Animigo</a>
-                    </div>
-
-                    <h2>1. Reconnaître les signes d'un inconfort ou d'une infection oculaire</h2>
-                    <p>Un œil en bonne santé est limpide, grand ouvert, sans rougeur ni sécrétions anormales. Soyez attentif aux manifestations suivantes :</p>
-                    <ul>
-                        <li><b>Écoulements répétés :</b> Qu'ils soient clairs (épiphora), jaunâtres ou verdâtres (signe d'infection bactérienne).</li>
-                        <li><b>Trace de larmes brunâtres :</b> Fréquentes chez les chiens à poil clair (Caniche, Bichon, Shih Tzu) ou les chats brachycéphales (Persan), causées par la porphyrine présente dans les larmes.</li>
-                        <li><b>Œil fermé ou demi-clos (blépharospasme) :</b> L'animal cligne fréquemment ou garde l'œil fermé à cause de la douleur ou de la lumière (photophobie).</li>
-                        <li><b>Frottements fréquents :</b> Le chien ou le chat passe sa patte sur l'œil ou se frotte la tête contre les tapis et les meubles.</li>
-                        <li><b>Rougeur de la conjonctive :</b> La membrane blanche ou le contour de l'œil devient injecté de sang.</li>
-                    </ul>
-
-                    <h2>2. Quelles sont les causes fréquentes d'irritation oculaire ?</h2>
-                    <p>Plusieurs facteurs peuvent altérer le confort visuel de votre compagnon :</p>
-                    <ul>
-                        <li><b>Corps étrangers :</b> Poussières, graines de graminées, sable ou poils incarnés qui frottent sur la cornée.</li>
-                        <li><b>Canaux lacrymaux bouchés :</b> Empêchent l'évacuation naturelle des larmes vers le nez, provoquant un débordement continu sur le visage.</li>
-                        <li><b>Conjonctivites allergiques ou infectieuses :</b> Réaction aux pollens ou contamination virale (comme le Coryza chez le chat).</li>
-                        <li><b>Morphologie spécifique :</b> Les races à museau plat (Bouledogue, Carlin, Persan) ont des orbites peu profondes qui exposent davantage la cornée.</li>
-                    </ul>
-
-                    <div class="lead-gen-box">
-                        <h3>💡 Urgences oculaires : Ne prenez aucun risque !</h3>
-                        <p>Un ulcère cornéen non soigné peut entraîner la perte de la vue en quelques jours. En cas de traumatisme ou de douleur vive, consultez un vétérinaire immédiatement. La mutuelle santé prend en charge ces urgences.</p>
-                        <a href="https://votre-lien-affilie-santevet.com" target="_blank" rel="sponsored nofollow" class="btn btn-blue">Obtenir votre devis gratuit Santévet</a>
-                    </div>
-
-                    <h2>3. Les principes actifs naturels pour apaiser et purifier la sphère oculaire</h2>
-                    <p>Pour le nettoyage quotidien, privilégiez toujours des lotions physiologiques enrichies en extraits botaniques doux :</p>
-                    <ul>
-                        <li><b>L'Eau de Bleuet (Centaurea cyanus) :</b> Reconnue pour ses propriétés décongestionnantes, apaisantes et anti-inflammatoires sur les yeux fatigués ou irrités.</li>
-                        <li><b>L'Extrait de Camomille :</b> Calme les rougeurs, nettoie en douceur et antiseptise les muqueuses sensibles.</li>
-                        <li><b>L'Euphraise (Casse-Lunettes) :</b> Plante médicinale phare en ophtalmologie naturelle, idéale contre les blépharites et conjonctivites légères.</li>
-                        <li><b>Le Sérum Physiologique Stérile (NaCl 0.9%) :</b> Parfait pour rincer l'œil à grand eau en cas de présence de poussière ou de sable.</li>
-                    </ul>
-
-                    <div class="lead-gen-box">
-                        <h3>Découvrir les lingettes et lotions oculaires vétérinaires</h3>
-                        <p>Retrouvez une sélection complète de produits de nettoyage oculaire, lingettes nettoyantes et peignes à puces/sécrétions chez nos partenaires.</p>
-                        <a href="https://votre-lien-affilie-wanimo.com" target="_blank" rel="sponsored nofollow" class="btn btn-blue">Voir les produits hygiène oculaire sur Wanimo</a>
-                    </div>
-
-                    <h2>4. Comparatif 2026 : Les meilleures lotions et soins oculaires</h2>
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>Produit</th>
-                                <th>Ingrédients clés</th>
-                                <th>Format & Action</th>
-                                <th>Prix indicatif</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Animigo Lotion Yeux</b></td>
-                                <td>Eau de Bleuet, Camomille, Aloe Vera</td>
-                                <td>Flacon compte-gouttes (Nettoyant/Anti-taches)</td>
-                                <td>~14.99 €</td>
-                                <td><a href="https://votre-lien-affilie-animigo-yeux.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Animigo</a></td>
-                            </tr>
-                            <tr>
-                                <td><b>HomeoAnimo Yeux Sains</b></td>
-                                <td>Euphraise & extraits homéopathiques</td>
-                                <td>Gouttes apaisantes (Irritations)</td>
-                                <td>~22.90 €</td>
-                                <td><a href="https://votre-lien-affilie-homeoanimo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
-                            </tr>
-                            <tr>
-                                <td><b>Wanimo VetoCare Lingettes</b></td>
-                                <td>Solution saline & Camomille</td>
-                                <td>Lingettes jetables biodégradables</td>
-                                <td>~9.90 €</td>
-                                <td><a href="https://votre-lien-affilie-wanimo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Wanimo</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h2>5. Le protocole étape par étape pour nettoyer les yeux de votre animal</h2>
-                    <p>Nettoyer les yeux de son chien ou de son chat demande de la douceur pour éviter toute blessure :</p>
-                    <ol>
-                        <li><b>Lavez-vous soigneusement les mains</b> à l'eau et au savon avant toute manipulation.</li>
-                        <li><b>Imbibez une compresse stérile</b> (évitez le coton hydrophile qui peut laisser des fibres irritantes dans l'œil) avec la lotion oculaire ou du sérum physiologique.</li>
-                        <li><b>Passez délicatement la compresse</b> de l'angle interne de l'œil (près du nez) vers l'angle externe, pour évacuer les saletés vers l'extérieur sans réinsérer de bactéries.</li>
-                        <li><b>Utilisez IMPÉRATIVEMENT une compresse différente pour chaque œil</b> afin de ne pas transmettre une éventuelle infection d'un œil sain à un œil infecté.</li>
-                        <li>Pour décoller les croûtes sèches ou les larmes incrustées, laissez poser la compresse humide quelques secondes sur la zone pour ramollir les résidus avant d'essuyer.</li>
-                    </ol>
-
-                    <div class="medical-disclaimer">
-                        <b>Avertissement médical :</b> Ne mettez JAMAIS un collyre pour humain ou un collyre contenant des corticoïdes dans l'œil de votre animal sans avis vétérinaire. En présence d'un ulcère de la cornée, les corticoïdes peuvent aggraver dramatiquement la lésion et provoquer une perforation oculaire.
-                    </div>
-                </article>
-            </div>
-
-            <!-- GUIDE 5 : HYGIÈNE DENTAIRE -->
-            <div id="art-5" class="article-page">
-                <article>
-                    <h1>Hygiène Dentaire du Chien et du Chat : Combattre la Plaque, Éliminer le Tartre et Stopper la Mauvaise Haleine</h1>
-                    <div class="article-meta">Publié le 23 Septembre 2026 • Temps de lecture : 9 min • Par Rédaction VetNature</div>
-
-                    <p>La <strong>santé bucco-dentaire</strong> de nos compagnons est trop souvent négligée. Pourtant, plus de 80 % des chiens et des chats âgés de plus de 3 ans souffrent de la <b>maladie parodontale</b>. L'accumulation lente mais continue de plaque dentaire et de tartre ne provoque pas seulement une mauvaise haleine persistante (halitose) : elle détruit le tissu de soutien de la dent, entraîne la perte des dents et peut libérer des bactéries dangereuses dans le sang (risques cardiaques et rénaux). Mettre en place une routine d'hygiène dentaire adaptée est la meilleure stratégie pour éviter un détartrage lourd sous anesthésie générale.</p>
-
-                    <div class="cta-box">
-                        <h3>🦷 Recommandation N°1 Dentaire : La Poudre d'Algues Purifiante Anti-Tartre</h3>
-                        <p>Pour ramollir le tartre incrusté et neutraliser la mauvaise haleine sans stress, nous recommandons la <b>Poudre Dentaire d'Algues Ascophyllum Nodosum d'Animigo</b> à mélanger quotidiennement à la nourriture.</p>
-                        <a href="https://votre-lien-affilie-animigo-dentaire.com" target="_blank" rel="sponsored nofollow" class="btn">Voir la Poudre Dentaire sur Animigo</a>
-                    </div>
-
-                    <h2>1. Comprendre la formation du tartre et la maladie parodontale</h2>
-                    <p>Le mécanisme d'apparition des problèmes dentaires est progressif :</p>
-
-                    <ul>
-                        <li><b>Étape 1 : La Plaque Dentaire :</b> Après chaque repas, un enduit invisible composé de résidus alimentaires, de salive et de bactéries se dépose sur les dents.</li>
-                        <li><b>Étape 2 : Le Tartre :</b> Sans brossage ni action enzymatique, la plaque se minéralise en quelques jours sous l'effet du calcium salivaire pour former un dépôt solide jaunâtre puis brunâtre : le tartre.</li>
-                        <li><b>Étape 3 : La Gingivite :</b> Le tartre s'insère sous la gencive, provoquant une inflammation douloureuse, des saignements et un gonflement des gencives.</li>
-                        <li><b>Étape 4 : La Parodontite et le Déchaussement :</b> L'os alvéolaire se résorbe, les dents bougent puis tombent. Les bactéries pénètrent le système sanguin, ce qui peut affecter le cœur, le foie et les reins.</li>
-                    </ul>
-
-                    <h2>2. Comment repérer un problème bucco-dentaire chez votre animal ?</h2>
-                    <p>Observez régulièrement la cavité buccale de votre chien ou de votre chat. Les signaux d'alerte comprennent :</p>
-                    <ul>
-                        <li><b>Une mauvaise haleine forte (Halitose) :</b> Ce n'est pas "normal" qu'un animal sente fort de la bouche.</li>
-                        <li><b>Un dépôt marron ou jaunâtre :</b> Particulièrement visible sur les crocs et les molaires du fond.</li>
-                        <li><b>Une gencive rouge ou sanglante :</b> La ligne de jonction entre la dent et la gencive doit être rose pâle.</li>
-                        <li><b>Une difficulté à mâcher :</b> L'animal lâche ses croquettes, penche la tête d'un côté pour manger ou refuse la nourriture dure.</li>
-                        <li><b>Salivation excessive ou frottement de la museau :</b> L'animal exprime une gêne ou une douleur vive.</li>
-                    </ul>
-
-                    <div class="lead-gen-box">
-                        <h3>💡 Les détartrages vétérinaires : Une intervention coûteuse</h3>
-                        <p>Lorsque le tartre est trop avancé, un détartrage sous anesthésie générale en clinique vétérinaire est indispensable. Ces actes sont pris en charge par les mutuelles santé de prévention.</p>
-                        <a href="https://votre-lien-affilie-santevet.com" target="_blank" rel="sponsored nofollow" class="btn btn-blue">Obtenir un devis gratuit Santévet</a>
-                    </div>
-
-                    <h2>3. Les meilleures solutions naturelles pour nettoyer les dents sans stress</h2>
-                    <p>S'il est difficile de brosser les dents de votre animal tous les jours, plusieurs alternatives naturelles offrent d'excellents résultats :</p>
-                    <ul>
-                        <li><b>L'Algue Ascophyllum Nodosum :</b> Une fois ingérée, cette algue marine naturelle libère des enzymes via la salive qui ramollissent le tartre existant et empêchent les nouvelles bactéries de s'accrocher aux dents.</li>
-                        <li><b>L'Huile d'Arbre à Thé (très diluée) et le Bicarbonate Vétérinaire :</b> Neutralisent l'acidité buccale et désinfectent les gencives.</li>
-                        <li><b>Les Batônnets de Bois de Cerf ou de Bois d'Olivier :</b> Ils offrent une mastication mécanique naturelle qui gratte la plaque sans risquer d'éclater les dents.</li>
-                        <li><b>Les Solutés Enzymatiques à ajouter dans l'eau de boisson :</b> Une solution invisible et sans goût qui purifie la cavité buccale à chaque gorgée d'eau.</li>
-                    </ul>
-
-                    <div class="lead-gen-box">
-                        <h3>Découvrir la sélection de soins bucco-dentaires</h3>
-                        <p>Retrouvez une gamme complète de brosses à dents à doigtier, dentifrices appétents au goût de poulet et friandises à mâcher sur notre boutique partenaire.</p>
-                        <a href="https://votre-lien-affilie-wanimo.com" target="_blank" rel="sponsored nofollow" class="btn btn-blue">Voir les produits dentaires sur Wanimo</a>
-                    </div>
-
-                    <h2>4. Comparatif 2026 : Les meilleures solutions Hygiène Dentaire</h2>
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>Produit</th>
-                                <th>Ingrédients clés</th>
-                                <th>Mode d'application</th>
-                                <th>Prix indicatif</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Animigo Poudre Dentaire</b></td>
-                                <td>100% Algues Ascophyllum Nodosum</td>
-                                <td>Poudre à saupoudrer sur la nourriture</td>
-                                <td>~18.99 €</td>
-                                <td><a href="https://votre-lien-affilie-animigo-dentaire.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Animigo</a></td>
-                            </tr>
-                            <tr>
-                                <td><b>HomeoAnimo Haleine Fraîche</b></td>
-                                <td>Complexe d'huiles essentielles & plantes</td>
-                                <td>Spray buccal / Gouttes</td>
-                                <td>~21.50 €</td>
-                                <td><a href="https://votre-lien-affilie-homeoanimo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
-                            </tr>
-                            <tr>
-                                <td><b>Wanimo VetoCare Kit Dentaire</b></td>
-                                <td>Dentifrice Enzymatique + Doigtier</td>
-                                <td>Brossage direct des gencives</td>
-                                <td>~12.90 €</td>
-                                <td><a href="https://votre-lien-affilie-wanimo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Wanimo</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h2>5. Le guide étape par étape du brossage de dents réussi</h2>
-                    <p>Le brossage mécanique reste l'action la plus efficace contre la plaque dentaire. Voici comment habituer votre compagnon sans conflit :</p>
-                    <ol>
-                        <li><b>Utilisez EXCLUSIVEMENT du dentifrice vétérinaire :</b> Ne mettez JAMAIS de dentifrice pour humain. Le fluor et le xylitol qu'il contient sont hautement toxiques pour les animaux.</li>
-                        <li><b>Étape 1 (Accoutumance) :</b> Mettez un peu de dentifrice appétent (goût volaille ou foie) sur votre doigt et laissez votre animal le lécher pour qu'il le rattache à une récompense.</li>
-                        <li><b>Étape 2 (Le Doigtier) :</b> Enfilez un doigtier en microfibre ou en silicone doux, mettez une noisette de dentifrice et frottez délicatement les canines extérieures.</li>
-                        <li><b>Étape 3 (Brossage complet) :</b> Soulevez les babines et brossez doucement en mouvements circulaires du haut vers le bas sur la face externe des dents. Il n'est pas nécessaire de brosser la face interne, la langue de l'animal s'en chargeant naturellement.</li>
-                    </ol>
-
-                    <div class="medical-disclaimer">
-                        <b>Avertissement médical :</b> Si les gencives de votre animal sont très rouges, gonflées ou saignent au moindre contact, n'entamez pas de brossage mécanique qui serait très douloureux. Consultez d'abord un vétérinaire pour soigner l'inflammation ou programmer un détartrage professionnel.
-                    </div>
-                </article>
-            </div>
-
-            <!-- GUIDE 6 : TOP 5 COMPLÉMENTS (Guide Complet & Comparatif) -->
-            <div id="art-6" class="article-page">
-                <article>
-                    <h1>Top 5 des Meilleurs Compléments Alimentaires Naturels pour Chien et Chat : Comparatif 2026 & Avis VetNature</h1>
-                    <div class="article-meta">Publié le 23 Septembre 2026 • Temps de lecture : 10 min • Par Rédaction VetNature</div>
-
-                    <p>Face à l'offre pléthorique de produits de soins naturels sur Internet et en parapharmacie, il est parfois difficile d'identifier les compléments réellement efficaces et sans danger pour nos animaux. Notre équipe rédactionnelle a analysé les compositions, les dosages d'actifs, la traçabilité des ingrédients et les retours d'expérience des propriétaires d'animaux pour établir ce <b>Top 5 des compléments alimentaires naturels indispensables</b> au bien-être de vos chiens et chats.</p>
-
-                    <div class="cta-box">
-                        <h3>🏆 Le Gagnant du Classement 2026 : Glucosamine & Chondroïtine d'Animigo</h3>
-                        <p>Pour sa formule complète 3-en-1 combinant chondroprotecteurs et Harpagophytum, ce soin articulaire obtient la note maximale pour préserver la mobilité des animaux seniors.</p>
-                        <a href="https://votre-lien-affilie-animigo-articulations.com" target="_blank" rel="sponsored nofollow" class="btn">Voir la fiche & les avis sur Animigo</a>
-                    </div>
-
-                    <h2>1. Le Classement Officiel VetNature 2026</h2>
-                    <p>Voici le récapitulatif détaillé des 5 meilleurs soins naturels retenus par notre rédaction, classés selon leur domaine d'action principal :</p>
-
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>Rang</th>
-                                <th>Produit & Catégorie</th>
-                                <th>Actifs phares</th>
-                                <th>Point fort</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>🥇 1</b></td>
-                                <td><b>Articulations & Mobilité</b><br>(Animigo)</td>
-                                <td>Glucosamine, Chondroïtine, Harpagophytum</td>
-                                <td>Action rapide sur la raideur matinale</td>
-                                <td><a href="https://votre-lien-affilie-animigo-articulations.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir l'offre</a></td>
-                            </tr>
-                            <tr>
-                                <td><b>🥈 2</b></td>
-                                <td><b>Probiotiques Intestinaux</b><br>(Animigo)</td>
-                                <td>Enterococcus Faecium, FOS, Inuline</td>
-                                <td>Rétablit le transit et stoppe les diarrhées</td>
-                                <td><a href="https://votre-lien-affilie-animigo-probiotiques.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir l'offre</a></td>
-                            </tr>
-                            <tr>
-                                <td><b>🥉 3</b></td>
-                                <td><b>Huile de CBD Bio 5%</b><br>(HomeoAnimo)</td>
-                                <td>Cannabidiol Broad Spectrum sans THC</td>
-                                <td>Apaises le stress et l'anxiété de séparation</td>
-                                <td><a href="https://votre-lien-affilie-cbd.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir l'offre</a></td>
-                            </tr>
-                            <tr>
-                                <td><b>4</b></td>
-                                <td><b>Poudre d'Algues Dentaire</b><br>(Animigo)</td>
-                                <td>100% Algue Ascophyllum Nodosum</td>
-                                <td>Elimine le tartre sans brossage direct</td>
-                                <td><a href="https://votre-lien-affilie-dentaire.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir l'offre</a></td>
-                            </tr>
-                            <tr>
-                                <td><b>5</b></td>
-                                <td><b>Lotion Oculaire au Bleuet</b><br>(Wanimo VetoCare)</td>
-                                <td>Eau de Bleuet, Camomille, Aloe Vera</td>
-                                <td>Nettoyage ultra-doux et anti-taches</td>
-                                <td><a href="https://votre-lien-affilie-yeux.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir l'offre</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h2>2. Analyse détaillée de notre Top 5</h2>
-
-                    <h3>N°1 : La Formule Articulations (Animigo)</h3>
-                    <p><b>Pourquoi il est en tête :</b> L'arthrose touchant près de 20% des chiens, ce complément apporte la synergie parfaite pour protéger le cartilage. La présence conjointe de Glucosamine et Chondroïtine nourrit le cartilage tandis que l'Harpagophytum agit comme un anti-inflammatoire naturel puissant.</p>
-
-                    <h3>N°2 : Le Complexe Probiotiques & Prébiotiques (Animigo)</h3>
-                    <p><b>Pourquoi il est indispensable :</b> 70% de l'immunité de l'animal réside dans son intestin. Ce complexe rééquilibre la flore digestive après une gastro-entérite, une transition alimentaire ou un traitement antibiotique.</p>
-
-                    <h3>N°3 : L'Huile de CBD Bio Vétérinaire (HomeoAnimo)</h3>
-                    <p><b>Pourquoi elle fait la différence :</b> Une solution naturelle de choix pour apaiser les phobies sonores (orages, pétards), l'anxiété de séparation et soulager les douleurs chroniques sans aucun effet d'accoutumance ni d'endormissement.</p>
-
-                    <h3>N°4 : La Poudre d'Algues Anti-Tartre (Animigo)</h3>
-                    <p><b>Pourquoi elle est révolutionnaire :</b> Saupoudrée sur la nourriture, cette algue agit de l'intérieur en modifiant la composition salivaire pour ramollir le tartre et éliminer la mauvaise haleine sans stress.</p>
-
-                    <h3>N°5 : La Lotion Oculaire Apaisante au Bleuet</h3>
-                    <p><b>Pourquoi elle complète la routine :</b> Idéale pour les races à risque d'écoulements oculaires (Bichons, Caniches, Persans), elle décolle les saletés en douceur et atténue les traces de larmes superficielles.</p>
-
-                    <div class="lead-gen-box">
-                        <h3>💡 Anticiper la santé globale de votre animal avec Santévet</h3>
-                        <p>Si les compléments naturels préviennent efficacement les maux du quotidien, une mutuelle santé permet de couvrir jusqu'à 80% des imprévus vétérinaires (urgences, chirurgies, bilans annuels).</p>
-                        <a href="https://votre-lien-affilie-santevet.com" target="_blank" rel="sponsored nofollow" class="btn btn-blue">Obtenir un devis gratuit Santévet</a>
-                    </div>
-
-                    <div class="medical-disclaimer">
-                        <b>Avertissement médical :</b> Les compléments alimentaires doivent s'inscrire dans le cadre d'une alimentation équilibrée et ne remplacent en aucun cas un traitement médical prescrit par votre docteur vétérinaire.
+                        <b>Avertissement médical :</b> Si les troubles du comportement s'accompagnent d'agressivité soudaine ou persistent dans le temps, il est fortement conseillé de consulter un vétérinaire comportementaliste qualifié.
                     </div>
                 </article>
             </div>
@@ -834,59 +515,57 @@
 
         <aside>
             <div class="widget">
-                <h3>Code Promo Partenaire</h3>
-                <span class="promo-badge">-10% AVEC LE CODE VET10</span>
-                <p>Valable sur votre première commande de compléments alimentaires chez nos partenaires.</p>
+                <h3>Navigation Rapide</h3>
+                <ul class="sidebar-menu">
+                    <li><a onclick="showArticle('art-1')" id="side-art-1" class="active">Arthrose & Mobilité</a></li>
+                    <li><a onclick="showArticle('art-2')" id="side-art-2">Digestion & Transit</a></li>
+                    <li><a onclick="showArticle('art-3')" id="side-art-3">Stress & Comportement</a></li>
+                </ul>
             </div>
 
             <div class="widget">
-                <h3>Nos 6 Guides Santé</h3>
-                <ul class="sidebar-menu">
-                    <li><a id="side-art-1" onclick="showArticle('art-1')">🦴 1. Arthrose & Mobilité</a></li>
-                    <li><a id="side-art-2" onclick="showArticle('art-2')">🌿 2. Digestion & Transit</a></li>
-                    <li><a id="side-art-3" onclick="showArticle('art-3')">💧 3. Stress & Comportement</a></li>
-                    <li><a id="side-art-4" onclick="showArticle('art-4')">👁️ 4. Soin des Yeux</a></li>
-                    <li><a id="side-art-5" onclick="showArticle('art-5')">🦷 5. Hygiène Dentaire</a></li>
-                    <li><a id="side-art-6" onclick="showArticle('art-6')" class="active">⭐ 6. Top 5 Compléments</a></li>
-                </ul>
+                <span class="promo-badge">PROMO VETNATURE</span>
+                <h3>Soin Naturel Recommandé</h3>
+                <p style="font-size: 0.88rem; margin-bottom: 12px;">Découvrez les compléments en phytothérapie et homéopathie vétérinaire certifiés pour la santé globale de vos animaux.</p>
+                <a href="https://www.homeoanimo.com/?rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn" style="width: 100%; text-align: center;">Accéder au catalogue</a>
             </div>
         </aside>
     </div>
 
     <footer>
         <div class="footer-container">
-            <p>&copy; 2026 VetNature.fr - Tous droits réservés.</p>
-            <button class="legal-toggle-btn" onclick="toggleLegal()">Mentions légales & Confidentialité</button>
-            <div class="legal-content" id="legalContent">
-                <h2>Informations Légales</h2>
-                <p><strong>Éditeur du site :</strong> VetNature.fr</p>
-                <p><strong>Hébergement :</strong> Netlify Inc.</p>
-                <h3>Affiliation & Transparence</h3>
-                <p>Ce site participe à des programmes d'affiliation. Certains liens vers des boutiques partenaires sont affiliés : si vous effectuez un achat via ces liens, une commission peut nous être reversée sans aucun surcoût pour vous.</p>
+            <p>&copy; 2026 VetNature.fr - Conseils & Soins Naturels pour Animaux de Compagnie.</p>
+            <button class="legal-toggle-btn" onclick="toggleLegal()">Mentions Légales & Confidentialité</button>
+            <div id="legalContent" class="legal-content">
+                <h2>Mentions Légales</h2>
+                <h3>Édition du site</h3>
+                <p>Le site VetNature est un portail d'information indépendant spécialisé dans les conseils de santé et produits naturels pour animaux domestiques.</p>
+                <h3>Transparence & Affiliation</h3>
+                <p>Certains liens sur ce site sont des liens d'affiliation. Lorsque vous achetez un produit via ces liens, une commission peut nous être reversée sans coût supplémentaire pour vous.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        function showArticle(articleId) {
-            const pages = document.querySelectorAll('.article-page');
-            pages.forEach(page => page.classList.remove('active'));
+        function showArticle(id) {
+            const articles = document.querySelectorAll('.article-page');
+            articles.forEach(art => art.classList.remove('active'));
 
-            const selectedPage = document.getElementById(articleId);
-            if (selectedPage) {
-                selectedPage.classList.add('active');
+            const target = document.getElementById(id);
+            if (target) {
+                target.classList.add('active');
             }
 
             const navLinks = document.querySelectorAll('.subnav-container a');
             navLinks.forEach(link => link.classList.remove('active'));
-            const activeNav = document.getElementById('nav-' + articleId);
+            const activeNav = document.getElementById('nav-' + id);
             if (activeNav) {
                 activeNav.classList.add('active');
             }
 
             const sideLinks = document.querySelectorAll('.sidebar-menu a');
             sideLinks.forEach(link => link.classList.remove('active'));
-            const activeSide = document.getElementById('side-' + articleId);
+            const activeSide = document.getElementById('side-' + id);
             if (activeSide) {
                 activeSide.classList.add('active');
             }
@@ -895,8 +574,10 @@
         }
 
         function toggleLegal() {
-            const legal = document.getElementById('legalContent');
-            legal.classList.toggle('active');
+            const content = document.getElementById('legalContent');
+            if (content) {
+                content.classList.toggle('active');
+            }
         }
     </script>
 </body>
