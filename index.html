@@ -141,6 +141,39 @@
         .lead-gen-box { background-color: #ebf8ff; border: 1px solid #bee3f8; border-left: 4px solid #3182ce; padding: 20px; border-radius: 4px; margin: 30px 0; width: 100%; }
         .lead-gen-box h3 { color: #2b6cb0; margin-bottom: 8px; }
 
+        /* CARTES DE PRODUIT TOP 5 */
+        .product-card {
+            background-color: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .product-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+        .product-card-title {
+            font-size: 1.15rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        .product-rank {
+            background-color: var(--accent);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
         .btn { display: inline-block; background-color: var(--accent); color: white; padding: 10px 18px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: background 0.2s; cursor: pointer; border: none; font-size: 0.9rem; text-align: center; max-width: 100%; }
         .btn:hover { background-color: #d35400; }
         .btn-blue { background-color: #3182ce; }
@@ -271,7 +304,7 @@
                 padding: 6px 10px !important;
             }
 
-            .cta-box, .lead-gen-box {
+            .cta-box, .lead-gen-box, .product-card {
                 padding: 12px 10px !important;
                 margin: 15px 0 !important;
             }
@@ -534,7 +567,7 @@
                     <h1>Stress, Anxiété et Troubles du Comportement chez le Chien et le Chat : Solutions Naturelles & Apaisantes</h1>
                     <div class="article-meta">Publié le 23 Septembre 2026 • Temps de lecture : 9 min • Par Rédaction VetNature</div>
 
-                    <p>Tout comme les humains, nos animaux de compagnie ressentent du stress, de l'inquiétude et de la peur. Qu'il s'agiste de l'<b>anxiété de séparation</b> chez le chien, de la <b>malpropreté urinaire du chat</b> lors d'un déménagement, de la phobie des orages ou des feux d'artifice, le stress chronique altère gravement la santé physique et psychologique de nos compagnons. Heureusement, des approches naturelles et bienveillantes permettent d'apaiser leur système nerveux sans recourir à des sédatifs chimiques lourds.</p>
+                    <p>Tout comme les humains, nos animaux de compagnie ressentent du stress, de l'inquiétude et de la peur. Qu'il s'agisse de l'<b>anxiété de séparation</b> chez le chien, de la <b>malpropreté urinaire du chat</b> lors d'un déménagement, de la phobie des orages ou des feux d'artifice, le stress chronique altère gravement la santé physique et psychologique de nos compagnons. Heureusement, des approches naturelles et bienveillantes permettent d'apaiser leur système nerveux sans recourir à des sédatifs chimiques lourds.</p>
 
                     <div class="cta-box">
                         <h3>💧 Recommandation N°1 Apaisement : Huile de CBD Bio Vétérinaire</h3>
@@ -563,7 +596,7 @@
                 </article>
             </div>
 
-            <!-- GUIDE 4 : SOIN DES YEUX (DÉVELOPPÉ 8 MIN) -->
+            <!-- GUIDE 4 : SOIN DES YEUX -->
             <div id="art-4" class="article-page">
                 <article>
                     <h1>Hygiène Oculaire & Soin des Yeux du Chien et du Chat : Prévenir et Traiter Naturellement les Irritations</h1>
@@ -663,7 +696,7 @@
                 </article>
             </div>
 
-            <!-- GUIDE 5 : HYGIÈNE DENTAIRE (DÉVELOPPÉ 8 MIN) -->
+            <!-- GUIDE 5 : HYGIÈNE DENTAIRE -->
             <div id="art-5" class="article-page">
                 <article>
                     <h1>Hygiène Dentaire & Tartre du Chien et du Chat : Prévenir le Détartrage grâce aux Solutions Naturelles</h1>
@@ -754,27 +787,73 @@
                 </article>
             </div>
 
-            <!-- GUIDE 6 : TOP 5 COMPLÉMENTS -->
+            <!-- GUIDE 6 : TOP 5 COMPLÉMENTS (AVEC BOUTONS DÉDIÉS) -->
             <div id="art-6" class="article-page">
                 <article>
                     <h1>Top 5 des Compléments Alimentaires Indispensables pour la Santé Animale en 2026</h1>
                     <div class="article-meta">Publié le 23 Septembre 2026 • Temps de lecture : 10 min • Par Rédaction VetNature</div>
 
-                    <p>Retrouvez notre sélection des meilleurs compléments naturels testés et approuvés pour renforcer le système immunitaire, le pelage, les articulations et la vitalité générale de vos compagnons.</p>
+                    <p>Face à la multiplicité des offres du marché, choisir un complément alimentaire sûr et véritablement efficace pour son chien ou son chat peut s'avérer complexe. Notre équipe rédactionnelle a sélectionné et évalué les <b>5 essentiels incontournables</b> à conserver dans sa pharmacie vétérinaire naturelle pour soutenir la longévité, la mobilité et la vitalité générale de vos compagnons.</p>
 
-                    <h2>Les 5 essentiels du quotidien :</h2>
-                    <ol>
-                        <li><b>L'Huile de Saumon Sauvage :</b> Riche en Oméga-3 pour le poil et les articulations.</li>
-                        <li><b>Les Probiotiques Vétérinaires :</b> Indispensables pour soutenir la flore intestinale.</li>
-                        <li><b>Le Complexe Articulations (Glucosamine/Chondroïtine) :</b> Préserve la souplesse.</li>
-                        <li><b>L'Huile de CBD Vétérinaire :</b> Apaise le stress et les douleurs chroniques.</li>
-                        <li><b>La Poudre d'Algues Anti-Tartre :</b> Maintient une hygiène buccale optimale.</li>
-                    </ol>
+                    <!-- PRODUIT N°1 -->
+                    <div class="product-card">
+                        <div class="product-card-header">
+                            <span class="product-card-title">1. Huile de Saumon Sauvage Pure d'Islande</span>
+                            <span class="product-rank">N°1 Vitalité</span>
+                        </div>
+                        <p>Riche en acides gras essentiels <b>Oméga-3 (EPA et DHA)</b>, l'huile de saumon constitue le pilier fondamental de la prévention santé. Elle renforce la barrière cutanée, redonne un poil brillant et soyeux, protège la fonction cardiaque et agit comme anti-inflammatoire naturel pour les articulations et la fonction rénale.</p>
+                        <p><b>Pour qui ?</b> Chiens et chats de tous âges, particulièrement en période de mue, pour les animaux seniors ou sujets aux démangeaisons.</p>
+                        <a href="https://votre-lien-affilie-wanimo.com" target="_blank" rel="sponsored nofollow" class="btn">Découvrir l'Huile de Saumon sur Wanimo</a>
+                    </div>
+
+                    <!-- PRODUIT N°2 -->
+                    <div class="product-card">
+                        <div class="product-card-header">
+                            <span class="product-card-title">2. Probiotiques & Prébiotiques Vétérinaires</span>
+                            <span class="product-rank">N°2 Digestion</span>
+                        </div>
+                        <p>Plus de 70 % de l'immunité animale réside dans la flore intestinale. Cette cure réensemence le microbiote grâce à des souches de bonnes bactéries micro-encapsulées. Idéal pour stopper les diarrhées, apaiser les gaz, récupérer après une prise d'antibiotiques ou lors d'une transition alimentaire.</p>
+                        <p><b>Pour qui ?</b> Animaux à la digestion sensible, chiots/chatons en croissance ou sujets au mal de transport.</p>
+                        <a href="https://votre-lien-affilie-animigo-digestion.com" target="_blank" rel="sponsored nofollow" class="btn">Voir la cure Probiotiques sur Animigo</a>
+                    </div>
+
+                    <!-- PRODUIT N°3 -->
+                    <div class="product-card">
+                        <div class="product-card-header">
+                            <span class="product-card-title">3. Complexe Articulations : Glucosamine & Chondroïtine</span>
+                            <span class="product-rank">N°3 Mobilité</span>
+                        </div>
+                        <p>La référence absolue pour préserver la souplesse et soulager l'arthrose. Ce complexe associe la Glucosamine et la Chondroïtine à de l'Harpagophytum pour freiner la dégradation du cartilage et éliminer la raideur lors du lever matinal.</p>
+                        <p><b>Pour qui ?</b> Chiens seniors, grandes races prédisposées (Labradors, Bergers), ou animaux pratiquant une activité sportive intense.</p>
+                        <a href="https://www.homeoanimo.com/pages/search-results-page?q=arthrose&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Découvrir le soin Articulations sur HomeoAnimo</a>
+                    </div>
+
+                    <!-- PRODUIT N°4 -->
+                    <div class="product-card">
+                        <div class="product-card-header">
+                            <span class="product-card-title">4. Huile de CBD Bio Spéciale Animaux</span>
+                            <span class="product-rank">N°4 Anti-Stress</span>
+                        </div>
+                        <p>Extraite de chanvre biologique sans THC, l'huile de CBD pour animaux agit directement sur le système endocannabinoïde. Elle offre une réponse naturelle ciblée pour réduire l'anxiété de séparation, calmer la phobie des bruits forts (orages, feux d'artifice) et soulager les douleurs chroniques.</p>
+                        <p><b>Pour qui ?</b> Chien ou chat sujet à l'hyper-anxiété, la malpropreté de stress ou souffrant de douleurs chroniques résiduelles.</p>
+                        <a href="https://www.homeoanimo.com/?rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Voir l'Huile CBD sur HomeoAnimo</a>
+                    </div>
+
+                    <!-- PRODUIT N°5 -->
+                    <div class="product-card">
+                        <div class="product-card-header">
+                            <span class="product-card-title">5. Poudre d'Algue Marine Anti-Tartre (*Ascophyllum*)</span>
+                            <span class="product-rank">N°5 Bucco-Dentaire</span>
+                        </div>
+                        <p>Une solution simple et sans brossage contraignant. Cette poudre à saupoudrer sur la nourriture modifie la salive pour ramollir le tartre incrusté, éviter le déchaussement des dents et éliminer la mauvaise haleine durablement.</p>
+                        <p><b>Pour qui ?</b> Tous les chiens et chats dès l'apparition des premières traces de tartre ou d'haleine forte.</p>
+                        <a href="https://www.homeoanimo.com/?rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Voir la Poudre Dentaire sur HomeoAnimo</a>
+                    </div>
 
                     <div class="cta-box">
-                        <h3>🌟 Découvrez la Boutique Partenaire HomeoAnimo</h3>
-                        <p>Retrouvez des soins certifiés et développés avec des experts en santé animale.</p>
-                        <a href="https://www.homeoanimo.com/?rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Explorer le catalogue complet</a>
+                        <h3>🌟 Catalogue Général Soins Naturels</h3>
+                        <p>Accédez à l'ensemble des remèdes homéopathiques et phytothérapeutiques pour votre animal de compagnie.</p>
+                        <a href="https://www.homeoanimo.com/?rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Explorer le catalogue complet HomeoAnimo</a>
                     </div>
                 </article>
             </div>
