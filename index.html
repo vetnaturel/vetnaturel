@@ -1,469 +1,380 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VetNature : Soins & Produits Naturels pour Animaux</title>
-    <meta name="description" content="Guides, avis et comparatifs de soins naturels pour chien et chat : arthrose, digestion, probiotiques, CBD, yeux et hygiène dentaire.">
-    <link rel="canonical" href="https://vetnature.fr/" />
+    <title>VetNature - Soins & Santé Naturelle Animale</title>
     <style>
         :root {
-            --primary: #1e4d3b;
-            --primary-light: #2e7d5e;
-            --accent: #e67e22;
-            --bg-light: #f7f9f8;
-            --text: #2c3e50;
-            --gray: #6c757d;
-            --border: #e2e8f0;
+            --primary: #2e7d32;
+            --primary-light: #e8f5e9;
+            --secondary: #d84315;
+            --secondary-hover: #bf360c;
+            --text: #333333;
+            --bg: #f4f6f8;
+            --white: #ffffff;
+            --border: #e0e0e0;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: var(--text); background-color: var(--bg-light); }
-
-        header { background-color: #ffffff; border-bottom: 1px solid var(--border); }
-        .header-container { max-width: 1200px; margin: 0 auto; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.6rem; font-weight: 800; color: var(--primary); text-decoration: none; cursor: pointer; }
-        .logo span { color: var(--accent); }
-
-        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); color: white; padding: 35px 20px; text-align: center; }
-        .hero h1 { font-size: 2.1rem; margin-bottom: 8px; }
-        .hero p { font-size: 1.05rem; opacity: 0.9; max-width: 650px; margin: 0 auto; }
-
-        .subnav-bar { 
-            background-color: #ffffff; 
-            border-bottom: 1px solid var(--border); 
-            position: sticky; 
-            top: 0; 
-            z-index: 100; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06); 
-            padding: 8px 0;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        .subnav-wrapper {
-            position: relative;
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* HEADER & NAVIGATION MOBILES */
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Barre d'onglets à défilement fluide */
+        .subnav {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border);
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .subnav::-webkit-scrollbar {
+            display: none; /* Chrome / Safari */
+        }
+
+        .subnav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            padding: 0 10px;
+        }
+
+        .subnav-container a {
+            padding: 14px 20px;
+            text-decoration: none;
+            color: #666;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .subnav-container a.active, 
+        .subnav-container a:hover {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+            background-color: var(--primary-light);
+        }
+
+        /* DISPOSITION PRINCIPALE */
+        .main-wrapper {
+            max-width: 1200px;
+            margin: 25px auto;
+            padding: 0 15px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 25px;
+            flex: 1;
+        }
+
+        .article-page {
+            display: none;
+        }
+
+        .article-page.active {
+            display: block;
+        }
+
+        article {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        h2 {
+            color: #1b5e20;
+            font-size: 1.3rem;
+            margin: 25px 0 12px 0;
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul, ol {
+            margin: 0 0 20px 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* BOÎTE D'APPEL À L'ACTION (CTA) */
+        .cta-box {
+            background: var(--primary-light);
+            border: 1px solid #c8e6c9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            margin-top: 12px;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-hover);
+        }
+
+        .medical-disclaimer {
+            background-color: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            font-size: 0.88rem;
+            margin-top: 30px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* SIDEBAR (BARRE LATÉRALE) */
+        aside .widget {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        aside h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 8px;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            margin: 0;
+        }
+
+        .sidebar-menu li a {
+            display: block;
+            padding: 10px 12px;
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .sidebar-menu li a:hover {
+            background-color: var(--primary-light);
+            color: var(--primary);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #1b2e1c;
+            color: var(--white);
+            padding: 25px 15px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-container {
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .subnav-container { 
-            display: flex; 
-            overflow-x: auto; 
-            white-space: nowrap; 
-            padding: 4px 35px; 
-            gap: 8px;
-            scrollbar-width: none; 
+        /* ADAPTATIONS MOBILES & TABLETTES */
+        @media (max-width: 850px) {
+            .main-wrapper {
+                grid-template-columns: 1fr;
+                margin: 15px auto;
+                padding: 0 10px;
+            }
+
+            article {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 1.45rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .cta-button {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            aside {
+                order: 2;
+            }
         }
-        .subnav-container::-webkit-scrollbar { display: none; }
-        
-        .subnav-container a { 
-            color: var(--primary); 
-            text-decoration: none; 
-            padding: 8px 14px; 
-            font-weight: 700; 
-            font-size: 0.85rem; 
-            border-radius: 20px;
-            background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
-            border: 1px solid #cbd5e1;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-            cursor: pointer; 
-            transition: all 0.25s ease; 
-            display: inline-block; 
-            flex-shrink: 0;
-        }
-        .subnav-container a:hover { 
-            color: var(--primary); 
-            background: #ffffff;
-            border-color: var(--primary-light);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(30, 77, 59, 0.15);
-        }
-        .subnav-container a.active { 
-            color: #ffffff; 
-            background: linear-gradient(135deg, var(--accent) 0%, #d35400 100%);
-            border-color: var(--accent);
-            box-shadow: 0 3px 8px rgba(230, 126, 34, 0.35);
-        }
-
-        .container { max-width: 1200px; margin: 25px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 320px; gap: 30px; }
-        @media (max-width: 850px) { .container { grid-template-columns: 1fr; } }
-
-        .article-page { display: none; }
-        .article-page.active { display: block; }
-
-        article { background: white; padding: 30px; border-radius: 8px; border: 1px solid var(--border); }
-        article h1 { font-size: 1.8rem; color: var(--primary); margin-bottom: 15px; line-height: 1.3; }
-        article h2 { font-size: 1.3rem; color: var(--primary-light); margin: 25px 0 10px 0; }
-        article p { margin-bottom: 15px; }
-        article ul, article ol { margin: 15px 0 20px 20px; }
-        article li { margin-bottom: 8px; }
-
-        .article-meta { font-size: 0.85rem; color: var(--gray); margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid var(--border); }
-
-        .cta-box { background-color: #e8f5e9; border-left: 4px solid var(--primary-light); padding: 20px; border-radius: 4px; margin: 25px 0; }
-        .cta-box h3 { color: var(--primary); margin-bottom: 8px; }
-
-        .lead-gen-box { background-color: #ebf8ff; border: 1px solid #bee3f8; border-left: 4px solid #3182ce; padding: 20px; border-radius: 4px; margin: 30px 0; }
-        .lead-gen-box h3 { color: #2b6cb0; margin-bottom: 8px; }
-
-        .btn { display: inline-block; background-color: var(--accent); color: white; padding: 10px 18px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: background 0.2s; cursor: pointer; border: none; font-size: 0.9rem; }
-        .btn:hover { background-color: #d35400; }
-        .btn-blue { background-color: #3182ce; }
-        .btn-blue:hover { background-color: #2b6cb0; }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
-            font-size: 0.9rem;
-            background: #ffffff;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-        }
-        .comparison-table th {
-            background-color: var(--primary);
-            color: #ffffff;
-            padding: 12px 10px;
-            text-align: left;
-            font-weight: 700;
-        }
-        .comparison-table td {
-            padding: 12px 10px;
-            border-bottom: 1px solid var(--border);
-            vertical-align: middle;
-        }
-        .comparison-table tr:nth-child(even) {
-            background-color: #f8fafc;
-        }
-        .btn-table {
-            display: inline-block;
-            background-color: var(--accent);
-            color: #ffffff !important;
-            padding: 6px 12px;
-            border-radius: 4px;
-            text-decoration: none !important;
-            font-weight: bold;
-            font-size: 0.8rem;
-            transition: background 0.2s;
-            text-align: center;
-            white-space: nowrap;
-        }
-        .btn-table:hover {
-            background-color: #d35400;
-        }
-
-        aside .widget { background: white; padding: 20px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 20px; }
-        aside h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid var(--primary-light); }
-
-        .promo-badge {
-            background: #feebc8;
-            color: #c05621;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 0.85rem;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
-
-        .sidebar-menu { list-style: none; }
-        .sidebar-menu li { margin-bottom: 8px; }
-        .sidebar-menu a { color: var(--text); text-decoration: none; font-size: 0.88rem; cursor: pointer; display: block; padding: 3px 0; }
-        .sidebar-menu a:hover, .sidebar-menu a.active { color: var(--primary-light); font-weight: bold; }
-
-        .medical-disclaimer { font-size: 0.8rem; color: var(--gray); border-top: 1px solid var(--border); padding-top: 15px; margin-top: 30px; font-style: italic; }
-
-        footer { background-color: #ffffff; border-top: 1px solid var(--border); color: #71717a; padding: 20px; font-size: 0.72rem; margin-top: 40px; line-height: 1.4; text-align: center; }
-        .footer-container { max-width: 1200px; margin: 0 auto; }
-
-        .legal-toggle-btn { background: none; border: none; color: #71717a; font-size: 0.75rem; text-decoration: underline; cursor: pointer; padding: 5px 10px; }
-        .legal-toggle-btn:hover { color: var(--primary); }
-
-        .legal-content { display: none; text-align: left; margin-top: 15px; padding-top: 15px; border-top: 1px dashed var(--border); }
-        .legal-content.active { display: block; }
-
-        footer h2 { color: #3f3f46; font-size: 0.8rem; font-weight: 700; margin-bottom: 6px; text-transform: uppercase; }
-        footer h3 { color: var(--primary); font-size: 0.74rem; margin-top: 8px; margin-bottom: 2px; }
-        footer p { margin-bottom: 5px; }
-        footer a { color: #71717a; text-decoration: underline; }
     </style>
 </head>
 <body>
 
+    <!-- ENTÊTE & NAVIGATION -->
     <header>
         <div class="header-container">
-            <a onclick="showArticle('art-1')" class="logo">Vet<span>Nature</span></a>
+            <a href="#" class="logo">🌿 VetNature</a>
         </div>
+        <nav class="subnav">
+            <div class="subnav-container">
+                <a onclick="showArticle('art-1')" id="nav-art-1" class="active">🦴 Arthrose & Mobilité</a>
+                <a onclick="showArticle('art-2')" id="nav-art-2">🌿 Digestion & Transit</a>
+                <a onclick="showArticle('art-3')" id="nav-art-3">💧 Stress & Comportement</a>
+            </div>
+        </nav>
     </header>
 
-    <div class="hero">
-        <h1>Conseils & Soins Naturels pour Animaux</h1>
-        <p>Guides indépendants et comparatifs pour la santé de vos compagnons au quotidien.</p>
-    </div>
-
-    <div class="subnav-bar">
-        <div class="subnav-wrapper" id="subnavWrapper">
-            <div class="subnav-container" id="subnavContainer">
-                <a id="nav-art-1" onclick="showArticle('art-1')" class="active">Arthrose & Mobilité</a>
-                <a id="nav-art-2" onclick="showArticle('art-2')">Digestion & Transit</a>
-                <a id="nav-art-3" onclick="showArticle('art-3')">Stress & Comportement</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
+    <!-- CONTENU PRINCIPAL -->
+    <div class="main-wrapper">
         <main>
-            <!-- GUIDE 1 : ARTHROSE ET MOBILITÉ -->
+            <!-- ARTICLE 1 : ARTHROSE -->
             <div id="art-1" class="article-page active">
                 <article>
-                    <h1>Arthrose du Chien : Symptômes, Alimentation et Traitements Naturels pour Soulager votre Compagnon</h1>
-                    <div class="article-meta">Publié le 23 Septembre 2026 • Temps de lecture : 10 min • Par Rédaction VetNature</div>
-
-                    <p>L'<strong>arthrose chez le chien</strong> (ou ostéoarthrose) est une maladie chronique progressive qui touche près d'un chien sur cinq au cours de sa vie. Caractérisée par une dégradation progressive du cartilage articulaire, elle entraîne des douleurs lancinantes, une perte de mobilité et une baisse de qualité de vie importante. Bien qu'il s'agisse d'une affection irréversible, il est tout à fait possible de freiner son évolution et de redonner de l'aisance à votre animal grâce à une prise en charge globale : alimentation adaptée, compléments chondroprotecteurs, soins naturels et aménagement du quotidien.</p>
+                    <h1>Soulager l'arthrose du chien et du chat : Solutions naturelles efficaces</h1>
+                    <p>L’arthrose est une affection articulaire fréquente qui touche de nombreux chiens et chats vieillissants. Heureusement, des approches naturelles existent pour redonner de la mobilité à votre compagnon.</p>
+                    
+                    <h2>Les symptômes de l'arthrose</h2>
+                    <ul>
+                        <li>Difficulté à se lever ou à sauter sur les meubles.</li>
+                        <li>Boiterie à froid, particulièrement le matin.</li>
+                        <li>Changement de comportement (irritabilité, léchage excessif des pattes).</li>
+                    </ul>
 
                     <div class="cta-box">
-                        <h3>🦴 Recommandation N°1 : La formule Articulations & Mobilité</h3>
-                        <p>Pour régénérer le cartilage et agir directement sur la raideur matinale, nous recommandons la gamme ciblée <b>HomeoAnimo pour l'arthrose</b>.</p>
-                        <a href="https://www.homeoanimo.com/pages/search-results-page?q=arthrose&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Voir les soins Arthrose sur HomeoAnimo</a>
+                        <h3>Découvrez notre sélection de compléments de mobilité</h3>
+                        <p>Des formules riches en Chondroïtine, Glucosamine et Curcuma naturel.</p>
+                        <a href="#" class="cta-button">Voir le comparatif</a>
                     </div>
-
-                    <h2>1. Reconnaître les premiers symptômes de l'arthrose canine</h2>
-                    <p>L'arthrose s'installe souvent de manière insidieuse. Les chiens ayant une forte résistance à la douleur, les premiers signaux passent facilement inaperçus aux yeux des propriétaires. Soyez particulièrement vigilant aux signes suivants :</p>
-                    <ul>
-                        <li><b>La raideur à chaud ou « rouille matinale » :</b> Le chien a du mal à se lever après une période de repos ou une nuit de sommeil, puis retrouve une démarche plus fluide après quelques minutes de marche.</li>
-                        <li><b>Hésitation aux obstacles :</b> Votre animal refuse subitement de monter dans la voiture, d'emprunter les escaliers ou de sauter sur le canapé.</li>
-                        <li><b>Baisse d'enthousiasme à la promenade :</b> Il traîne le pas, raccourcit ses trajets ou s'arrête fréquemment pendant les balades habituelles.</li>
-                        <li><b>Changements de comportement :</b> Un chien souffrant d'articulations douloureuses peut devenir irritable quand on le touche, se lécher frénétiquement une articulation précise, ou chercher à s'isoler.</li>
-                    </ul>
-
-                    <h2>2. Les facteurs aggravants : Le surpoids en ligne de mire</h2>
-                    <p>L'usure du cartilage peut être liée à l'âge, mais plusieurs facteurs accélèrent le processus : la prédisposition génétique (particulièrement chez les grandes races comme le Golden Retriever, le Labrador ou le Berger Allemand), les antécédents de dysplasie de la hanche ou du coude, et surtout <b>le surpoids</b>.</p>
-                    <p>Chaque kilo supplémentaire exerce une pression mécanique directe et continue sur la structure osseuse. De plus, le tissu graisseux sécrète des substances pro-inflammatoires qui aggravent la dégradation des cartilages. Le maintien d'un poids de forme optimal est donc le levier n°1 de tout traitement articulaire.</p>
-
-                    <div class="lead-gen-box">
-                        <h3>💡 Anticiper les soins vétérinaires liés au grand âge</h3>
-                        <p>Radiographies de contrôle, consultations spécialisées, bilans sanguins... Les frais liés à la prise en charge de l'arthrose peuvent vite devenir lourds. Protégez le budget de votre foyer en souscrivant une mutuelle santé adaptée.</p>
-                        <a href="https://votre-lien-affilie-santevet.com" target="_blank" rel="sponsored nofollow" class="btn btn-blue">Obtenir votre devis gratuit Santévet</a>
-                    </div>
-
-                    <h2>3. L'alimentation thérapeutique : La première médecine de l'articulation</h2>
-                    <p>Pour lutter contre l'inflammation systémique et régénérer le cartilage, la nutrition doit répondre à des critères stricts :</p>
-                    <ul>
-                        <li><b>Une haute teneur en Oméga-3 marins (EPA et DHA) :</b> Extraits d'huiles de poissons sauvages (saumon, sardine, anchois), ces acides gras essentiels agissent comme de puissants anti-inflammatoires naturels. Ils permettent souvent de diminuer la dose de traitements médicamenteux lourds.</li>
-                        <li><b>Des protéines de haute valeur biologique :</b> Le manque d'exercice dû à la douleur entraîne une fonte musculaire (sarcopénie). Un apport suffisant en viande ou poisson d'excellente qualité est indispensable pour préserver la masse musculaire qui soutient les squelettes.</li>
-                        <li><b>Contrôle strict des glucides :</b> Il faut proscrire les friandises industrielles et les croquettes bas de gamme riches en céréales pour éviter toute prise de poids.</li>
-                    </ul>
-
-                    <div class="lead-gen-box">
-                        <h3>Trouver les meilleures croquettes "Joint & Mobility"</h3>
-                        <p>Offrez à votre chien une alimentation spécifique enrichie en acides gras EPA/DHA et à faible apport calorique chez nos partenaires spécialisés.</p>
-                        <a href="https://votre-lien-affilie-wanimo.com" target="_blank" rel="sponsored nofollow" class="btn btn-blue">Découvrir les croquettes mobilité sur Wanimo</a>
-                    </div>
-
-                    <h2>4. Les compléments alimentaires naturels et la phytothérapie</h2>
-                    <p>Associés à une bonne alimentation, les compléments alimentaires permettent d'obtenir des résultats remarquables sur le confort articulaire au bout de quelques semaines :</p>
-                    <ul>
-                        <li><b>La Glucosamine et la Chondroïtine :</b> Briques de construction du cartilage, elles ralentissent sa destruction et stimulent la production de liquide synovial, assurant une meilleure lubrification des articulations.</li>
-                        <li><b>L'Harpagophytum (Griffe du Diable) :</b> Cette plante médicinale possède des propriétés antalgiques reconnues pour apaiser les poussées douloureuses chroniques.</li>
-                        <li><b>La Moule aux Lèvres Vertes de Nouvelle-Zélande :</b> Source naturelle de glycosaminoglycanes et d'oméga-3 uniques, elle protège durablement le cartilage.</li>
-                        <li><b>Le Curcuma et le MSM :</b> Ils neutralisent les radicaux libres responsables du vieillissement cellulaire articulaire.</li>
-                    </ul>
-
-                    <h2>5. Comparatif 2026 : Les meilleurs compléments Articulations</h2>
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>Produit</th>
-                                <th>Actifs principaux</th>
-                                <th>Format & Usage</th>
-                                <th>Prix indicatif</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Animigo Articulations</b></td>
-                                <td>Glucosamine, Chondroïtine, Harpagophytum</td>
-                                <td>Comprimés appétents</td>
-                                <td>~24.99 €</td>
-                                <td><a href="https://votre-lien-affilie-animigo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Animigo</a></td>
-                            </tr>
-                            <tr>
-                                <td><b>HomeoAnimo Mobilité</b></td>
-                                <td>Formule plantes & homéopathie</td>
-                                <td>Gouttes / Poudre</td>
-                                <td>~29.90 €</td>
-                                <td><a href="https://www.homeoanimo.com/pages/search-results-page?q=arthrose&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
-                            </tr>
-                            <tr>
-                                <td><b>Wanimo VetoCare</b></td>
-                                <td>Huile de Saumon pure d'Islande</td>
-                                <td>Flacon pompe</td>
-                                <td>~15.50 €</td>
-                                <td><a href="https://votre-lien-affilie-wanimo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Wanimo</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h2>6. Adapter l'environnement et l'exercice quotidien</h2>
-                    <p>Le traitement médical et nutritionnel doit s'accompagner d'ajustements pratiques au domicile :</p>
-                    <ul>
-                        <li><b>Exercices doux et réguliers :</b> Privilégiez 2 à 3 petites promenades de 15 minutes sur terrain plat plutôt qu'une grande randonnée éprouvante. L'activité évite la baisse de tonicité musculaire sans traumatiser l'articulation.</li>
-                        <li><b>Couchage orthopédique :</b> Un lit à mémoire de forme réduit les points de pression et facilite les levers du matin.</li>
-                        <li><b>Rampes d'accès et tapis antidérapants :</b> Installez des tapis sur le carrelage ou le parquet glissant, et utilisez une rampe pour l'accès au coffre de la voiture afin d'éviter les impacts répétés.</li>
-                    </ul>
 
                     <div class="medical-disclaimer">
-                        <b>Avertissement médical :</b> Cet article est publié à titre informatif et ne remplace en aucun cas un diagnostic établi par un docteur vétérinaire. Si votre animal montre des signes de douleur aiguë, de boiterie soudaine ou de prostration, consultez rapidement votre clinique vétérinaire.
+                        <b>Avertissement médical :</b> Ces conseils ne remplacent pas une consultation vétérinaire. Si la boiterie est soudaine ou sévère, consultez rapidement un professionnel.
                     </div>
                 </article>
             </div>
 
-            <!-- GUIDE 2 : DIGESTION ET TRANSIT -->
+            <!-- ARTICLE 2 : DIGESTION -->
             <div id="art-2" class="article-page">
                 <article>
-                    <h1>Troubles Digestifs du Chien et du Chat : Probiotiques, Alimentation et Traitements Naturels du Transit</h1>
-                    <div class="article-meta">Publié le 23 Septembre 2026 • Temps de lecture : 9 min • Par Rédaction VetNature</div>
-
-                    <p>La <strong>santé digestive</strong> est le véritable moteur de la vitalité et du système immunitaire de nos chiens et chats. Pourtant, diarrhées aiguës, constipation, vomissements de bile, gaz malodorants ou borborygmes (gargouillements d'estomac) font partie des motifs de consultation vétérinaire les plus fréquents. Qu'il s'agisse d'une sensibilité ponctuelle ou d'un syndrome d'intestin irritable, il existe des solutions naturelles très efficaces pour rééquilibrer le microbiote intestinal et restaurer un transit fluide et confortable.</p>
+                    <h1>Troubles digestifs chez les animaux : Optimiser le transit naturellement</h1>
+                    <p>Un microbiote équilibré est la clé de la santé globale de vos animaux. Diarrhées occasionnelles, vomissements ou gaz peuvent être soulagés avec des ingrédients naturels adaptés.</p>
+                    
+                    <h2>Conseils naturels pour la digestion</h2>
+                    <ol>
+                        <li>Intégrer des prébiotiques et probiotiques spécifiques aux carnivores.</li>
+                        <li>Utiliser de l'argile verte en cataplasme ou solution buvable légère.</li>
+                        <li>Proposer une transition alimentaire très progressive sur 10 jours.</li>
+                    </ol>
 
                     <div class="cta-box">
-                        <h3>🌿 Recommandation N°1 Digestion : Complexe Probiotiques Bio</h3>
-                        <p>Pour réensemencer la flore intestinale après une diarrhée ou un traitement antibiotique, la cure de <b>Probiotiques & Prébiotiques d'Animigo</b> offre une concentration optimale de souches bénéfiques.</p>
-                        <a href="https://votre-lien-affilie-animigo-digestion.com" target="_blank" rel="sponsored nofollow" class="btn">Découvrir les Probiotiques Animigo</a>
+                        <h3>Besoin de rééquilibrer la flore intestinale ?</h3>
+                        <p>Découvrez notre guide complet sur les probiotiques vétérinaires.</p>
+                        <a href="#" class="cta-button">Découvrir les produits</a>
                     </div>
-
-                    <h2>1. Identifier les symptômes d'une perturbation digestive</h2>
-                    <p>Le système digestif des carnivores est plus court et sensible que le nôtre. Une perturbation se manifeste rapidement par :</p>
-                    <ul>
-                        <li><b>Des selles molles ou liquides :</b> La diarrhée signale une inflammation de la muqueuse intestinale ou une accélération anormale du transit.</li>
-                        <li><b>Des flatulences et ballonnements :</b> Souvent provoqués par une fermentation excessive liée à des ingrédients mal assimilés (céréales en trop grande quantité, légumineuses).</li>
-                        <li><b>Des vomissements bilieux ou alimentaires :</b> Un estomac irrité rejette son contenu à vide (mousse jaune) ou juste après le repas.</li>
-                        <li><b>L'entérophagie (ingestion d'herbe) :</b> L'animal cherche à provoquer le vomissement ou à apaiser une acidité gastrique gênante.</li>
-                    </ul>
-
-                    <h2>2. Les causes fréquentes des désordres intestinaux</h2>
-                    <p>Avant d'engager un traitement, il est essentiel d'analyser l'origine du problème :</p>
-                    <ul>
-                        <li><b>Une transition alimentaire trop rapide :</b> Changer de marque de croquettes sans période de transition sur 10 jours détruit le microbiote local.</li>
-                        <li><b>Une alimentation inadaptée :</b> Présence d'allergènes fréquents (bœuf, blé, soja, produits laitiers) ou excès de glucides.</li>
-                        <li><b>Le stress et l'anxiété :</b> L'axe intestin-cerveau est direct chez l'animal ; un choc émotionnel se traduit souvent par de la diarrhée.</li>
-                        <li><b>Une parasitose interne :</b> Les vers intestinaux (giardiose, ascaris) dégradent la paroi digestive et nécessitent un vermifuge régulier.</li>
-                    </ul>
-
-                    <div class="lead-gen-box">
-                        <h3>💡 Gastro-entérites répétées : Attention au budget vétérinaire</h3>
-                        <p>Analyses de selles, coproscopies, perfusions en cas de déshydratation... Les urgences digestives grimpent vite. Pensez à protéger votre animal avec une mutuelle santé adaptée.</p>
-                        <a href="https://votre-lien-affilie-santevet.com" target="_blank" rel="sponsored nofollow" class="btn btn-blue">Obtenir un devis gratuit Santévet</a>
-                    </div>
-
-                    <h2>3. Les 4 ingrédients naturels piliers de la reconstruction intestinale</h2>
-                    <p>La phytothérapie et la nutraceutique proposent des principes actifs d'une grande efficacité pour apaiser le tube digestif :</p>
-                    <ul>
-                        <li><b>Probiotiques et Prébiotiques :</b> Les probiotiques fournissent des bactéries saines (ex: <i>Enterococcus faecium</i>) tandis que les prébiotiques (FOS/MOS) servent de nourriture à ces bonnes bactéries.</li>
-                        <li><b>L'Argile Verte (Montmorillonite) et le Smectite :</b> Elles forment un pansement intestinal protecteur qui absorbe les toxines, capte l'excès d'eau et remoule les selles instantanément.</li>
-                        <li><b>Le Psyllium Blond :</b> Riche en mucilages solubles, il régule aussi bien la constipation (en retenant l'eau) que la diarrhée (en donnant de la consistance aux selles).</li>
-                        <li><b>Le Charbon Végétal Activé :</b> Puissant absorbant naturel, il capture les gaz toxiques et purifie le tractus digestif en cas d'indigestion.</li>
-                    </ul>
-
-                    <div class="lead-gen-box">
-                        <h3>Passer à une alimentation hautement digestible</h3>
-                        <p>Découvrez notre sélection de croquettes hypoallergéniques sans céréales et pâtées digestives formulées pour les estomacs très sensibles.</p>
-                        <a href="https://votre-lien-affilie-wanimo.com" target="_blank" rel="sponsored nofollow" class="btn btn-blue">Voir les aliments digestifs sur Wanimo</a>
-                    </div>
-
-                    <h2>4. Comparatif 2026 : Les meilleures solutions Transit & Digestion</h2>
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>Produit</th>
-                                <th>Ingrédients clés</th>
-                                <th>Usage recommandé</th>
-                                <th>Prix indicatif</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>Animigo Probiotiques</b></td>
-                                <td>Probiotiques, FOS, Inuline</td>
-                                <td>Cure de fond & flore intestinale</td>
-                                <td>~21.99 €</td>
-                                <td><a href="https://votre-lien-affilie-animigo-digestion.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Animigo</a></td>
-                            </tr>
-                            <tr>
-                                <td><b>HomeoAnimo Transit</b></td>
-                                <td>Extrait de plantes & homéopathie</td>
-                                <td>Gastrites, diarrhées aiguës, gaz</td>
-                                <td>~27.50 €</td>
-                                <td><a href="https://www.homeoanimo.com/?rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
-                            </tr>
-                            <tr>
-                                <td><b>Wanimo Croquettes Gastro</b></td>
-                                <td>Protéines hydrolysées & riz</td>
-                                <td>Sensibilité digestive chronique</td>
-                                <td>~34.90 €</td>
-                                <td><a href="https://votre-lien-affilie-wanimo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Wanimo</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h2>5. Conseils pratiques en cas de crise digestive aiguë</h2>
-                    <ul>
-                        <li><b>Diète hydrique raisonnée :</b> En cas de vomissements ou diarrhée soudaine, mettez l'animal à la diète solide pendant 12 à 24h tout en laissant de l'eau fraîche à disposition.</li>
-                        <li><b>Réintroduction ultra-douce :</b> Reprenez avec de petites portions de riz bien cuit (gluant) mélangé à du blanc de poulet poché sans sel.</li>
-                        <li><b>Hydratation vigilante :</b> Surveillez le pli de peau pour éviter toute déshydratation, surtout chez le chiot, le chaton ou l'animal senior.</li>
-                    </ul>
 
                     <div class="medical-disclaimer">
-                        <b>Avertissement médical :</b> Si la diarrhée ou les vomissements s'accompagnent de fièvre, de léthargie, de présence de sang rouge ou noir dans les selles, ou s'ils durent plus de 48 heures, une consultation vétérinaire urgente est indispensable.
+                        <b>Avertissement médical :</b> En cas de diarrhée persistante chez le jeune animal ou présence de sang dans les selles, rendez-vous immédiatement chez un vétérinaire.
                     </div>
                 </article>
             </div>
 
-            <!-- GUIDE 3 : STRESS ET COMPORTEMENT -->
+            <!-- ARTICLE 3 : STRESS -->
             <div id="art-3" class="article-page">
                 <article>
-                    <h1>Stress, Anxiété et Troubles du Comportement chez le Chien et le Chat : Solutions Naturelles & Apaisantes</h1>
-                    <div class="article-meta">Publié le 23 Septembre 2026 • Temps de lecture : 9 min • Par Rédaction VetNature</div>
-
-                    <p>Tout comme les humains, nos animaux de compagnie ressentent du stress, de l'inquiétude et de la peur. Qu'il s'agisse de l'<b>anxiété de séparation</b> chez le chien, de la <b>malpropreté urinaire du chat</b> lors d'un déménagement, de la phobie des orages ou des feux d'artifice, le stress chronique altère gravement la santé physique et psychologique de nos compagnons. Heureusement, des approches naturelles et bienveillantes permettent d'apaiser leur système nerveux sans recourir à des sédatifs chimiques lourds.</p>
+                    <h1>Gérer le stress et l'anxiété chez le chien et le chat</h1>
+                    <p>Déménagement, feux d'artifice, solitude ou visite chez le vétérinaire : le stress affecte le bien-être émotionnel de nos compagnons à quatre pattes.</p>
+                    
+                    <h2>Solutions d'apaisement douces</h2>
+                    <ul>
+                        <li>Fleurs de Bach spécifiques pour animaux sans alcool.</li>
+                        <li>Diffuseurs de phéromones apaisantes pour l'habitat.</li>
+                        <li>Enrichissement de l'environnement (jeux d'occupation, tapis de fouille).</li>
+                    </ul>
 
                     <div class="cta-box">
-                        <h3>💧 Recommandation N°1 Apaisement : Huile de CBD Bio Vétérinaire</h3>
-                        <p>Pour apaiser rapidement les crises d'angoisse, les phobies sonores ou l'agitation, l'<b>Huile de CBD 5% spécial animaux de HomeoAnimo</b> agit en douceur sur les récepteurs du système nerveux.</p>
-                        <a href="https://www.homeoanimo.com/?rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Découvrir l'Huile CBD sur HomeoAnimo</a>
+                        <h3>Solution anti-stress naturelle</h3>
+                        <p>Efficace en 30 minutes sans effet d'accoutumance ni somnolence.</p>
+                        <a href="#" class="cta-button">Voir les solutions apaisantes</a>
                     </div>
 
-                    <h2>1. Comment reconnaître le stress chez le chien et le chat ?</h2>
-                    <p>Les signaux de détresse psychologique sont parfois subtils ou interprétés à tort comme de la mauvaise volonté :</p>
-                    <ul>
-                        <li><b>Chez le chien :</b> Halètements excessifs hors chaleur, léchage compulsif des pattes (plaies de léchage), destructions d'objets en votre absence, aboiements intempestifs, tremblements ou démarche en cent-pas.</li>
-                        <li><b>Chez le chat :</b> Élimination hors de la litière (marquage urinaire sur lit ou canapé), léchage excessif du ventre menant à la dépilation, griffades verticales sur les meubles, tendance à se cacher ou hypervigilance.</li>
-                    </ul>
-
-                    <h2>2. Les principales sources d'anxiété chez l'animal</h2>
-                    <p>Identifier le déclencheur est la première étape vers un retour au calme :</p>
-                    <ul>
-                        <li><b>Changements d'environnement :</b> Déménagement, arrivée d'un bébé, adoption d'un autre animal, ou simplement modification de la disposition des meubles.</li>
-                        <li><b>Phobies bruits forts :</b> Orages, pétards, travaux, aspirateur.</li>
-                        <li><b>Anxiété de séparation :</b> Incapacité à rester seul à la maison, liée à un hyper-attachement ou un manque de détachement progressif.</li>
-                    </ul>
-
                     <div class="medical-disclaimer">
-                        <b>Avertissement médical :</b> Si les troubles du comportement persistent ou se traduisent par de l'agressivité envers les membres du foyer, demandez conseil à un comportementaliste certifié ou à un vétérinaire spécialisé.
+                        <b>Avertissement médical :</b> Si les troubles anxieux de votre animal s'accompagnent d'agressivité soudaine, de malpropreté persistante ou d'automutilation, consultez un vétérinaire comportementaliste pour un diagnostic approfondi.
                     </div>
                 </article>
             </div>
         </main>
 
+        <!-- BARRE LATÉRALE -->
         <aside>
-            <div class="widget">
-                <span class="promo-badge">Offre Spéciale</span>
-                <h3>Conseils Personnalisés</h3>
-                <p style="font-size: 0.88rem; margin-bottom: 12px;">Besoin d'un avis sur le choix d'un soin naturel adapté à votre animal ? Nos guides sont régulièrement mis à jour.</p>
-            </div>
-
             <div class="widget">
                 <h3>Navigation Rapide</h3>
                 <ul class="sidebar-menu">
@@ -475,52 +386,36 @@
         </aside>
     </div>
 
+    <!-- PIED DE PAGE -->
     <footer>
         <div class="footer-container">
-            <p>&copy; 2026 VetNature.fr - Tous droits réservés.</p>
-            <p>
-                <button class="legal-toggle-btn" onclick="toggleLegal()">Mentions Légales & Informations Affiliation</button>
-            </p>
-            <div class="legal-content" id="legalContent">
-                <h2>Mentions Légales</h2>
-                <p><b>Éditeur du site :</b> VetNature.fr</p>
-                <p><b>Hébergement :</b> Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA.</p>
-                <h3>Transparence & Affiliation</h3>
-                <p>VetNature participe à plusieurs programmes d'affiliation. Lorsque vous cliquez sur un lien menant vers un site marchand (ex: HomeoAnimo, Animigo, Wanimo, Santévet) et effectuez un achat, nous pouvons percevoir une commission sans aucun surcoût pour vous. Cela nous permet de financer la rédaction et l'indépendance de nos guides.</p>
-            </div>
+            <p>&copy; 2026 VetNature. Tous droits réservés. Site d'information indépendant et comparatif de soins naturels pour animaux.</p>
         </div>
     </footer>
 
+    <!-- SCRIPT INTERACTIF -->
     <script>
-        function showArticle(artId) {
-            var pages = document.querySelectorAll('.article-page');
-            pages.forEach(function(page) {
-                page.classList.remove('active');
-            });
+        function showArticle(articleId) {
+            // 1. Masquer tous les articles
+            const pages = document.querySelectorAll('.article-page');
+            pages.forEach(page => page.classList.remove('active'));
 
-            var target = document.getElementById(artId);
+            // 2. Afficher l'article ciblé
+            const target = document.getElementById(articleId);
             if (target) {
                 target.classList.add('active');
             }
 
-            var navLinks = document.querySelectorAll('.subnav-container a');
-            navLinks.forEach(function(link) {
-                link.classList.remove('active');
-            });
-
-            var activeNav = document.getElementById('nav-' + artId);
+            // 3. Mettre à jour la classe active sur les onglets de navigation
+            const navLinks = document.querySelectorAll('.subnav-container a');
+            navLinks.forEach(link => link.classList.remove('active'));
+            const activeNav = document.getElementById('nav-' + articleId);
             if (activeNav) {
                 activeNav.classList.add('active');
             }
 
+            // 4. Défilement doux vers le haut
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function toggleLegal() {
-            var content = document.getElementById('legalContent');
-            if (content) {
-                content.classList.toggle('active');
-            }
         }
     </script>
 </body>
