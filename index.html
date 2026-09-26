@@ -1,100 +1,802 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VetNaturel : Soins & Produits Naturels pour Animaux</title>
-<meta name="description" content="Guides, avis et comparatifs de soins naturels pour chien et chat : arthrose, digestion, probiotiques, CBD, yeux et hygiène dentaire.">
-<link rel="canonical" href="https://www.vetnaturel.fr/index.html" />
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>VetNaturel : Soins & Produits Naturels pour Animaux</title>
+    <meta name="description" content="Guides, avis et comparatifs de soins naturels pour chien et chat : arthrose, digestion, probiotiques, CBD, yeux et hygiène dentaire.">
+    <link rel="canonical" href="https://www.vetnaturel.fr/" />
+    <style>
+        :root {
+            --primary: #1e4d3b;
+            --primary-light: #2e7d5e;
+            --accent: #e67e22;
+            --bg-light: #f7f9f8;
+            --text: #2c3e50;
+            --gray: #6c757d;
+            --border: #e2e8f0;
+        }
+
+        *, *::before, *::after { 
+            box-sizing: border-box !important; 
+            margin: 0; 
+            padding: 0; 
+        }
+
+        html, body {
+            width: 100% !important;
+            max-width: 100% !important;
+            overflow-x: hidden !important;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text); 
+            background-color: var(--bg-light);
+        }
+
+        header { background-color: #ffffff; border-bottom: 1px solid var(--border); width: 100%; }
+        .header-container { max-width: 1200px; margin: 0 auto; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.6rem; font-weight: 800; color: var(--primary); text-decoration: none; cursor: pointer; }
+        .logo span { color: var(--accent); }
+
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); color: white; padding: 35px 20px; text-align: center; width: 100%; }
+        .hero h1 { font-size: 2.1rem; margin-bottom: 8px; word-break: break-word; }
+        .hero p { font-size: 1.05rem; opacity: 0.9; max-width: 650px; margin: 0 auto; }
+
+        .subnav-bar { 
+            background-color: #ffffff; 
+            border-bottom: 1px solid var(--border); 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06); 
+            padding: 8px 0;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .subnav-wrapper {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .subnav-container { 
+            display: flex; 
+            overflow-x: auto; 
+            white-space: nowrap; 
+            padding: 4px 15px; 
+            gap: 8px;
+            scrollbar-width: none; 
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+        }
+        .subnav-container::-webkit-scrollbar { display: none; }
+        
+        .subnav-container a { 
+            color: var(--primary); 
+            text-decoration: none; 
+            padding: 8px 14px; 
+            font-weight: 700; 
+            font-size: 0.85rem; 
+            border-radius: 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            cursor: pointer; 
+            transition: all 0.25s ease; 
+            display: inline-block; 
+            flex-shrink: 0;
+        }
+        .subnav-container a:hover { 
+            color: var(--primary); 
+            background: #ffffff;
+            border-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(30, 77, 59, 0.15);
+        }
+        .subnav-container a.active { 
+            color: #ffffff; 
+            background: linear-gradient(135deg, var(--accent) 0%, #d35400 100%);
+            border-color: var(--accent);
+            box-shadow: 0 3px 8px rgba(230, 126, 34, 0.35);
+        }
+
+        .container { 
+            max-width: 1200px; 
+            margin: 25px auto; 
+            padding: 0 20px; 
+            display: grid; 
+            grid-template-columns: minmax(0, 1fr) 320px; 
+            gap: 30px; 
+            width: 100%;
+        }
+
+        main { width: 100%; min-width: 0; }
+
+        .article-page { display: none; width: 100%; }
+        .article-page.active { display: block; }
+
+        article { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 8px; 
+            border: 1px solid var(--border); 
+            width: 100%;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+        article h1 { font-size: 1.8rem; color: var(--primary); margin-bottom: 15px; line-height: 1.3; }
+        article h2 { font-size: 1.3rem; color: var(--primary-light); margin: 25px 0 10px 0; }
+        article p { margin-bottom: 15px; }
+        article ul, article ol { margin: 15px 0 20px 20px; }
+        article li { margin-bottom: 8px; }
+
+        .article-meta { font-size: 0.85rem; color: var(--gray); margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid var(--border); }
+
+        .cta-box { background-color: #e8f5e9; border-left: 4px solid var(--primary-light); padding: 20px; border-radius: 4px; margin: 25px 0; width: 100%; }
+        .cta-box h3 { color: var(--primary); margin-bottom: 8px; }
+
+        .lead-gen-box { background-color: #ebf8ff; border: 1px solid #bee3f8; border-left: 4px solid #3182ce; padding: 20px; border-radius: 4px; margin: 30px 0; width: 100%; }
+        .lead-gen-box h3 { color: #2b6cb0; margin-bottom: 8px; }
+
+        .product-card {
+            background-color: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .product-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+        .product-card-title {
+            font-size: 1.15rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        .product-rank {
+            background-color: var(--accent);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        .btn { display: inline-block; background-color: var(--accent); color: white; padding: 10px 18px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: background 0.2s; cursor: pointer; border: none; font-size: 0.9rem; text-align: center; max-width: 100%; }
+        .btn:hover { background-color: #d35400; }
+        .btn-blue { background-color: #3182ce; }
+        .btn-blue:hover { background-color: #2b6cb0; }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 25px 0;
+            display: block;
+        }
+
+        .comparison-table {
+            width: 100%;
+            min-width: 500px;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .comparison-table th {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 700;
+        }
+        .comparison-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        .btn-table {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #ffffff !important;
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-decoration: none !important;
+            font-weight: bold;
+            font-size: 0.8rem;
+            transition: background 0.2s;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .btn-table:hover {
+            background-color: #d35400;
+        }
+
+        aside { width: 100%; }
+        aside .widget { background: white; padding: 20px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 20px; width: 100%; }
+        aside h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid var(--primary-light); }
+
+        .promo-badge {
+            background: #feebc8;
+            color: #c05621;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .sidebar-menu { list-style: none; }
+        .sidebar-menu li { margin-bottom: 8px; }
+        .sidebar-menu a { color: var(--text); text-decoration: none; font-size: 0.88rem; cursor: pointer; display: block; padding: 3px 0; }
+        .sidebar-menu a:hover, .sidebar-menu a.active { color: var(--primary-light); font-weight: bold; }
+
+        .medical-disclaimer { font-size: 0.8rem; color: var(--gray); border-top: 1px solid var(--border); padding-top: 15px; margin-top: 30px; font-style: italic; }
+
+        footer { background-color: #ffffff; border-top: 1px solid var(--border); color: #71717a; padding: 20px; font-size: 0.72rem; margin-top: 40px; line-height: 1.4; text-align: center; width: 100%; }
+        .footer-container { max-width: 1200px; margin: 0 auto; }
+
+        .legal-toggle-btn { background: none; border: none; color: #71717a; font-size: 0.75rem; text-decoration: underline; cursor: pointer; padding: 5px 10px; }
+        .legal-toggle-btn:hover { color: var(--primary); }
+
+        .legal-content { display: none; text-align: left; margin-top: 15px; padding-top: 15px; border-top: 1px dashed var(--border); }
+        .legal-content.active { display: block; }
+
+        footer h2 { color: #3f3f46; font-size: 0.8rem; font-weight: 700; margin-bottom: 6px; text-transform: uppercase; }
+        footer h3 { color: var(--primary); font-size: 0.74rem; margin-top: 8px; margin-bottom: 2px; }
+        footer p { margin-bottom: 5px; }
+        footer a { color: #71717a; text-decoration: underline; }
+
+        @media screen and (max-width: 850px) {
+            .container {
+                grid-template-columns: 1fr !important;
+                padding: 0 10px !important;
+                margin: 15px 0 !important;
+                width: 100% !important;
+            }
+
+            article {
+                padding: 15px 10px !important;
+                border-radius: 6px !important;
+            }
+
+            .hero {
+                padding: 20px 10px !important;
+            }
+            .hero h1 {
+                font-size: 1.35rem !important;
+            }
+            .hero p {
+                font-size: 0.9rem !important;
+            }
+
+            article h1 {
+                font-size: 1.25rem !important;
+                line-height: 1.3 !important;
+            }
+            article h2 {
+                font-size: 1.05rem !important;
+            }
+
+            .subnav-container {
+                padding: 4px 8px !important;
+            }
+            .subnav-container a {
+                font-size: 0.78rem !important;
+                padding: 6px 10px !important;
+            }
+
+            .cta-box, .lead-gen-box, .product-card {
+                padding: 12px 10px !important;
+                margin: 15px 0 !important;
+            }
+
+            .btn, .btn-blue {
+                display: block !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+
+            article ul, article ol {
+                margin-left: 15px !important;
+            }
+        }
+    </style>
 </head>
 <body>
-<header>
-<div class="header-container">
-<a href="index.html" class="logo">Vet<span>Nature</span></a>
-</div>
-</header>
-<div class="subnav-bar">
-<div class="subnav-wrapper">
-<div class="subnav-container">
-<a href="arthrose-chien-traitement-naturel.html">Arthrose & Mobilité</a>
-<a href="digestion-chien-chat-probiotiques.html">Digestion & Transit</a>
-<a href="stress-anxiete-chien-chat-cbd.html">Stress & Comportement</a>
-<a href="soin-yeux-hygiene-oculaire-animal.html">Soin des Yeux</a>
-<a href="hygiene-dentaire-tartre-chien-chat.html">Hygiène Dentaire</a>
-<a href="top-5-complements-naturels-animaux.html">Top 5 Compléments</a>
-</div>
-</div>
-</div>
-<div class="hero"><h1>Conseils & Soins Naturels pour Animaux</h1><p>Guides indépendants et comparatifs pour la santé de vos compagnons au quotidien.</p></div>
-<div class="container">
-<main>
-<div class="home-grid">
-<div class="home-card">
-<h2>Arthrose & Mobilité</h2>
-<p>Symptômes, alimentation thérapeutique et compléments naturels pour soulager les articulations de votre chien.</p>
-<a href="arthrose-chien-traitement-naturel.html" class="btn">Lire le guide</a>
-</div><div class="home-card">
-<h2>Digestion & Transit</h2>
-<p>Probiotiques, argile verte et solutions naturelles pour restaurer le microbiote de votre chien ou chat.</p>
-<a href="digestion-chien-chat-probiotiques.html" class="btn">Lire le guide</a>
-</div><div class="home-card">
-<h2>Stress & Comportement</h2>
-<p>CBD, homéopathie et Fleurs de Bach pour apaiser durablement l'anxiété de votre animal.</p>
-<a href="stress-anxiete-chien-chat-cbd.html" class="btn">Lire le guide</a>
-</div><div class="home-card">
-<h2>Soin des Yeux</h2>
-<p>La méthode pas à pas pour un nettoyage oculaire sûr et les signes d'alerte à surveiller.</p>
-<a href="soin-yeux-hygiene-oculaire-animal.html" class="btn">Lire le guide</a>
-</div><div class="home-card">
-<h2>Hygiène Dentaire</h2>
-<p>Solutions naturelles anti-tartre sans brossage pour préserver la santé bucco-dentaire.</p>
-<a href="hygiene-dentaire-tartre-chien-chat.html" class="btn">Lire le guide</a>
-</div><div class="home-card">
-<h2>Top 5 Compléments 2026</h2>
-<p>Notre sélection des meilleurs compléments naturels pour la santé globale de votre animal.</p>
-<a href="top-5-complements-naturels-animaux.html" class="btn">Lire le guide</a>
-</div>
-</div>
-</main>
-<aside>
-<div class="widget">
-<span class="promo-badge">Offre Partenaire</span>
-<h3>Soins Naturels HomeoAnimo</h3>
-<p>Découvrez des remèdes naturels et homéopathiques sur-mesure pour la santé globale de votre animal.</p>
-<a href="https://www.homeoanimo.com/?rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Visiter la boutique</a>
-</div>
-<div class="widget">
-<h3>Nos Guides Santé</h3>
-<ul class="sidebar-menu">
-<li><a href="arthrose-chien-traitement-naturel.html">• Arthrose & Mobilité</a></li>
-<li><a href="digestion-chien-chat-probiotiques.html">• Digestion & Transit</a></li>
-<li><a href="stress-anxiete-chien-chat-cbd.html">• Stress & Comportement</a></li>
-<li><a href="soin-yeux-hygiene-oculaire-animal.html">• Soin des Yeux</a></li>
-<li><a href="hygiene-dentaire-tartre-chien-chat.html">• Hygiène Dentaire</a></li>
-<li><a href="top-5-complements-naturels-animaux.html">• Top 5 Compléments 2026</a></li>
-</ul>
-</div>
-</aside>
-</div>
-<footer>
-<div class="footer-container">
-<p>&copy; 2026 VetNaturel.fr - Conseils et guides indépendants pour le bien-être de vos animaux domestiques.</p>
-<p>Les informations partagées ne remplacent pas un avis vétérinaire professionnel.</p>
-<button class="legal-toggle-btn" onclick="toggleLegal()">Mentions Légales & Informations Affiliées</button>
-<div id="legalContent" class="legal-content">
-<h2>Mentions Légales & Affiliation</h2>
-<h3>Transparence Affiliation</h3>
-<p>Certains liens présents sur ce site sont des liens affiliés. Cela signifie que nous percevons une commission si vous effectuez un achat via ces liens, sans aucun coût supplémentaire pour vous.</p>
-<h3>Responsabilité</h3>
-<p>VetNaturel propose du contenu informatif général sur les soins naturels et ne constitue aucunement une consultation médicale vétérinaire.</p>
-</div>
-</div>
-</footer>
-<script>
-function toggleLegal() {
-  document.getElementById('legalContent').classList.toggle('active');
-}
-</script>
+
+    <header>
+        <div class="header-container">
+            <a onclick="showArticle('art-1')" class="logo">Vet<span>Nature</span></a>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>Conseils & Soins Naturels pour Animaux</h1>
+        <p>Guides indépendants et comparatifs pour la santé de vos compagnons au quotidien.</p>
+    </div>
+
+    <div class="subnav-bar">
+        <div class="subnav-wrapper" id="subnavWrapper">
+            <div class="subnav-container" id="subnavContainer">
+                <a id="nav-art-1" onclick="showArticle('art-1')" class="active">Arthrose & Mobilité</a>
+                <a id="nav-art-2" onclick="showArticle('art-2')">Digestion & Transit</a>
+                <a id="nav-art-3" onclick="showArticle('art-3')">Stress & Comportement</a>
+                <a id="nav-art-4" onclick="showArticle('art-4')">Soin des Yeux</a>
+                <a id="nav-art-5" onclick="showArticle('art-5')">Hygiène Dentaire</a>
+                <a id="nav-art-6" onclick="showArticle('art-6')">Top 5 Compléments</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <main>
+            <!-- GUIDE 1 : ARTHROSE ET MOBILITÉ -->
+            <div id="art-1" class="article-page active">
+                <article>
+                    <h1>Arthrose du Chien : Symptômes, Alimentation et Traitements Naturels pour Soulager votre Compagnon</h1>
+                    <div class="article-meta">Publié le 23 Septembre 2026 • Temps de lecture : 10 min • Par Rédaction VetNature</div>
+
+                    <p>L'<strong>arthrose chez le chien</strong> (ou ostéoarthrose) est une maladie chronique progressive qui touche près d'un chien sur cinq au cours de sa vie. Caractérisée par une dégradation progressive du cartilage articulaire, elle entraîne des douleurs lancinantes, une perte de mobilité et une baisse de qualité de vie importante. Bien qu'il s'agisse d'une affection irréversible, il est tout à fait possible de freiner son évolution et de redonner de l'aisance à votre animal grâce à une prise en charge globale : alimentation adaptée, compléments chondroprotecteurs, soins naturels et aménagement du quotidien.</p>
+
+                    <div class="cta-box">
+                        <h3>🦴 Recommandation N°1 : La formule Articulations & Mobilité</h3>
+                        <p>Pour régénérer le cartilage et agir directement sur la raideur matinale, nous recommandons la gamme ciblée <b>HomeoAnimo pour l'arthrose</b>.</p>
+                        <a href="https://www.homeoanimo.com/pages/search-results-page?q=arthrose&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Voir les soins Arthrose sur HomeoAnimo</a>
+                    </div>
+
+                    <h2>1. Reconnaître les premiers symptômes de l'arthrose canine</h2>
+                    <p>L'arthrose s'installe souvent de manière insidieuse. Les chiens ayant une forte résistance à la douleur, les premiers signaux passent facilement inaperçus aux yeux des propriétaires. Soyez particulièrement vigilant aux signes suivants :</p>
+                    <ul>
+                        <li><b>La raideur à chaud ou « rouille matinale » :</b> Le chien a du mal à se lever après une période de repos ou une nuit de sommeil, puis retrouve une démarche plus fluide après quelques minutes de marche.</li>
+                        <li><b>Hésitation aux obstacles :</b> Votre animal refuse subitement de monter dans la voiture, d'emprunter les escaliers ou de sauter sur le canapé.</li>
+                        <li><b>Baisse d'enthousiasme à la promenade :</b> Il traîne le pas, raccourcit ses trajets ou s'arrête fréquemment pendant les balades habituelles.</li>
+                        <li><b>Changements de comportement :</b> Un chien souffrant d'articulations douloureuses peut devenir irritable quand on le touche, se lécher frénétiquement une articulation précise, ou chercher à s'isoler.</li>
+                    </ul>
+
+                    <h2>2. Les facteurs aggravants : Le surpoids en ligne de mire</h2>
+                    <p>L'usure du cartilage peut être liée à l'âge, mais plusieurs facteurs accélèrent le processus : la prédisposition génétique (particulièrement chez les grandes races comme le Golden Retriever, le Labrador ou le Berger Allemand), les antécédents de dysplasie de la hanche ou du coude, et surtout <b>le surpoids</b>.</p>
+                    <p>Chaque kilo supplémentaire exerce une pression mécanique directe et continue sur la structure osseuse. De plus, le tissu graisseux sécrète des substances pro-inflammatoires qui aggravent la dégradation des cartilages. Le maintien d'un poids de forme optimal est donc le levier n°1 de tout traitement articulaire.</p>
+
+                    <div class="lead-gen-box">
+                        <h3>💡 Anticiper les soins vétérinaires liés au grand âge</h3>
+                        <p>Radiographies de contrôle, consultations spécialisées, bilans sanguins... Les frais liés à la prise en charge de l'arthrose peuvent vite devenir lourds. Protégez le budget de votre foyer en souscrivant une mutuelle santé adaptée.</p>
+                        <a href="https://votre-lien-affilie-santevet.com" target="_blank" rel="sponsored nofollow" class="btn btn-blue">Obtenir votre devis gratuit Santévet</a>
+                    </div>
+
+                    <h2>3. L'alimentation thérapeutique : La première médecine de l'articulation</h2>
+                    <p>Pour lutter contre l'inflammation systémique et régénérer le cartilage, la nutrition doit répondre à des critères stricts :</p>
+                    <ul>
+                        <li><b>Une haute teneur en Oméga-3 marins (EPA et DHA) :</b> Extraits d'huiles de poissons sauvages (saumon, sardine, anchois), ces acides gras essentiels agissent comme de puissants anti-inflammatoires naturels. Ils permettent souvent de diminuer la dose de traitements médicamenteux lourds.</li>
+                        <li><b>Des protéines de haute valeur biologique :</b> Le manque d'exercice dû à la douleur entraîne une fonte musculaire (sarcopénie). Un apport suffisant en viande ou poisson d'excellente qualité est indispensable pour préserver la masse musculaire qui soutient les squelettes.</li>
+                        <li><b>Contrôle strict des glucides :</b> Il faut proscrire les friandises industrielles et les croquettes bas de gamme riches en céréales pour éviter toute prise de poids.</li>
+                    </ul>
+
+                    <div class="lead-gen-box">
+                        <h3>Trouver les meilleures croquettes "Joint & Mobility"</h3>
+                        <p>Offrez à votre chien une alimentation spécifique enrichie en acides gras EPA/DHA et à faible apport calorique chez nos partenaires spécialisés.</p>
+                        <a href="https://votre-lien-affilie-wanimo.com" target="_blank" rel="sponsored nofollow" class="btn btn-blue">Découvrir les croquettes mobilité sur Wanimo</a>
+                    </div>
+
+                    <h2>4. Les compléments alimentaires naturels, CBD et phytothérapie</h2>
+                    <p>Associés à une bonne alimentation, les compléments alimentaires permettent d'obtenir des résultats remarquables sur le confort articulaire au bout de quelques semaines :</p>
+                    <ul>
+                        <li><b>La Glucosamine et la Chondroïtine :</b> Briques de construction du cartilage, elles ralentissent sa destruction et stimulent la production de liquide synovial, assurant une meilleure lubrification des articulations.</li>
+                        <li><b>L'Huile de CBD & Chanvre Bio :</b> Le cannabidiol interagit directement avec le système endocannabinoïde du chien pour bloquer la perception de la douleur articulaire et réduire les poussées inflammatoires chroniques sans accoutumance.</li>
+                        <li><b>L'Harpagophytum (Griffe du Diable) :</b> Cette plante médicinale possède des propriétés antalgiques reconnues pour apaiser les raideurs.</li>
+                        <li><b>La Moule aux Lèvres Vertes de Nouvelle-Zélande :</b> Source naturelle de glycosaminoglycanes et d'oméga-3 uniques, elle protège durablement le cartilage.</li>
+                    </ul>
+
+                    <h2>5. Comparatif 2026 : Les meilleurs compléments Articulations</h2>
+                    <div class="table-responsive">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Produit</th>
+                                    <th>Actifs principaux</th>
+                                    <th>Format & Usage</th>
+                                    <th>Prix indicatif</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><b>Animigo Articulations</b></td>
+                                    <td>Glucosamine, Chondroïtine, Harpagophytum</td>
+                                    <td>Comprimés appétents</td>
+                                    <td>~24.99 €</td>
+                                    <td><a href="https://votre-lien-affilie-animigo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Animigo</a></td>
+                                </tr>
+                                <tr>
+                                    <td><b>HomeoAnimo Mobilité</b></td>
+                                    <td>Formule plantes & homéopathie</td>
+                                    <td>Gouttes / Poudre</td>
+                                    <td>~29.90 €</td>
+                                    <td><a href="https://www.homeoanimo.com/pages/search-results-page?q=arthrose&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
+                                </tr>
+                                <tr>
+                                    <td><b>Huile Chanvre & CBD Animigo</b></td>
+                                    <td>CBD 100% naturel & Oméga 3-6-9</td>
+                                    <td>Flacon compte-gouttes</td>
+                                    <td>~15.99 €</td>
+                                    <td><a href="https://votre-lien-affilie-animigo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Animigo</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2>6. Adapter l'environnement et l'exercice quotidien</h2>
+                    <p>Le traitement médical et nutritionnel doit s'accompagner d'ajustements pratiques au domicile :</p>
+                    <ul>
+                        <li><b>Exercices doux et réguliers :</b> Privilégiez 2 à 3 petites promenades de 15 minutes sur terrain plat plutôt qu'une grande randonnée éprouvante.</li>
+                        <li><b>Couchage orthopédique :</b> Un lit à mémoire de forme réduit les points de pression et facilite les levers du matin.</li>
+                        <li><b>Rampes d'accès et tapis antidérapants :</b> Installez des tapis sur le carrelage et utilisez une rampe pour le coffre de la voiture.</li>
+                    </ul>
+
+                    <div class="medical-disclaimer">
+                        <b>Avertissement médical :</b> Cet article est publié à titre informatif et ne remplace en aucun cas un diagnostic établi par un docteur vétérinaire.
+                    </div>
+                </article>
+            </div>
+
+            <!-- GUIDE 2 : DIGESTION ET TRANSIT -->
+            <div id="art-2" class="article-page">
+                <article>
+                    <h1>Troubles Digestifs du Chien et du Chat : Probiotiques, Alimentation et Traitements Naturels du Transit</h1>
+                    <div class="article-meta">Publié le 23 Septembre 2026 • Temps de lecture : 9 min • Par Rédaction VetNature</div>
+
+                    <p>La <strong>santé digestive</strong> est le véritable moteur de la vitalité et du système immunitaire de nos chiens et chats. Pourtant, diarrhées aiguës, constipation, vomissements de bile, gaz malodorants ou borborygmes (gargouillements d'estomac) font partie des motifs de consultation vétérinaire les plus fréquents. Qu'il s'agisse d'une sensibilité ponctuelle ou d'un syndrome d'intestin irritable, il existe des solutions naturelles très efficaces pour rééquilibrer le microbiote intestinal et restaurer un transit fluide et confortable.</p>
+
+                    <div class="cta-box">
+                        <h3>🌿 Recommandation N°1 Digestion : Complexe Probiotiques Bio</h3>
+                        <p>Pour réensemencer la flore intestinale après une diarrhée ou un traitement antibiotique, la cure de <b>Probiotiques & Prébiotiques d'Animigo</b> offre une concentration optimale de souches bénéfiques.</p>
+                        <a href="https://votre-lien-affilie-animigo-digestion.com" target="_blank" rel="sponsored nofollow" class="btn">Découvrir les Probiotiques Animigo</a>
+                    </div>
+
+                    <h2>1. Identifier les symptômes d'une perturbation digestive</h2>
+                    <p>Le système digestif des carnivores est particulièrement réactif. Une perturbation se manifeste rapidement par :</p>
+                    <ul>
+                        <li><b>Des selles molles ou liquides :</b> La diarrhée signale une inflammation de la muqueuse intestinale ou une accélération anormale du transit.</li>
+                        <li><b>Des flatulences et ballonnements :</b> Souvent provoqués par une fermentation excessive liée à des ingrédients mal assimilés.</li>
+                        <li><b>Des vomissements bilieux ou alimentaires :</b> Un estomac irrité rejette son contenu à vide (mousse jaune) ou juste après le repas.</li>
+                        <li><b>L'entérophagie (ingestion d'herbe) :</b> L'animal cherche à provoquer le vomissement ou à apaiser une acidité gastrique gênante.</li>
+                    </ul>
+
+                    <h2>2. Les causes fréquentes des désordres intestinaux</h2>
+                    <p>Avant d'engager un traitement, il est essentiel d'analyser l'origine du problème :</p>
+                    <ul>
+                        <li><b>Une transition alimentaire trop rapide :</b> Changer de marque de croquettes sans période de transition sur 10 jours déstabilise le microbiote.</li>
+                        <li><b>Une alimentation inadaptée :</b> Présence d'allergènes fréquents (bœuf, blé, soja, produits laitiers) ou excès de glucides.</li>
+                        <li><b>Le stress et l'anxiété :</b> L'axe intestin-cerveau est direct chez l'animal ; un choc émotionnel se traduit souvent par de la diarrhée.</li>
+                        <li><b>Une parasitose interne :</b> Les vers intestinaux dégradent la paroi digestive et nécessitent un suivi régulier.</li>
+                    </ul>
+
+                    <div class="lead-gen-box">
+                        <h3>💡 Gastro-entérites répétées : Attention au budget vétérinaire</h3>
+                        <p>Analyses de selles, coproscopies, perfusions en cas de déshydratation... Les urgences digestives grimpent vite. Pensez à protéger votre animal avec une mutuelle santé adaptée.</p>
+                        <a href="https://votre-lien-affilie-santevet.com" target="_blank" rel="sponsored nofollow" class="btn btn-blue">Obtenir votre devis gratuit Santévet</a>
+                    </div>
+
+                    <h2>3. Les piliers naturels de la reconstruction intestinale</h2>
+                    <p>La phytothérapie et la nutraceutique proposent des principes actifs d'une grande efficacité pour apaiser le tube digestif :</p>
+                    <ul>
+                        <li><b>Probiotiques et Prébiotiques :</b> Ils fournissent les bactéries saines nécessaires à la restauration de la flore microbienne.</li>
+                        <li><b>L'Argile Verte (Montmorillonite) :</b> Elle forme un pansement intestinal protecteur qui absorbe les toxines et aide à remouler les selles.</li>
+                        <li><b>Le Psyllium Blond :</b> Riche en mucilages, il régule aussi bien la constipation que les épisodes de selles trop liquides.</li>
+                    </ul>
+
+                    <div class="lead-gen-box">
+                        <h3>Passer à une alimentation hautement digestible</h3>
+                        <p>Découvrez notre sélection de croquettes hypoallergéniques sans céréales et pâtées digestives formulées pour les estomacs très sensibles.</p>
+                        <a href="https://votre-lien-affilie-wanimo.com" target="_blank" rel="sponsored nofollow" class="btn btn-blue">Voir les aliments digestifs sur Wanimo</a>
+                    </div>
+
+                    <h2>4. Comparatif 2026 : Les meilleures solutions Transit & Digestion</h2>
+                    <div class="table-responsive">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Produit</th>
+                                    <th>Ingrédients clés</th>
+                                    <th>Usage recommandé</th>
+                                    <th>Prix indicatif</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><b>Animigo Probiotiques</b></td>
+                                    <td>Probiotiques, FOS, Inuline</td>
+                                    <td>Cure de fond & flore intestinale</td>
+                                    <td>~21.99 €</td>
+                                    <td><a href="https://votre-lien-affilie-animigo-digestion.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Animigo</a></td>
+                                </tr>
+                                <tr>
+                                    <td><b>IntestAnimo D</b></td>
+                                    <td>Extrait de plantes & homéopathie</td>
+                                    <td>Diarrhées aiguës, gastrites, gaz</td>
+                                    <td>~27.50 €</td>
+                                    <td><a href="https://www.homeoanimo.com/products/diarrhee?rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
+                                </tr>
+                                <tr>
+                                    <td><b>Wanimo Croquettes Gastro</b></td>
+                                    <td>Protéines hydrolysées & riz</td>
+                                    <td>Sensibilité digestive chronique</td>
+                                    <td>~34.90 €</td>
+                                    <td><a href="https://votre-lien-affilie-wanimo.com" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur Wanimo</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="medical-disclaimer">
+                        <b>Avertissement médical :</b> En cas de sang dans les selles, d'abattement sévère ou de vomissements répétés plus de 24h, consultez rapidement un vétérinaire.
+                    </div>
+                </article>
+            </div>
+
+            <!-- GUIDE 3 : STRESS ET COMPORTEMENT -->
+            <div id="art-3" class="article-page">
+                <article>
+                    <h1>Gestion du Stress & Anxiété chez le Chien et le Chat : CBD, Solutions Naturelles & Homéopathie</h1>
+                    <div class="article-meta">Publié le 23 Septembre 2026 • Temps de lecture : 8 min • Par Rédaction VetNature</div>
+
+                    <p>L'<strong>anxiété chez l'animal</strong> de compagnie est un trouble comportemental trop souvent sous-estimé. Qu'elle soit déclenchée par la solitude (anxiété de séparation), les bruits intenses (orages, feux d'artifice), les trajets en voiture ou un changement d'environnement (déménagement, arrivée d'un nouveau bébé), le stress chronique produit du cortisol en excès. À terme, cette tension permanente fragilise le système immunitaire et détériore la relation avec les maîtres. Heureusement, des remèdes naturels doux et l'huile de CBD permettent d'apaiser le système nerveux sans provoquer d'accoutumance ni d'effet sédatif.</p>
+
+                    <div class="cta-box">
+                        <h3>🧘 Recommandation Anti-Stress : Formule Apaisante HomeoAnimo</h3>
+                        <p>Pour calmer l'agitation, l'anxiété de séparation et la peur des bruits forts, optez pour une solution homéopathique ciblée et 100% naturelle.</p>
+                        <a href="https://www.homeoanimo.com/pages/search-results-page?q=stress&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Découvrir les Soins Anti-Stress sur HomeoAnimo</a>
+                    </div>
+
+                    <h2>1. Reconnaître les signes de stress chez le chien et le chat</h2>
+                    <p>Les manifestations de l'anxiété varient considérablement selon l'espèce et la personnalité de l'animal :</p>
+                    <ul>
+                        <li><b>Chez le chien :</b> Halètements excessifs en dehors de toute chaleur ou effort, léchage frénétique des pattes (plaies de léchage), destructions d'objets ou de portes en l'absence des maîtres, aboiements intempestifs et hypersalivation.</li>
+                        <li><b>Chez le chat :</b> Malpropreté urinaire hors du bac (marquage sur les lits ou canapés), isolement prolonge sous les meubles, léchage compulsif jusqu'à la perte totale de poils sur le ventre (alopécie psychogène), hypervigilance au moindre bruit.</li>
+                    </ul>
+
+                    <h2>2. Le CBD et les huiles de Chanvre : L'anti-stress naturel de référence</h2>
+                    <p>Le <b>CBD (Cannabidiol) pour chiens et chats</b> s'est imposé comme l'une des découvertes les plus prometteuses en santé animale. Garanti sans THC (donc sans aucun effet psychotrope ni dépendance), le CBD agit directement sur les récepteurs du système nerveux pour réguler le niveau de stress, diminuer l'hyper-réactivité aux bruits et favoriser un sommeil réparateur.</p>
+                    <p>Quelques gouttes déposées dans la nourriture ou sur les gencives 30 minutes avant un événement stressant (voyage, vétérinaire, feu d'artifice) suffisent à procurer un apaisement rapide et naturel.</p>
+
+                    <h2>3. Les autres piliers d'un apaisement naturel et durable</h2>
+                    <p>Plutôt que d'avoir recours à des molécules sédatives lourdes, plusieurs approches complémentaires agissent en douceur sur les neurotransmetteurs de la sérénité :</p>
+                    <ul>
+                        <li><b>L'Homéopathie et les Fleurs de Bach :</b> Particulièrement adaptées pour rééquilibrer le terrain émotionnel et désensibiliser l'animal face aux déclencheurs de panique.</li>
+                        <li><b>La Valériane et la Camomille :</b> Des plantes médicinales aux vertus myorelaxantes et apaisantes reconnues pour calmer les états d'hyper-excitation.</li>
+                        <li><b>La L-Théanine et le Tryptophane :</b> Des acides aminés précurseurs de la sérotonine (l'hormone du bonheur), favorisant un état de calme attentif.</li>
+                    </ul>
+
+                    <h2>4. Aménager l'environnement pour réduire la charge mentale</h2>
+                    <p>Les compléments apaisants doivent toujours s'accompagner d'ajustements dans le mode de vie :</p>
+                    <ul>
+                        <li>Créer une « zone de refuge » sécurisante (niche d'intérieur ou arbre à chat en hauteur) accessible en permanence.</li>
+                        <li>Enrichir l'environnement avec des jeux de fouille, des tapis de léchage ou des jouets distributeurs d'aliments pour occuper l'esprit.</li>
+                        <li>Mantenir des routines stables pour rassurer l'animal sur son emploi du temps quotidien.</li>
+                    </ul>
+
+                    <div class="medical-disclaimer">
+                        <b>Avertissement médical :</b> Si l'anxiété entraîne des comportements d'agressivité soudaine ou des mutilations physiques, consultez impérativement un docteur vétérinaire ou un comportementaliste diplômé.
+                    </div>
+                </article>
+            </div>
+
+            <!-- GUIDE 4 : SOIN DES YEUX -->
+            <div id="art-4" class="article-page">
+                <article>
+                    <h1>Soin des Yeux & Hygiène Oculaire : Prévenir les Infections et Écoulements chez l'Animal</h1>
+                    <div class="article-meta">Publié le 23 Septembre 2026 • Temps de lecture : 7 min • Par Rédaction VetNature</div>
+
+                    <p>Les <strong>yeux des chiens et des chats</strong> sont des organes extrêmement fragiles, continuellement exposés aux agressions extérieures : poussière, vent, pollen, graines de graminées (épillets) et bactéries. Certaines races dites brachycéphales (Bouledogues, Carlins, Shih Tzu, chats Persans), en raison de la morphologie de leur face aplatie et de leurs yeux très exposés, nécessitent une attention toute particulière. Un nettoyage oculaire régulier prévient la formation de croûtes, élimine les traces de larmes rougeâtres et évite les infections chroniques.</p>
+
+                    <div class="cta-box">
+                        <h3>👁️ Soin des Yeux : Lotion & Gouttes Apaisantes HomeoAnimo</h3>
+                        <p>Nettoyez les impuretés, éliminez les traces de larmes et calmez les rougeurs oculaires avec une formule douce adaptée au pH lacrymal de votre animal.</p>
+                        <a href="https://www.homeoanimo.com/pages/search-results-page?q=yeux&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Voir les Soins Oculaires sur HomeoAnimo</a>
+                    </div>
+
+                    <h2>1. Pourquoi le nettoyage oculaire est-il indispensable ?</h2>
+                    <p>Le canal lacrymal permet normalement d'évacuer les larmes vers les fosses nasales. Lorsqu'il est étroit ou obstrué, les larmes débordent à l'extérieur de l'œil. Au contact de l'air et de la peau, ces sécrétions s'oxydent (prenant une couleur brunâtre) et créent un terrain très favorable à la multiplication des bactéries et des champignons.</p>
+
+                    <h2>2. La méthode pas à pas pour nettoyer les yeux en toute sécurité</h2>
+                    <p>Pour ne pas risquer de blesser la cornée ou d'infecter l'œil, appliquez scrupuleusement ces règles :</p>
+                    <ul>
+                        <li><b>Le bon matériel :</b> Utilisez exclusivement des compresses stériles en intissé. Proscrivez le coton hydrophile classique, dont les petites fibres détachées peuvent s'accrocher à l'œil et provoquer de sévères irritations.</li>
+                        <li><b>Le bon geste :</b> Imbibez généreusement la compresse de lotion oculaire vétérinaire ou de sérum physiologique. Passez la compresse délicatement du coin interne de l'œil (près du nez) vers le coin externe.</li>
+                        <li><b>L'hygiène stricte :</b> Utilisez toujours une compresse neuve pour le deuxième œil afin d'éviter la contamination croisée d'une infection d'un œil à l'autre.</li>
+                    </ul>
+
+                    <h2>3. Détecter les signes d'alerte d'une pathologie oculaire</h2>
+                    <p>Inspectez régulièrement la surface du globe oculaire de votre compagnon. La présence des symptômes suivants doit vous alerter :</p>
+                    <ul>
+                        <li>Écoulements jaunâtres ou verdâtres (signe d'une infection bactérienne).</li>
+                        <li>Œil gardé fermé ou mi-clos avec clignements fréquents (signe de douleur vive).</li>
+                        <li>Voile blanc, bleuté ou opacité sur la surface transparent de la cornée.</li>
+                        <li>Frottements répétés de la tête contre les tapis ou coups de patte sur les yeux.</li>
+                    </ul>
+
+                    <div class="medical-disclaimer">
+                        <b>Avertissement médical :</b> Un œil douloureux, rouge ou fermé est une urgence vétérinaire absolue. N'utilisez jamais un collyre destiné à l'homme ou entamé depuis longtemps sans avis médical, sous peine d'aggraver un ulcère de la cornée.
+                    </div>
+                </article>
+            </div>
+
+            <!-- GUIDE 5 : HYGIÈNE DENTAIRE -->
+            <div id="art-5" class="article-page">
+                <article>
+                    <h1>Hygiène Dentaire du Chien et du Chat : Éliminer le Tartre et la Mauvaise Haleine Sans Brossage</h1>
+                    <div class="article-meta">Publié le 23 Septembre 2026 • Temps de lecture : 8 min • Par Rédaction VetNature</div>
+
+                    <p>La <strong>maladie dentaire et le tartre</strong> touchent plus de 80 % des chiens et chats âgés de plus de 3 ans. Souvent négligée par les propriétaires, la santé bucco-dentaire est pourtant capitale. En se déposant progressivement sur l'émail, la plaque bactérienne provoque une mauvaise haleine persistante (halitose), une inflammation douloureuse des gencives (gingivite), puis le déchaussement prématuré des dents. De plus, les bactéries buccales s'infiltrent dans les vaisseaux sanguins et peuvent causer de graves lésions au niveau du cœur, du foie et des reins. Prendre soin des dents de son animal est un véritable enjeu de longévité.</p>
+
+                    <div class="cta-box">
+                        <h3>🦴 Recommandation Dentaire : Beldents - Spray Anti-Tartre HomeoAnimo</h3>
+                        <p>Alternative idéale au brossage de dents souvent refusé par l'animal : le spray homéopathique <b>Beldents</b> aide à dissoudre le tartre, apaiser les gencives et assainir l'haleine en un seul pshitt quotidien.</p>
+                        <a href="https://www.homeoanimo.com/products/produit-naturel-homeopathie-anti-tartre-dents-chiens-chats-autres?rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Voir le Spray Beldents sur HomeoAnimo</a>
+                    </div>
+
+                    <h2>1. Comprendre la formation du tartre chez le carnivore</h2>
+                    <p>Après chaque repas, les débris alimentaires mélangés à la salive et aux bactéries forment un film invisible : la plaque dentaire. Si elle n'est pas éliminée rapidement, cette plaque se minéralise sous l'action des sels de calcium contenus dans la salive et se transforme en tartre d'une grande dureté. Une fois installé, le tartre s'insinue sous la gencive, créant des poches d'infection très douloureuses.</p>
+
+                    <h2>2. Les solutions naturelles anti-tartre les plus efficaces</h2>
+                    <p>Pour les animaux qui ne se laissent pas brosser les dents, plusieurs alternatives naturelles ont fait leurs preuves :</p>
+                    <ul>
+                        <li><b>Le Spray Bucco-Dentaire Homéopathique (Beldents) :</b> Administré directement dans la gueule ou sur les lèvres, il modifie l'environnement salivaire pour ramollir le tartre et empêcher l'adhérence des bactéries.</li>
+                        <li><b>Les Algues Marines en poudre (Ascophyllum Nodosum) :</b> Ajoutées à la nourriture quotidienne, les molécules de l'algue passent dans le sang puis dans la salive pour fragiliser la structure du tartre.</li>
+                        <li><b>La Mastication Mécanique :</b> Proposer des friandises naturelles très dures (bois de cerf, cornes, bâtons d'olivier) ou des jouets en caoutchouc strié qui frottent les dents pendant le jeu.</li>
+                    </ul>
+
+                    <h2>3. Prévenir la gingivite et protèger les gencives</h2>
+                    <p>Une gencive saine doit être de couleur rose pâle. Si la gencive devient rouge vif, gonflée ou saigne au contact des aliments, l'animal souffre d'une gingivite. L'utilisation de sprays apaisants aux extraits de plantes ou de granules homéopathiques (GencivAnimo) permet d'enrayer l'inflammation avant qu'elle n'atteigne l'os alvéolaire.</p>
+
+                    <div class="medical-disclaimer">
+                        <b>Avertissement médical :</b> Si votre animal présente un tartre très épais (plaques de couleur marron/vert), salive abondamment ou refuse de manger en raison de la douleur, un détartrage sous anesthésie générale chez votre vétérinaire est indispensable avant de reprendre les soins d'entretien.
+                    </div>
+                </article>
+            </div>
+
+            <!-- GUIDE 6 : TOP 5 COMPLÉMENTS -->
+            <div id="art-6" class="article-page">
+                <article>
+                    <h1>Top 5 des Meilleures Solutions et Compléments Naturels pour Animaux en 2026</h1>
+                    <div class="article-meta">Publié le 23 Septembre 2026 • Temps de lecture : 6 min • Par Rédaction VetNature</div>
+
+                    <p>Retrouvez la sélection 2026 de nos experts pour soutenir la santé globale de vos chiens et chats au quotidien avec des remèdes naturels hautement concentrés.</p>
+
+                    <div class="product-card">
+                        <div class="product-card-header">
+                            <span class="product-card-title">1. Gamme Mobilité & Arthrose HomeoAnimo</span>
+                            <span class="product-rank">N°1 Santé Articulaire</span>
+                        </div>
+                        <p>Formulation naturelle très complète pour régénérer les cartilages usés, réduire la raideur matinale et redonner de la souplesse aux articulations des chiens et chats âgés.</p>
+                        <a href="https://www.homeoanimo.com/pages/search-results-page?q=arthrose&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Découvrir la gamme Arthrose sur HomeoAnimo</a>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card-header">
+                            <span class="product-card-title">2. Probiotiques Intestinaux Animigo</span>
+                            <span class="product-rank">N°1 Transit & Digestion</span>
+                        </div>
+                        <p>Inoculum complet de ferments et prébiotiques indispensables pour restaurer le microbiote après des troubles digestifs.</p>
+                        <a href="https://votre-lien-affilie-animigo-digestion.com" target="_blank" rel="sponsored nofollow" class="btn">Découvrir les Probiotiques</a>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card-header">
+                            <span class="product-card-title">3. Beldents - Spray Bucco-Dentaire Anti-Tartre</span>
+                            <span class="product-rank">N°1 Hygiène Dentaire</span>
+                        </div>
+                        <p>Action ciblée sans brossage : aide à dissoudre les plaques de tartre existantes, protège les gencives sensibles et assainit durablement l'haleine.</p>
+                        <a href="https://www.homeoanimo.com/products/produit-naturel-homeopathie-anti-tartre-dents-chiens-chats-autres?rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Découvrir le Spray Beldents sur HomeoAnimo</a>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card-header">
+                            <span class="product-card-title">4. Huile de Chanvre & CBD Bio Animigo</span>
+                            <span class="product-rank">N°1 Anti-Stress & Douleurs</span>
+                        </div>
+                        <p>Riche en cannabidiol naturel sans THC et en acides gras oméga 3-6-9 pour calmer le stress l'anxiété et soulager les douleurs chroniques.</p>
+                        <a href="https://votre-lien-affilie-animigo.com" target="_blank" rel="sponsored nofollow" class="btn">Découvrir le CBD Animigo</a>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card-header">
+                            <span class="product-card-title">5. Soin Apaisant Anti-Stress HomeoAnimo</span>
+                            <span class="product-rank">N°1 Sérénité & Comportement</span>
+                        </div>
+                        <p>Formule douce aux plantes et homéopathie pour réduire l'agitation, apaiser l'anxiété de séparation et désensibiliser la peur des orages ou transports.</p>
+                        <a href="https://www.homeoanimo.com/pages/search-results-page?q=stress&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Découvrir les Soins Anti-Stress sur HomeoAnimo</a>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <aside>
+            <div class="widget">
+                <span class="promo-badge">Offre Partenaire</span>
+                <h3>Soins Naturels HomeoAnimo</h3>
+                <p>Découvrez des remèdes naturels et homéopathiques sur-mesure pour la santé globale de votre animal.</p>
+                <a href="https://www.homeoanimo.com/?rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Visiter la boutique</a>
+            </div>
+
+            <div class="widget">
+                <h3>Nos Guides Santé</h3>
+                <ul class="sidebar-menu">
+                    <li><a onclick="showArticle('art-1')" id="side-art-1" class="active">• Arthrose & Mobilité</a></li>
+                    <li><a onclick="showArticle('art-2')" id="side-art-2">• Digestion & Transit</a></li>
+                    <li><a onclick="showArticle('art-3')" id="side-art-3">• Stress & Comportement</a></li>
+                    <li><a onclick="showArticle('art-4')" id="side-art-4">• Soin des Yeux</a></li>
+                    <li><a onclick="showArticle('art-5')" id="side-art-5">• Hygiène Dentaire</a></li>
+                    <li><a onclick="showArticle('art-6')" id="side-art-6">• Top 5 Compléments 2026</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 VetNaturel.fr - Conseils et guides indépendants pour le bien-être de vos animaux domestiques.</p>
+            <p>Les informations partagées ne remplacent pas un avis vétérinaire professionnel.</p>
+            <button class="legal-toggle-btn" onclick="toggleLegal()">Mentions Légales & Informations Affiliées</button>
+            <div id="legalContent" class="legal-content">
+                ## Mentions Légales & Affiliation
+                ### Transparence Affiliation
+                <p>Certains liens présents sur ce site sont des liens affiliés. Cela signifie que nous percevons une commission si vous effectuez un achat via ces liens, sans aucun coût supplémentaire pour vous.</p>
+                ### Responsabilité
+                <p>VetNaturel propose du contenu informatif général sur les soins naturels et ne constitue aucunement une consultation médicale vétérinaire.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showArticle(articleId) {
+            const articles = document.querySelectorAll('.article-page');
+            articles.forEach(art => art.classList.remove('active'));
+
+            const targetArticle = document.getElementById(articleId);
+            if (targetArticle) {
+                targetArticle.classList.add('active');
+            }
+
+            const navLinks = document.querySelectorAll('.subnav-container a');
+            navLinks.forEach(link => link.classList.remove('active'));
+            const activeNav = document.getElementById('nav-' + articleId);
+            if (activeNav) {
+                activeNav.classList.add('active');
+            }
+
+            const sideLinks = document.querySelectorAll('.sidebar-menu a');
+            sideLinks.forEach(link => link.classList.remove('active'));
+            const activeSide = document.getElementById('side-' + articleId);
+            if (activeSide) {
+                activeSide.classList.add('active');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleLegal() {
+            const legal = document.getElementById('legalContent');
+            legal.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
