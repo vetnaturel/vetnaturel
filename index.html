@@ -228,6 +228,52 @@
             background-color: #d35400;
         }
 
+        /* Navigation entre articles */
+        .article-nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 2px solid var(--border);
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-nav {
+            background-color: var(--primary);
+            color: #ffffff;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            text-decoration: none;
+        }
+
+        .btn-nav:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-nav-top {
+            background-color: #f1f5f9;
+            color: var(--text);
+            border: 1px solid var(--border);
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-nav-top:hover {
+            background-color: #e2e8f0;
+        }
+
         aside { width: 100%; }
         aside .widget { background: white; padding: 20px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 20px; width: 100%; }
         aside h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid var(--primary-light); }
@@ -316,6 +362,15 @@
 
             article ul, article ol {
                 margin-left: 15px !important;
+            }
+
+            .article-nav-footer {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .btn-nav, .btn-nav-top {
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
@@ -1140,6 +1195,20 @@
     </footer>
 
     <script>
+        const articleOrder = [
+            'art-1',
+            'art-2',
+            'art-3',
+            'art-4',
+            'art-5',
+            'art-6',
+            'art-8',
+            'art-9',
+            'art-10',
+            'art-11',
+            'art-12'
+        ];
+
         function showArticle(articleId) {
             const articles = document.querySelectorAll('.article-page');
             articles.forEach(art => art.classList.remove('active'));
@@ -1147,6 +1216,7 @@
             const targetArticle = document.getElementById(articleId);
             if (targetArticle) {
                 targetArticle.classList.add('active');
+                updateArticleNav(articleId);
             }
 
             const navLinks = document.querySelectorAll('.subnav-container a');
@@ -1154,6 +1224,7 @@
             const activeNav = document.getElementById('nav-' + articleId);
             if (activeNav) {
                 activeNav.classList.add('active');
+                activeNav.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
             }
 
             const sideLinks = document.querySelectorAll('.sidebar-menu a');
@@ -1166,10 +1237,38 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        function updateArticleNav(currentId) {
+            const currentIndex = articleOrder.indexOf(currentId);
+            if (currentIndex === -1) return;
+
+            const prevId = currentIndex > 0 ? articleOrder[currentIndex - 1] : null;
+            const nextId = currentIndex < articleOrder.length - 1 ? articleOrder[currentIndex + 1] : null;
+
+            const currentArticle = document.querySelector('#' + currentId + ' article');
+            if (!currentArticle) return;
+
+            let navDiv = currentArticle.querySelector('.article-nav-footer');
+            if (!navDiv) {
+                navDiv = document.createElement('div');
+                navDiv.className = 'article-nav-footer';
+                currentArticle.appendChild(navDiv);
+            }
+
+            const prevBtn = prevId ? `<button onclick="showArticle('${prevId}')" class="btn-nav">← Article précédent</button>` : '<span></span>';
+            const topBtn = `<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="btn-nav-top">↑ Haut de page</button>`;
+            const nextBtn = nextId ? `<button onclick="showArticle('${nextId}')" class="btn-nav">Article suivant →</button>` : '<span></span>';
+
+            navDiv.innerHTML = `${prevBtn}${topBtn}${nextBtn}`;
+        }
+
         function toggleLegal() {
             const legal = document.getElementById('legalContent');
             legal.classList.toggle('active');
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateArticleNav('art-1');
+        });
     </script>
 </body>
 </html>
