@@ -66,3 +66,38 @@ aside h3 { color: var(--primary-color); font-size: 1.1rem; margin-bottom: 1rem; 
 .sidebar-menu a:hover { color: var(--secondary-color); }
 
 footer { background-color: var(--primary-color); color: var(--white); text-align: center; padding: 2rem 1rem; margin-top: 3rem; }
+/* NAVIGATION PAR CATEGORIES / TAGS */
+.category-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.tag-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f7f9f8;
+    color: #2c3e50;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.tag-btn:hover {
+    background-color: #1e4d3b;
+    color: #ffffff;
+    border-color: #1e4d3b;
+}
+
+.tag-btn.active {
+    background-color: #e67e22;
+    color: #ffffff;
+    border-color: #e67e22;
+}
