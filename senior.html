@@ -19,7 +19,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); }
 
-        /* HEADER & NAVIGATION (Identiques à index.html) */
+        /* HEADER & NAVIGATION */
         header { background-color: var(--white); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
         .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
         .logo { font-size: 1.8rem; font-weight: bold; color: var(--primary-color); text-decoration: none; }
@@ -35,30 +35,30 @@
         .main-container { max-width: 1200px; margin: 2rem auto; display: grid; grid-template-columns: 3fr 1fr; gap: 2rem; padding: 0 1rem; }
         @media (max-width: 768px) { .main-container { grid-template-columns: 1fr; } }
 
-        /* CONTENU ARTICLE */
-        .article-page { background: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        /* CONTENU ARTICLE (Même style de carte que index.html) */
+        .article-page { background: var(--white); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
 
-        h1 { color: var(--primary-color); font-size: 2rem; margin-bottom: 1rem; line-height: 1.2; }
-        h2 { color: var(--primary-color); font-size: 1.4rem; margin: 1.8rem 0 0.8rem 0; border-bottom: 2px solid var(--primary-light); padding-bottom: 0.3rem; }
-        p { margin-bottom: 1.2rem; }
-        ul, ol { margin-bottom: 1.2rem; padding-left: 1.5rem; }
+        h1 { color: var(--primary-color); font-size: 2rem; margin-bottom: 1rem; line-height: 1.2; border-bottom: 2px solid var(--primary-light); padding-bottom: 0.5rem; }
+        h2 { color: var(--primary-color); font-size: 1.3rem; margin: 1.5rem 0 0.8rem 0; }
+        p { margin-bottom: 1rem; color: #4a5568; }
+        ul, ol { margin-bottom: 1.2rem; padding-left: 1.5rem; color: #4a5568; }
         li { margin-bottom: 0.4rem; }
 
         /* BLOCS CONSEIL ET AVERTISSEMENTS */
-        .vet-tip { background-color: var(--primary-light); border-left: 4px solid var(--primary-color); padding: 1rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0; }
-        .medical-disclaimer { background-color: #fffbe3; border: 1px solid #ffe58f; padding: 1rem; border-radius: 4px; font-size: 0.85rem; margin-top: 2rem; }
+        .vet-tip { background-color: var(--primary-light); border-left: 4px solid var(--primary-color); padding: 1rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; color: var(--primary-color); }
+        .medical-disclaimer { background-color: #fffbe3; border: 1px solid #ffe58f; padding: 1rem; border-radius: 6px; font-size: 0.85rem; margin-top: 2rem; color: #856404; }
 
-        /* TABLEAUX COMPARATIFS */
+        /* TABLEAUX COMPARATIFS AVEC BOUTONS ORANGE INDEX */
         .table-responsive { overflow-x: auto; margin: 1.5rem 0; }
         table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
         th, td { padding: 0.8rem; border: 1px solid var(--border-color); }
         th { background-color: var(--primary-light); color: var(--primary-color); }
-        .btn-table { display: inline-block; background-color: var(--secondary-color); color: var(--white); padding: 0.4rem 0.8rem; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.85rem; }
+        .btn-table { display: inline-block; background-color: var(--secondary-color); color: var(--white); padding: 0.5rem 1rem; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 0.85rem; text-align: center; transition: background 0.2s; }
         .btn-table:hover { background-color: #b45309; }
 
-        /* SIDEBAR */
-        aside .widget { background: var(--white); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 1.5rem; }
-        aside h3 { color: var(--primary-color); font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        /* SIDEBAR (Match exact avec les cartes d'index.html) */
+        aside .widget { background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin-bottom: 1.5rem; }
+        aside h3 { color: var(--primary-color); font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 2px solid var(--primary-light); padding-bottom: 0.5rem; }
         .sidebar-menu { list-style: none; padding: 0; }
         .sidebar-menu li { margin-bottom: 0.8rem; }
         .sidebar-menu a { color: var(--text-color); text-decoration: none; transition: color 0.2s; }
@@ -77,7 +77,6 @@
         </div>
     </header>
 
-    <!-- BARRE DE NAVIGATION VERS LES DIFFÉRENTES PAGES -->
     <nav class="subnav">
         <div class="subnav-container">
             <a href="arthrose.html">1. Arthrose & Mobilité</a>
@@ -103,7 +102,7 @@
                     <p>Avec l'âge, nos compagnons rencontrent de nouveaux défis : raideurs articulaires, baisse de tonus, perte d'appétit ou déclin cognitif. Une prise en charge globale permet d'améliorer leur confort de vie et de prolonger leur vitalité.</p>
 
                     <h2>1. Identifier les signes du vieillissement</h2>
-                    <p>Le statut "senior" s'installe généralement vers 7 à 9 ans chez le chien (selon sa taille) et vers 10 à 11 ans chez le chat. Les principaux signes d'alerte sont :</p>
+                    <p>Le statut « senior » s'installe généralement vers 7 à 9 ans chez le chien (selon sa taille) et vers 10 à 11 ans chez le chat. Les principaux signes d'alerte sont :</p>
                     <ul>
                         <li><b>Ralentissement général :</b> Difficulté à se lever le matin, réticence à monter les marches.</li>
                         <li><b>Troubles du sommeil et désorientation :</b> Vocalisations nocturnes, perte des habitudes de propreté.</li>
@@ -135,7 +134,7 @@
                             <tbody>
                                 <tr>
                                     <td>Tonique Vitalité Senior & Ginkgo Bio</td>
-                                    <td>Soutien de la mémoire, de la lucidité et du tonus general</td>
+                                    <td>Soutien de la mémoire, de la lucidité et du tonus général</td>
                                     <td>~21.90 €</td>
                                     <td><a href="#" target="_blank" rel="sponsored nofollow" class="btn-table">Voir l'offre</a></td>
                                 </tr>
