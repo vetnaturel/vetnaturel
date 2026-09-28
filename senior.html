@@ -35,20 +35,20 @@
         .main-container { max-width: 1200px; margin: 2rem auto; display: grid; grid-template-columns: 3fr 1fr; gap: 2rem; padding: 0 1rem; }
         @media (max-width: 768px) { .main-container { grid-template-columns: 1fr; } }
 
-        /* CONTENU ARTICLE (Même style de carte que index.html) */
-        .article-page { background: var(--white); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        /* BLOCS DU CONTENU PRINCIPAL */
+        .card { background: var(--white); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 2rem; }
 
-        h1 { color: var(--primary-color); font-size: 2rem; margin-bottom: 1rem; line-height: 1.2; border-bottom: 2px solid var(--primary-light); padding-bottom: 0.5rem; }
-        h2 { color: var(--primary-color); font-size: 1.3rem; margin: 1.5rem 0 0.8rem 0; }
+        h1 { color: var(--primary-color); font-size: 1.8rem; margin-bottom: 1rem; line-height: 1.3; }
+        h2 { color: var(--primary-color); font-size: 1.3rem; margin: 1.5rem 0 0.8rem 0; border-bottom: 2px solid var(--primary-light); padding-bottom: 0.3rem; }
         p { margin-bottom: 1rem; color: #4a5568; }
         ul, ol { margin-bottom: 1.2rem; padding-left: 1.5rem; color: #4a5568; }
         li { margin-bottom: 0.4rem; }
 
-        /* BLOCS CONSEIL ET AVERTISSEMENTS */
-        .vet-tip { background-color: var(--primary-light); border-left: 4px solid var(--primary-color); padding: 1rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; color: var(--primary-color); }
+        /* BLOCS D'AVERTISSEMENT & CONSEIL */
+        .vet-tip { background-color: var(--primary-light); border-left: 4px solid var(--primary-color); padding: 1.2rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; color: var(--primary-color); }
         .medical-disclaimer { background-color: #fffbe3; border: 1px solid #ffe58f; padding: 1rem; border-radius: 6px; font-size: 0.85rem; margin-top: 2rem; color: #856404; }
 
-        /* TABLEAUX COMPARATIFS AVEC BOUTONS ORANGE INDEX */
+        /* TABLEAU & BOUTONS */
         .table-responsive { overflow-x: auto; margin: 1.5rem 0; }
         table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
         th, td { padding: 0.8rem; border: 1px solid var(--border-color); }
@@ -56,8 +56,8 @@
         .btn-table { display: inline-block; background-color: var(--secondary-color); color: var(--white); padding: 0.5rem 1rem; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 0.85rem; text-align: center; transition: background 0.2s; }
         .btn-table:hover { background-color: #b45309; }
 
-        /* SIDEBAR (Match exact avec les cartes d'index.html) */
-        aside .widget { background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin-bottom: 1.5rem; }
+        /* SIDEBAR */
+        aside .widget { background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 1.5rem; }
         aside h3 { color: var(--primary-color); font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 2px solid var(--primary-light); padding-bottom: 0.5rem; }
         .sidebar-menu { list-style: none; padding: 0; }
         .sidebar-menu li { margin-bottom: 0.8rem; }
@@ -96,7 +96,7 @@
 
     <div class="main-container">
         <main>
-            <div class="article-page">
+            <div class="card">
                 <article>
                     <h1>Accompagner le Vieillissement du Chien et du Chat Senior</h1>
                     <p>Avec l'âge, nos compagnons rencontrent de nouveaux défis : raideurs articulaires, baisse de tonus, perte d'appétit ou déclin cognitif. Une prise en charge globale permet d'améliorer leur confort de vie et de prolonger leur vitalité.</p>
