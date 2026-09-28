@@ -25,13 +25,13 @@
         .logo { font-size: 1.8rem; font-weight: bold; color: var(--primary-color); text-decoration: none; }
         .logo span { color: var(--secondary-color); }
 
-        /* HERO BANNER */
+        /* HERO BANNER ACCUEIL */
         .hero { background: linear-gradient(135deg, #1b432c 0%, #2c5e3b 100%); color: var(--white); padding: 3rem 1rem; text-align: center; }
         .hero-container { max-width: 800px; margin: 0 auto; }
         .hero h1 { font-size: 2.2rem; margin-bottom: 0.8rem; font-weight: 700; color: var(--white); border: none; padding: 0; }
         .hero p { font-size: 1.1rem; opacity: 0.9; color: var(--white); margin: 0; }
 
-        /* BARRE DE CATÉGORIES */
+        /* BARRE DE CATÉGORIES / FILTRES */
         .category-nav { max-width: 1200px; margin: 1.5rem auto 0 auto; padding: 0 1rem; display: flex; gap: 0.6rem; overflow-x: auto; white-space: nowrap; }
         .tag-btn { background: var(--white); color: #4a5568; text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; border: 1px solid var(--border-color); transition: all 0.2s; }
         .tag-btn:hover { border-color: var(--secondary-color); color: var(--secondary-color); }
@@ -47,6 +47,7 @@
         .article-meta { font-size: 0.85rem; color: #a0aec0; margin-bottom: 1.5rem; }
 
         h2 { color: var(--primary-color); font-size: 1.3rem; margin: 1.8rem 0 0.8rem 0; border-bottom: 2px solid var(--primary-light); padding-bottom: 0.3rem; }
+        h3 { color: var(--primary-color); font-size: 1.1rem; margin: 1.2rem 0 0.5rem 0; }
         p { margin-bottom: 1rem; color: #4a5568; font-size: 0.98rem; }
         ul, ol { margin-bottom: 1.2rem; padding-left: 1.5rem; color: #4a5568; }
         li { margin-bottom: 0.4rem; }
@@ -58,11 +59,14 @@
         .btn-orange { display: inline-block; background-color: var(--secondary-color); color: var(--white); padding: 0.6rem 1.2rem; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 0.88rem; transition: background 0.2s; }
         .btn-orange:hover { background-color: #b45309; }
 
-        /* TABLEAU */
+        /* TABLEAU RECOMMANDATIONS */
         .table-responsive { overflow-x: auto; margin: 1.5rem 0; }
         table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
         th, td { padding: 0.8rem; border: 1px solid var(--border-color); }
         th { background-color: var(--primary-light); color: var(--primary-color); }
+
+        /* AVERTISSEMENT */
+        .medical-disclaimer { background-color: #fffbe3; border: 1px solid #ffe58f; padding: 1rem; border-radius: 6px; font-size: 0.85rem; margin-top: 2rem; color: #856404; }
 
         /* SIDEBAR */
         aside .widget { background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 1.5rem; }
@@ -118,23 +122,43 @@
                         <a href="#" class="btn-orange">Voir les soins Arthrose sur HomeoAnimo</a>
                     </div>
 
-                    <h2>1. Reconnaître les symptômes de l'arthrose chez le chien</h2>
-                    <p>Les signes d'arthrose s'installent souvent insidieusement. Voici les principaux comportements qui doivent vous alerter :</p>
+                    <h2>1. Reconnaître les symptômes de l'arthrose canine</h2>
+                    <p>Les signes d'arthrose s'installent souvent progressivement. Les symptômes les plus fréquents sont :</p>
                     <ul>
-                        <li><b>Raideur au réveil :</b> Le chien peine à se lever après un long repos (dérouillage difficile).</li>
-                        <li><b>Hésitation devant l'effort :</b> Réticence à monter en voiture, à grimper les escaliers ou à sauter sur le canapé.</li>
-                        <li><b>Léchage répété des articulations :</b> Le chien lèche fréquemment ses pattes ou ses hanches pour tenter de soulager la douleur.</li>
-                        <li><b>Changement d'humeur :</b> Grognements imprévus ou retrait social lorsque vous touchez une zone douloureuse.</li>
+                        <li><b>Raideur matinale ou "dérouillage" difficile :</b> Le chien peine à se lever après une période de repos, puis marche plus facilement après quelques minutes.</li>
+                        <li><b>Hésitation ou refus de sauter :</b> Réticence à monter en voiture, sur le canapé ou à franchir des marches d'escalier.</li>
+                        <li><b>Changement de démarche :</b> Boiterie intermittente, foulée raccourcie ou démarche raide du train arrière.</li>
+                        <li><b>Changements de comportement :</b> Léchage compulsif d'une articulation douloureuse, baisse d'enthousiasme pour les promenades, voire agressivité s'il est manipulé sur une zone sensible.</li>
                     </ul>
 
-                    <h2>2. Les solutions naturelles et phytothérapie</h2>
+                    <h2>2. Les causes et facteurs de risque</h2>
+                    <p>L'usure du cartilage articulaire peut être accélérée par plusieurs facteurs :</p>
                     <ul>
-                        <li><b>L'Harpagophytum (Griffe du diable) :</b> Un puissant anti-inflammatoire naturel pour apaiser les douleurs articulaires.</li>
-                        <li><b>Le Boswellia Serrata :</b> Protège les articulations et améliore la souplesse.</li>
-                        <li><b>La Prêle et l'Ortie :</b> Riches en silice, elles favorisent la reminéralisation osseuse.</li>
+                        <li><b>L'âge :</b> L'usure naturelle des articulations avec le vieillissement.</li>
+                        <li><b>Le surpoids :</b> Chaque kilo en trop exerce une pression mécanique considérable sur les articulations portantes (hanches, genoux, coudes).</li>
+                        <li><b>Les dysplasies et traumatismes :</b> Dysplasie de la hanche ou du coude, anciennes fractures ou entorses mal guéries.</li>
+                        <li><b>La race :</b> Les grandes races (Labrador, Golden Retriever, Berger Allemand, Rottweiler) sont particulièrement prédisposées.</li>
                     </ul>
 
-                    <h2>3. Produits et compléments recommandés</h2>
+                    <h2>3. Traitements naturels et phytothérapie pour l'arthrose</h2>
+                    <p>La phytothérapie et la nutraceutique offrent d'excellents résultats pour réduire l'inflammation sans les effets secondaires des anti-inflammatoires chimiques à long terme :</p>
+                    <ul>
+                        <li><b>L'Harpagophytum (Griffe du diable) :</b> Une plante reconnue pour ses propriétés anti-inflammatoires et antalgiques puissantes sur les douleurs articulaires.</li>
+                        <li><b>Le Boswellia Serrata :</b> Aide à préserver la souplesse des articulations et réduit le gonflement synovial.</li>
+                        <li><b>Les Chondroprotecteurs (Glucosamine & Chondroïtine) :</b> Essentiels pour nourrir et ralentir la dégradation du cartilage.</li>
+                        <li><b>Les Oméga-3 (EPA/DHA) :</b> Issues d'huiles de poisson sauvages, ces acides gras essentiels agissent comme de puissants anti-inflammatoires systémiques.</li>
+                    </ul>
+
+                    <h2>4. Aménagements du quotidien et conseils pratiques</h2>
+                    <p>Quelques ajustements simples dans l'environnement de votre chien peuvent considérablement réduire ses douleurs au quotidien :</p>
+                    <ul>
+                        <li><b>Installer des tapis antidérapants :</b> Pour éviter les glissades sur le carrelage ou le parquet.</li>
+                        <li><b>Proposer un lit orthopédique :</b> À mémoire de forme pour soulager les points de pression.</li>
+                        <li><b>Utiliser une rampe d'accès :</b> Pour faciliter la montée et la descente de voiture sans choc articulaire.</li>
+                        <li><b>Maintenir une activité douce et régulière :</b> Privilégiez plusieurs courtes promenades plutôt qu'une seule longue balade éprouvante.</li>
+                    </ul>
+
+                    <h2>5. Produits et compléments recommandés</h2>
                     <div class="table-responsive">
                         <table>
                             <thead>
@@ -160,6 +184,10 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+
+                    <div class="medical-disclaimer">
+                        <b>Avertissement médical :</b> Cet article est publié à titre informatif et ne remplace pas une consultation vétérinaire. Un diagnostic médical est indispensable avant tout traitement.
                     </div>
                 </article>
             </div>
