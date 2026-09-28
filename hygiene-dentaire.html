@@ -3,176 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hygiène Dentaire, Tartre et Mauvaise Haleine chez le Chien et le Chat - VetNature</title>
-    <meta name="description" content="Solutions naturelles contre le tartre, la plaque dentaire et la mauvaise haleine du chien et du chat : algues, dentifrices naturels et brossage.">
-    <style>
-        :root {
-            --primary-color: #2c5e3b;
-            --primary-light: #eaf2eb;
-            --secondary-color: #d97706;
-            --text-color: #333333;
-            --bg-color: #f4f7f4;
-            --white: #ffffff;
-            --border-color: #e2e8f0;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); }
-
-        /* HEADER & NAVIGATION */
-        header { background-color: var(--white); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
-        .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
-        .logo { font-size: 1.8rem; font-weight: bold; color: var(--primary-color); text-decoration: none; }
-        .logo span { color: var(--secondary-color); }
-
-        /* SUBNAV HORIZONTALE */
-        .subnav { background-color: var(--primary-color); overflow-x: auto; white-space: nowrap; }
-        .subnav-container { max-width: 1200px; margin: 0 auto; display: flex; padding: 0 1rem; }
-        .subnav a { color: var(--white); text-decoration: none; padding: 0.8rem 1.2rem; font-size: 0.9rem; display: inline-block; transition: background 0.35s; }
-        .subnav a:hover, .subnav a.active { background-color: rgba(255, 255, 255, 0.2); font-weight: bold; }
-
-        /* LAYOUT PRINCIPAL */
-        .main-container { max-width: 1200px; margin: 2rem auto; display: grid; grid-template-columns: 3fr 1fr; gap: 2rem; padding: 0 1rem; }
-        @media (max-width: 768px) { .main-container { grid-template-columns: 1fr; } }
-
-        /* CONTENU ARTICLE */
-        .article-page { background: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-
-        h1 { color: var(--primary-color); font-size: 2rem; margin-bottom: 1rem; line-height: 1.2; }
-        h2 { color: var(--primary-color); font-size: 1.4rem; margin: 1.8rem 0 0.8rem 0; border-bottom: 2px solid var(--primary-light); padding-bottom: 0.3rem; }
-        p { margin-bottom: 1.2rem; }
-        ul, ol { margin-bottom: 1.2rem; padding-left: 1.5rem; }
-        li { margin-bottom: 0.4rem; }
-
-        /* BLOCS CONSEIL ET AVERTISSEMENTS */
-        .vet-tip { background-color: var(--primary-light); border-left: 4px solid var(--primary-color); padding: 1rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0; }
-        .medical-disclaimer { background-color: #fffbe3; border: 1px solid #ffe58f; padding: 1rem; border-radius: 4px; font-size: 0.85rem; margin-top: 2rem; }
-
-        /* TABLEAUX COMPARATIFS */
-        .table-responsive { overflow-x: auto; margin: 1.5rem 0; }
-        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
-        th, td { padding: 0.8rem; border: 1px solid var(--border-color); }
-        th { background-color: var(--primary-light); color: var(--primary-color); }
-        .btn-table { display: inline-block; background-color: var(--secondary-color); color: var(--white); padding: 0.4rem 0.8rem; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.85rem; }
-        .btn-table:hover { background-color: #b45309; }
-
-        /* SIDEBAR */
-        aside .widget { background: var(--white); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 1.5rem; }
-        aside h3 { color: var(--primary-color); font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
-        .sidebar-menu { list-style: none; padding: 0; }
-        .sidebar-menu li { margin-bottom: 0.8rem; }
-        .sidebar-menu a { color: var(--text-color); text-decoration: none; transition: color 0.2s; }
-        .sidebar-menu a:hover { color: var(--secondary-color); }
-
-        /* FOOTER */
-        footer { background-color: var(--primary-color); color: var(--white); text-align: center; padding: 2rem 1rem; margin-top: 3rem; }
-    </style>
+    <title>Hygiène Dentaire du Chien et du Chat - VetNature</title>
+    <meta name="description" content="Conseils vétérinaires et solutions naturelles pour prévenir le tartre, la plaque dentaire et la mauvaise haleine chez vos animaux.">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="header-container">
-            <a href="/" class="logo">Vet<span>Nature</span></a>
+            <a href="index.html" class="logo">Vet<span>Nature</span></a>
             <div><strong>Guide Naturopathie & Phytothérapie Vétérinaire</strong></div>
         </div>
     </header>
 
-    <!-- BARRE DE NAVIGATION VERS LES DIFFÉRENTES PAGES -->
-    <nav class="subnav">
-        <div class="subnav-container">
-            <a href="arthrose.html">1. Arthrose & Mobilité</a>
-            <a href="digestion.html">2. Digestion & Transit</a>
-            <a href="stress.html">3. Stress & Anxiété</a>
-            <a href="allergies-peau.html">4. Allergies & Peau</a>
-            <a href="yeux-oreilles.html">5. Yeux & Oreilles</a>
-            <a href="dentaire.html" class="active">6. Hygiène Dentaire</a>
-            <a href="urinaires.html">7. Voies Urinaires</a>
-            <a href="immunite.html">8. Système Immunitaire</a>
-            <a href="senior.html">9. Vitalité Senior</a>
-            <a href="puces-tiques.html">10. Puces & Tiques</a>
-            <a href="vermifuge.html">11. Vermifuges Naturels</a>
-            <a href="top-complements.html">12. Top 5 Compléments</a>
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Conseils & Soins Naturels pour Animaux</h1>
+            <p>Guides indépendants et comparatifs pour la santé de vos compagnons au quotidien.</p>
         </div>
-    </nav>
+    </section>
+
+    <div class="category-nav">
+        <a href="arthrose.html" class="tag-btn">Arthrose & Mobilité</a>
+        <a href="digestion.html" class="tag-btn">Digestion & Transit</a>
+        <a href="stress.html" class="tag-btn">Stress & Anxiété</a>
+        <a href="allergies-peau.html" class="tag-btn">Allergies & Peau</a>
+        <a href="yeux-oreilles.html" class="tag-btn">Soin des Yeux & Oreilles</a>
+        <a href="hygiene-dentaire.html" class="tag-btn active">Hygiène Dentaire</a>
+        <a href="senior.html" class="tag-btn">Seniors & Grand Âge</a>
+        <a href="immunite.html" class="tag-btn">Système Immunitaire</a>
+    </div>
 
     <div class="main-container">
-        <main>
-            <div class="article-page">
-                <article>
-                    <h1>Hygiène Dentaire : Éliminer le Tartre et la Mauvaise Haleine</h1>
-                    <p>La maladie parodontale touche plus de 80% des chiens et des chats de plus de 3 ans. L'accumulation de plaque dentaire et la formation de tartre entraînent une gingivite douloureuse, la perte de dents et parfois des infections généralisées.</p>
+        <main class="content">
+            <article>
+                <h1>Hygiène Dentaire du Chien et du Chat : Prévenir le Tartre et Protéger les Gencives</h1>
+                <div class="article-meta">Publié le 28 Septembre 2026 • Temps de lecture : 8 min • Par Rédaction VetNature</div>
 
-                    <h2>1. Comprendre la formation du tartre</h2>
-                    <p>La plaque dentaire se dépose continuellement sur l'émail. Sous l'action des bactéries et des minéraux contenus dans la salive, elle se calcifie pour devenir du tartre. La mauvaise haleine (halitose) est le premier signe d'une prolifération bactérienne excessive dans la cavité buccale.</p>
+                <p>La maladie de la cavité buccale est l'une des affections les plus fréquemment diagnostiquées chez les carnivores domestiques. L'accumulation progressive de <strong>plaque dentaire</strong> conduit à la formation de tartre, responsable de gingivites, de mauvaise haleine et, à terme, du déchaussement des dents.</p>
 
-                    <h2>2. Solutions naturelles pour des dents saines</h2>
-                    <p>Pour prévenir et réduire le tartre de manière naturelle :</p>
-                    <ul>
-                        <li><b>L'algue <i>Ascophyllum Nodosum</i> :</b> Incorpore des enzymes dans la salive qui ramollissent la plaque dentaire et facilitent son détachement naturel.</li>
-                        <li><b>La Poudre de Romain et Persil :</b>Neutralise les bactéries responsables des odeurs et rafraîchit l'haleine.</li>
-                        <li><b>Bois de cerf ou Bois d'olivier :</b> Favorisent une mastication mécanique naturelle sécurisée pour gratter la plaque superficielle.</li>
-                    </ul>
+                <div class="cta-box">
+                    <h3>🦷 Soins Dentaires & Anti-Tartre HomeoAnimo</h3>
+                    <p>Découvrez des poudres et solutions naturelles favorisant l'élimination de la plaque dentaire et la santé des gencives.</p>
+                    <a href="https://www.homeoanimo.com/pages/search-results-page?q=dentaire&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Voir les Soins Dentaires sur HomeoAnimo</a>
+                </div>
 
-                    <div class="vet-tip">
-                        <b>Le conseil du vétérinaire :</b> Associer une supplémentation quotidienne à base d'algues à une activité de mastication régulière est la méthode préventive la plus efficace pour éviter un détartrage sous anesthésie générale.
-                    </div>
+                <h2>1. Pourquoi entretenir les dents de son animal ?</h2>
+                <p>La plaque dentaire se compose de bactéries et de débris alimentaires. En se minéralisant au contact de la salive, elle se transforme en tartre solide. Sans intervention régulière :</p>
+                <ul>
+                    <li><b>Prolifération bactérienne :</b> Mauvaise haleine (halitose) persistante.</li>
+                    <li><b>Gingivite :</b> Inflammation, rougeur et saignement des gencives.</li>
+                    <li><b>Infections profondes :</b> Risque d'abcès dentaire et de passage des bactéries dans le sang (impactant les reins et le cœur).</li>
+                </ul>
 
-                    <h2>3. Produits recommandés pour l'hygiène bucco-dentaire</h2>
-                    <div class="table-responsive">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Produit</th>
-                                    <th>Bénéfices & Utilisation</th>
-                                    <th>Prix Moyen</th>
-                                    <th>Lien Direct</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Poudre d'Algue Anti-Tartre (100% Naturelle)</td>
-                                    <td>À saupoudrer sur la nourriture, ramollit le tartre</td>
-                                    <td>~14.90 €</td>
-                                    <td><a href="#" target="_blank" rel="sponsored nofollow" class="btn-table">Voir l'offre</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Kit Brossage Dentaire Enzymatique</td>
-                                    <td>Dentifrice apaisant utilisable sans rincage</td>
-                                    <td>~12.90 €</td>
-                                    <td><a href="#" target="_blank" rel="sponsored nofollow" class="btn-table">Voir l'offre</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <h2>2. Les méthodes d'hygiène préventive</h2>
+                <p>Adopter une routine bucco-dentaire dès le plus jeune âge permet d'éviter les détartrages sous anesthésie générale :</p>
+                <ol>
+                    <li><b>Brossage mécanique :</b> Utiliser une brosse à dents souple ou un doigtier avec un dentifrice vétérinaire spécialement formulé (sans rinçage).</li>
+                    <li><b>Compléments alimentaires en poudre :</b> Les algues marines (comme <i>Ascophyllum nodosum</i>) modifient la salive pour ramollir le tartre et faciliter son élimination.</li>
+                    <li><b>Jouets et friandises de mastication :</b> Favorisent le nettoyage mécanique naturel des surfaces dentaires.</li>
+                </ol>
 
-                    <div class="medical-disclaimer">
-                        <b>Avertissement médical :</b> Cet article est publié à titre informatif. Si les gencives de votre animal sont très rouges, saignent ou si une dent déchaussée le fait souffrir, consultez rapidement un vétérinaire.
-                    </div>
-                </article>
-            </div>
+                <div class="medical-disclaimer">
+                    <b>Avertissement médical :</b> Si votre animal présente un tartre incrusté très important, une gêne pour manger ou des gencives très rouges, un détartrage préalable chez le vétérinaire est indispensable.
+                </div>
+
+                <h2>3. Comparatif des Soins Recommandés</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Besoin / Symptôme</th>
+                            <th>Action Recommandée</th>
+                            <th>Lien</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Mauvaise haleine & Plaque</strong></td>
+                            <td>Nettoyage quotidien et assainissement de la bouche</td>
+                            <td><a href="https://www.homeoanimo.com/pages/search-results-page?q=dentaire&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Prévention du tartre</strong></td>
+                            <td>Protection continue des gencives et réduction des bactéries</td>
+                            <td><a href="https://www.homeoanimo.com/pages/search-results-page?q=tartre&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
         </main>
 
-        <aside>
-            <div class="widget">
-                <h3>Articles Populaires</h3>
-                <ul class="sidebar-menu">
-                    <li><a href="arthrose.html">▸ Arthrose & Mobilité</a></li>
-                    <li><a href="digestion.html">▸ Digestion & Microbiote</a></li>
-                    <li><a href="stress.html">▸ Stress & Anxiété</a></li>
-                    <li><a href="allergies-peau.html">▸ Allergies & Peau</a></li>
-                    <li><a href="top-complements.html">▸ Top 5 Compléments</a></li>
-                </ul>
+        <aside class="sidebar">
+            <div class="sidebar-widget">
+                <h3>Offre Partenaire</h3>
+                <p><strong>Soins Naturels HomeoAnimo</strong></p>
+                <p>Découvrez des remèdes naturels et homéopathiques sur-mesure pour la santé globale de votre animal.</p>
+                <a href="https://www.homeoanimo.com/pages/search-results-page?q=dentaire&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn" style="display:inline-block; margin-top:10px; text-align:center; width:100%;">Visiter la boutique</a>
             </div>
 
-            <div class="widget">
-                <h3>À propos de VetNature</h3>
-                <p style="font-size: 0.85rem;">VetNature vous propose des guides rédigés sur la base de données vétérinaires et de naturopathie animale pour soigner vos animaux au naturel.</p>
+            <div class="sidebar-widget">
+                <h3>Nos Guides Santé</h3>
+                <ul>
+                    <li><a href="arthrose.html">Arthrose & Mobilité</a></li>
+                    <li><a href="digestion.html">Digestion & Transit</a></li>
+                    <li><a href="stress.html">Stress & Anxiété</a></li>
+                    <li><a href="yeux-oreilles.html">Soin des Yeux & Oreilles</a></li>
+                    <li><a href="hygiene-dentaire.html">Hygiène Dentaire</a></li>
+                    <li><a href="allergies-peau.html">Allergies & Peau</a></li>
+                    <li><a href="senior.html">Seniors & Grand Âge</a></li>
+                    <li><a href="immunite.html">Système Immunitaire</a></li>
+                </ul>
             </div>
         </aside>
     </div>
 
     <footer>
-        <p>&copy; 2026 VetNature. Tous droits réservés.</p>
+        <p>&copy; 2026 VetNature - Tous droits réservés.</p>
     </footer>
 
 </body>
