@@ -3,70 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soins des Yeux et des Oreilles chez le Chien et le Chat - VetNature</title>
-    <meta name="description" content="Nettoyage et prévention des infections oculaires et auriculaires chez le chien et le chat : solutions naturelles, nettoyants doux et conseils vétérinaires.">
-    <style>
-        :root {
-            --primary-color: #2c5e3b;
-            --primary-light: #eaf2eb;
-            --secondary-color: #d97706;
-            --text-color: #333333;
-            --bg-color: #f4f7f4;
-            --white: #ffffff;
-            --border-color: #e2e8f0;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); }
-
-        /* HEADER & NAVIGATION */
-        header { background-color: var(--white); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
-        .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
-        .logo { font-size: 1.8rem; font-weight: bold; color: var(--primary-color); text-decoration: none; }
-        .logo span { color: var(--secondary-color); }
-
-        /* SUBNAV HORIZONTALE */
-        .subnav { background-color: var(--primary-color); overflow-x: auto; white-space: nowrap; }
-        .subnav-container { max-width: 1200px; margin: 0 auto; display: flex; padding: 0 1rem; }
-        .subnav a { color: var(--white); text-decoration: none; padding: 0.8rem 1.2rem; font-size: 0.9rem; display: inline-block; transition: background 0.35s; }
-        .subnav a:hover, .subnav a.active { background-color: rgba(255, 255, 255, 0.2); font-weight: bold; }
-
-        /* LAYOUT PRINCIPAL */
-        .main-container { max-width: 1200px; margin: 2rem auto; display: grid; grid-template-columns: 3fr 1fr; gap: 2rem; padding: 0 1rem; }
-        @media (max-width: 768px) { .main-container { grid-template-columns: 1fr; } }
-
-        /* CONTENU ARTICLE */
-        .article-page { background: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-
-        h1 { color: var(--primary-color); font-size: 2rem; margin-bottom: 1rem; line-height: 1.2; }
-        h2 { color: var(--primary-color); font-size: 1.4rem; margin: 1.8rem 0 0.8rem 0; border-bottom: 2px solid var(--primary-light); padding-bottom: 0.3rem; }
-        p { margin-bottom: 1.2rem; }
-        ul, ol { margin-bottom: 1.2rem; padding-left: 1.5rem; }
-        li { margin-bottom: 0.4rem; }
-
-        /* BLOCS CONSEIL ET AVERTISSEMENTS */
-        .vet-tip { background-color: var(--primary-light); border-left: 4px solid var(--primary-color); padding: 1rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0; }
-        .medical-disclaimer { background-color: #fffbe3; border: 1px solid #ffe58f; padding: 1rem; border-radius: 4px; font-size: 0.85rem; margin-top: 2rem; }
-
-        /* TABLEAUX COMPARATIFS */
-        .table-responsive { overflow-x: auto; margin: 1.5rem 0; }
-        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
-        th, td { padding: 0.8rem; border: 1px solid var(--border-color); }
-        th { background-color: var(--primary-light); color: var(--primary-color); }
-        .btn-table { display: inline-block; background-color: var(--secondary-color); color: var(--white); padding: 0.4rem 0.8rem; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.85rem; }
-        .btn-table:hover { background-color: #b45309; }
-
-        /* SIDEBAR */
-        aside .widget { background: var(--white); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 1.5rem; }
-        aside h3 { color: var(--primary-color); font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
-        .sidebar-menu { list-style: none; padding: 0; }
-        .sidebar-menu li { margin-bottom: 0.8rem; }
-        .sidebar-menu a { color: var(--text-color); text-decoration: none; transition: color 0.2s; }
-        .sidebar-menu a:hover { color: var(--secondary-color); }
-
-        /* FOOTER */
-        footer { background-color: var(--primary-color); color: var(--white); text-align: center; padding: 2rem 1rem; margin-top: 3rem; }
-    </style>
+    <title>Soin des Yeux & des Oreilles chez le Chien et le Chat - VetNature</title>
+    <meta name="description" content="Guide complet sur l'hygiène et les soins naturels pour les yeux et les oreilles des chiens et chats.">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -77,102 +16,129 @@
         </div>
     </header>
 
-    <!-- BARRE DE NAVIGATION VERS LES DIFFÉRENTES PAGES -->
-    <nav class="subnav">
-        <div class="subnav-container">
-            <a href="arthrose.html">1. Arthrose & Mobilité</a>
-            <a href="digestion.html">2. Digestion & Transit</a>
-            <a href="stress.html">3. Stress & Anxiété</a>
-            <a href="allergies-peau.html">4. Allergies & Peau</a>
-            <a href="yeux-oreilles.html" class="active">5. Yeux & Oreilles</a>
-            <a href="dentaire.html">6. Hygiène Dentaire</a>
-            <a href="urinaires.html">7. Voies Urinaires</a>
-            <a href="immunite.html">8. Système Immunitaire</a>
-            <a href="senior.html">9. Vitalité Senior</a>
-            <a href="puces-tiques.html">10. Puces & Tiques</a>
-            <a href="vermifuge.html">11. Vermifuges Naturels</a>
-            <a href="top-complements.html">12. Top 5 Compléments</a>
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Conseils & Soins Naturels pour Animaux</h1>
+            <p>Guides indépendants et comparatifs pour la santé de vos compagnons au quotidien.</p>
         </div>
-    </nav>
+    </section>
+
+    <div class="category-nav">
+        <a href="arthrose.html" class="tag-btn">Arthrose & Mobilité</a>
+        <a href="digestion.html" class="tag-btn">Digestion & Transit</a>
+        <a href="stress.html" class="tag-btn">Stress & Comportement</a>
+        <a href="allergies-peau.html" class="tag-btn">Allergies & Peau</a>
+        <a href="yeux-oreilles.html" class="tag-btn active">Soin des Yeux & Oreilles</a>
+        <a href="hygiene-dentaire.html" class="tag-btn">Hygiène Dentaire</a>
+        <a href="senior.html" class="tag-btn">Vitalité Senior</a>
+        <a href="immunite.html" class="tag-btn">Système Immunitaire</a>
+    </div>
 
     <div class="main-container">
-        <main>
-            <div class="article-page">
-                <article>
-                    <h1>Soins des Yeux et des Oreilles : Nettoyage et Prévention des Infections</h1>
-                    <p>Les yeux et les oreilles sont des zones particulièrement vulnérables aux infections bactériennes, aux conjonctivites et aux otites. Une routine d'hygiène préventive douce permet d'éviter l'accumulation de cérumen et d'impuretés.</p>
+        <main class="content">
+            <article>
+                <h1>Soin des Yeux & des Oreilles : Protéger la Santé de votre Compagnon</h1>
+                <div class="article-meta">Publié le 23 Septembre 2026 • Temps de lecture : 10 min • Par Rédaction VetNature</div>
 
-                    <h2>1. Prévenir les otites et les irritations oculaires</h2>
-                    <p>Les races à oreilles tombantes (Cocker, Cavalier King Charles) ou les animaux brachycéphales (Bouledogues, Persans) présentent un canal auriculaire ou des plis faciaux retenant l'humidité, ce qui favorise la prolifération de levures comme <i>Malassezia</i>.</p>
+                <p>Les <strong>yeux</strong> et les <strong>oreilles</strong> des chiens et des chats sont des organes extrêmement fragiles, continuellement exposés aux agressions extérieures : poussière, vent, pollen, bactéries ou graines de graminées (épillets). Un entretien régulier permet de prévenir les infections chroniques comme les otites et les conjonctivites.</p>
 
-                    <h2>2. Ingrédients naturels nettoyants et apaisants</h2>
-                    <ul>
-                        <li><b>Eau florale de Bleuets :</b> Reconnue pour ses propriétés décongestionnantes et apaisantes sur les muqueuses oculaires.</li>
-                        <li><b>Hydrolat de Camomille :</b> Nettoie doucement les croûtes et réduit les traces brunes causées par les larmes sous les yeux.</li>
-                        <li><b>Calendula Officinalis :</b> Antiseptique et adoucissant puissant, parfait pour laver le pavillon auriculaire sans agresser la peau.</li>
-                        <li><b>Extrait de Pépins de Pamplemousse (EPP) :</b> Un antibactérien naturel doux adapté au soin des oreilles.</li>
-                    </ul>
+                <div class="cta-box">
+                    <h3>👁️ Soin des Yeux : Lotion & Gouttes Apaisantes HomeoAnimo</h3>
+                    <p>Nettoyez les impuretés, éliminez les traces de larmes et calmez les rougeurs oculaires avec une formule douce adaptée au pH lacrymal de votre animal.[cite: 4]</p>
+                    <a href="https://www.homeoanimo.com/pages/search-results-page?q=yeux&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn">Voir les Soins Oculaires sur HomeoAnimo</a>[cite: 4]
+                </div>
 
-                    <div class="vet-tip">
-                        <b>Le conseil du vétérinaire :</b> N'utilisez jamais de cotons-tiges pour nettoyer les oreilles de votre chien ou de votre chat. Le conduit auditif forme un "L" : vous risqueriez d'enfoncer le cérumen au fond du conduit et de perforer le tympan.
-                    </div>
+                <h2>1. Soin des Yeux : Nettoyage et Prévention</h2>
 
-                    <h2>3. Produits de soin recommandés</h2>
-                    <div class="table-responsive">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Soin / Solution</th>
-                                    <th>Utilisation Spécifique</th>
-                                    <th>Prix Moyen</th>
-                                    <th>Lien Direct</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Lotion Oculaire Bio Camomille & Bleuet</td>
-                                    <td>Nettoyage quotidien des yeux et retrait des sécrétions</td>
-                                    <td>~11.90 €</td>
-                                    <td><a href="#" target="_blank" rel="sponsored nofollow" class="btn-table">Voir l'offre</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Nettoyant Auriculaire Doux au Calendula</td>
-                                    <td>Dissout le cérumen et évite les odeurs auriculaires</td>
-                                    <td>~12.50 €</td>
-                                    <td><a href="#" target="_blank" rel="sponsored nofollow" class="btn-table">Voir l'offre</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <h3>Pourquoi le nettoyage oculaire est-il indispensable ?</h3>
+                <p>Le canal lacrymal permet normalement d'évacuer les larmes vers les fosses nasales. Lorsqu'il est étroit ou obstrué, les larmes débordent à l'extérieur de l'œil[cite: 4]. Au contact de l'air et de la peau, elles s'oxydent (provoquant des traces marron) et créent un terrain favorable au développement bactérien[cite: 4].</p>
 
-                    <div class="medical-disclaimer">
-                        <b>Avertissement médical :</b> Cet article est publié à titre informatif et ne remplace en aucun cas un diagnostic établi par un docteur vétérinaire.
-                    </div>
-                </article>
-            </div>
+                <h3>La méthode pas à pas pour nettoyer les yeux en toute sécurité</h3>
+                <p>Pour ne pas risquer de blesser la cornée ou d'infecter l'œil, appliquez scrupuleusement ces règles :[cite: 4]</p>
+                <ul>
+                    <li><b>Le bon matériel :</b> Utilisez exclusivement des compresses stériles en intissé[cite: 4]. Proscrivez le coton hydrophile classique, dont les petites fibres détachées peuvent s'accrocher à l'œil[cite: 4].</li>
+                    <li><b>Le bon geste :</b> Imbibez généreusement la compresse de lotion oculaire vétérinaire ou de sérum physiologique[cite: 4]. Passez la compresse délicatement du coin interne de l'œil (près du nez) vers le coin externe pour chasser les impuretés sans les ramener vers le canal[cite: 4].</li>
+                    <li><b>L'hygiène stricte :</b> Utilisez toujours une compresse neuve pour le deuxième œil afin d'éviter la contamination croisée d'une infection d'un œil à l'autre[cite: 4].</li>
+                </ul>
+
+                <h3>Détecter les signes d'alerte d'une pathologie oculaire</h3>
+                <p>Inspectez régulièrement la surface du globe oculaire de votre compagnon. La présence des symptômes suivants doit vous alerter :[cite: 4]</p>
+                <ul>
+                    <li>Écoulements jaunâtres ou verdâtres (signe d'une infection bactérienne)[cite: 4].</li>
+                    <li>Œil gardé fermé ou mi-clos avec clignements fréquents (signe de douleur vive)[cite: 4].</li>
+                    <li>Voile blanc, bleuté ou opacité sur la surface transparente de la cornée[cite: 4].</li>
+                    <li>Frottements répétés de la tête contre les tapis ou coups de patte sur les yeux[cite: 4].</li>
+                </ul>
+
+                <hr>
+
+                <h2>2. Soin des Oreilles : Prévenir les Otites & les Irritations</h2>
+
+                <p>Le conduit auditif du chien et du chat forme un « L » coudé. Cette anatomie particulière empêche les saletés de sortir seules et favorise l'accumulation de cérumen, la macération et le développement de levures (Malassezia) ou de bactéries.</p>
+
+                <h3>Les facteurs de risque au quotidien</h3>
+                <ul>
+                    <li><b>Oreilles tombantes :</b> Les races comme les Epagneuls, Beagles ou Cockers ont un conduit mal aéré, propice à l'humidité.</li>
+                    <li><b>Baignades répétées :</b> L'eau stagnante dans le conduit favorise le développement des otites fongiques.</li>
+                    <li><b>Présence de poils internes :</b> Les poils en excès dans le conduit bloquent l'évacuation naturelle du cérumen (fréquent chez le Caniche et le Bichon).</li>
+                </ul>
+
+                <h3>Comment effectuer un nettoyage auriculaire efficace</h3>
+                <ol>
+                    <li>Instillez quelques gouttes de lotion nettoyante auriculaire adaptée (anti-séborrhéique ou assainissante) directement dans le conduit.</li>
+                    <li>Massez délicatement la base de l'oreille pendant 20 à 30 secondes pour dissoudre les dépôts de cérumen.</li>
+                    <li>Laissez votre animal secouer la tête : cela fait remonter les impuretés dissoutes vers le pavillon.</li>
+                    <li>Essuyez l'excédent de produit et les saletés sur le pavillon à l'aide d'une compresse (jamais de cotons-tiges dans le conduit !).</li>
+                </ol>
+
+                <div class="medical-disclaimer">
+                    <b>Avertissement médical :</b> Un œil rouge/douloureux ou une oreille malodorante avec secousses répétées de la tête nécessite un contrôle vétérinaire urgent[cite: 4]. Ne mettez jamais de produit auriculaire si le tympan risque d'être perforé, ni de collyre humain sur un œil[cite: 4].
+                </div>
+
+                <h2>3. Comparatif des Soins Recommandés</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produit / Solution</th>
+                            <th>Indication & Action</th>
+                            <th>Lien</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Lotion Oculaire Apaisante</strong></td>
+                            <td>Nettoyage des larmes & soulagement des irritations</td>
+                            <td><a href="https://www.homeoanimo.com/pages/search-results-page?q=yeux&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lotion Auriculaire Assainissante</strong></td>
+                            <td>Dissolution du cérumen & hygiène des oreilles</td>
+                            <td><a href="https://www.homeoanimo.com/pages/search-results-page?q=oreilles&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn-table">Voir sur HomeoAnimo</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
         </main>
 
-        <aside>
-            <div class="widget">
+        <aside class="sidebar">
+            <div class="sidebar-widget">
                 <h3>Articles Populaires</h3>
-                <ul class="sidebar-menu">
-                    <li><a href="arthrose.html">▸ Arthrose & Mobilité</a></li>
-                    <li><a href="digestion.html">▸ Digestion & Microbiote</a></li>
-                    <li><a href="stress.html">▸ Stress & Anxiété</a></li>
-                    <li><a href="allergies-peau.html">▸ Allergies & Peau</a></li>
-                    <li><a href="top-complements.html">▸ Top 5 Compléments</a></li>
+                <ul>
+                    <li><a href="arthrose.html">Arthrose & Mobilité</a></li>
+                    <li><a href="digestion.html">Digestion & Microbiote</a></li>
+                    <li><a href="stress.html">Stress & Anxiété</a></li>
+                    <li><a href="allergies-peau.html">Allergies & Peau</a></li>
                 </ul>
             </div>
-
-            <div class="widget">
+            <div class="sidebar-widget">
                 <h3>À propos de VetNature</h3>
-                <p style="font-size: 0.85rem;">VetNature vous propose des guides rédigés sur la base de données vétérinaires et de naturopathie animale pour soigner vos animaux au naturel.</p>
+                <p>VetNature vous propose des guides rédigés sur la base de données vétérinaires et de naturopathie animale pour soigner vos animaux au naturel.</p>
             </div>
         </aside>
     </div>
 
     <footer>
-        <p>&copy; 2026 VetNature. Tous droits réservés.</p>
+        <p>&copy; 2026 VetNature - Tous droits réservés.</p>
     </footer>
 
 </body>
