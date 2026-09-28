@@ -13,7 +13,7 @@
             --text-color: #333333;
             --bg-color: #f4f7f4;
             --white: #ffffff;
-            --border-color: #e2e8f0;
+            --border-color: #cbd5e1;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,18 +31,24 @@
         .subnav a { color: var(--white); text-decoration: none; padding: 0.8rem 1.2rem; font-size: 0.9rem; display: inline-block; transition: background 0.35s; }
         .subnav a:hover, .subnav a.active { background-color: rgba(255, 255, 255, 0.2); font-weight: bold; }
 
-        /* HERO BANNER - MÊME DESIGN QUE INDEX.HTML */
-        .hero { background: linear-gradient(135deg, var(--primary-color) 0%, #1e3f27 100%); color: var(--white); padding: 2.5rem 1rem; text-align: center; }
+        /* HERO BANNER */
+        .hero { background: linear-gradient(135deg, var(--primary-color) 0%, #1e3f27 100%); color: var(--white); padding: 2.5rem 1rem; text-align: center; margin-bottom: 2rem; }
         .hero-container { max-width: 800px; margin: 0 auto; }
-        .hero h1 { font-size: 2.2rem; margin-bottom: 0.8rem; color: var(--white); border-bottom: none; padding-bottom: 0; }
-        .hero p { font-size: 1.1rem; opacity: 0.95; color: var(--primary-light); margin-bottom: 0; }
+        .hero h1 { font-size: 2rem; margin-bottom: 0.5rem; color: var(--white); border: none; padding: 0; }
+        .hero p { font-size: 1.05rem; color: var(--primary-light); margin: 0; }
 
         /* LAYOUT PRINCIPAL */
-        .main-container { max-width: 1200px; margin: 2rem auto; display: grid; grid-template-columns: 3fr 1fr; gap: 2rem; padding: 0 1rem; }
+        .main-container { max-width: 1200px; margin: 0 auto 2rem auto; display: grid; grid-template-columns: 3fr 1fr; gap: 2rem; padding: 0 1rem; }
         @media (max-width: 768px) { .main-container { grid-template-columns: 1fr; } }
 
         /* CARTE CONTENU PRINCIPAL */
-        .card { background: var(--white); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 2rem; }
+        .article-card { 
+            background: var(--white); 
+            padding: 2.5rem; 
+            border-radius: 10px; 
+            border: 1px solid var(--border-color); 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+        }
 
         .badge { display: inline-block; background-color: var(--primary-light); color: var(--primary-color); padding: 0.3rem 0.8rem; border-radius: 20px; font-weight: 600; font-size: 0.85rem; margin-bottom: 1rem; }
 
@@ -55,7 +61,7 @@
         .vet-tip { background-color: var(--primary-light); border-left: 4px solid var(--primary-color); padding: 1.2rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; color: var(--primary-color); }
         .medical-disclaimer { background-color: #fffbe3; border: 1px solid #ffe58f; padding: 1rem; border-radius: 6px; font-size: 0.85rem; margin-top: 2rem; color: #856404; }
 
-        /* TABLEAU & BOUTONS AFFILIATION EXAMEN INDEX */
+        /* TABLEAU & BOUTONS */
         .table-responsive { overflow-x: auto; margin: 1.5rem 0; }
         table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
         th, td { padding: 0.8rem; border: 1px solid var(--border-color); }
@@ -64,7 +70,14 @@
         .btn-table:hover { background-color: #b45309; }
 
         /* SIDEBAR */
-        aside .widget { background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 1.5rem; }
+        aside .widget { 
+            background: var(--white); 
+            padding: 1.5rem; 
+            border-radius: 10px; 
+            border: 1px solid var(--border-color); 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+            margin-bottom: 1.5rem; 
+        }
         aside h3 { color: var(--primary-color); font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 2px solid var(--primary-light); padding-bottom: 0.5rem; }
         .sidebar-menu { list-style: none; padding: 0; }
         .sidebar-menu li { margin-bottom: 0.8rem; }
@@ -101,7 +114,7 @@
         </div>
     </nav>
 
-    <!-- BANNIÈRE HERO DU TITRE -->
+    <!-- BANNIÈRE EN-TÊTE -->
     <section class="hero">
         <div class="hero-container">
             <h1>Accompagner le Vieillissement du Chien et du Chat Senior</h1>
@@ -111,7 +124,7 @@
 
     <div class="main-container">
         <main>
-            <div class="card">
+            <div class="article-card">
                 <article>
                     <span class="badge">Naturopathie Senior</span>
                     
