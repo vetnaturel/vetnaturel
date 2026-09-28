@@ -6,78 +6,7 @@
     <title>Arthrose du Chien : Symptômes, Alimentation et Traitements Naturels - VetNature</title>
     <meta name="description" content="Guide complet sur l'arthrose canine : repérer les symptômes et soulager votre chien naturellement avec la phytothérapie, l'alimentation et la chondroprotection.">
     <style>
-        :root {
-            --primary-color: #2c5e3b;
-            --primary-light: #eaf2eb;
-            --secondary-color: #d97706;
-            --text-color: #333333;
-            --bg-color: #f4f7f4;
-            --white: #ffffff;
-            --border-color: #e2e8f0;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); }
-
-        /* HEADER */
-        header { background-color: var(--white); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
-        .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
-        .logo { font-size: 1.8rem; font-weight: bold; color: var(--primary-color); text-decoration: none; }
-        .logo span { color: var(--secondary-color); }
-
-        /* HERO BANNER ACCUEIL */
-        .hero { background: linear-gradient(135deg, #1b432c 0%, #2c5e3b 100%); color: var(--white); padding: 3rem 1rem; text-align: center; }
-        .hero-container { max-width: 800px; margin: 0 auto; }
-        .hero h1 { font-size: 2.2rem; margin-bottom: 0.8rem; font-weight: 700; color: var(--white); border: none; padding: 0; }
-        .hero p { font-size: 1.1rem; opacity: 0.9; color: var(--white); margin: 0; }
-
-        /* BARRE DE CATÉGORIES / FILTRES */
-        .category-nav { max-width: 1200px; margin: 1.5rem auto 0 auto; padding: 0 1rem; display: flex; gap: 0.6rem; overflow-x: auto; white-space: nowrap; }
-        .tag-btn { background: var(--white); color: #4a5568; text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; border: 1px solid var(--border-color); transition: all 0.2s; }
-        .tag-btn:hover { border-color: var(--secondary-color); color: var(--secondary-color); }
-        .tag-btn.active { background-color: var(--secondary-color); color: var(--white); border-color: var(--secondary-color); }
-
-        /* LAYOUT PRINCIPAL */
-        .main-container { max-width: 1200px; margin: 1.5rem auto 3rem auto; display: grid; grid-template-columns: 3fr 1fr; gap: 2rem; padding: 0 1rem; }
-        @media (max-width: 768px) { .main-container { grid-template-columns: 1fr; } }
-
-        /* CARTE DE CONTENU */
-        .card { background: var(--white); padding: 2.5rem; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        .article-title { color: var(--primary-color); font-size: 1.9rem; margin-bottom: 0.5rem; line-height: 1.3; font-weight: 700; }
-        .article-meta { font-size: 0.85rem; color: #a0aec0; margin-bottom: 1.5rem; }
-
-        h2 { color: var(--primary-color); font-size: 1.3rem; margin: 1.8rem 0 0.8rem 0; border-bottom: 2px solid var(--primary-light); padding-bottom: 0.3rem; }
-        h3 { color: var(--primary-color); font-size: 1.1rem; margin: 1.2rem 0 0.5rem 0; }
-        p { margin-bottom: 1rem; color: #4a5568; font-size: 0.98rem; }
-        ul, ol { margin-bottom: 1.2rem; padding-left: 1.5rem; color: #4a5568; }
-        li { margin-bottom: 0.4rem; }
-
-        /* BLOC DE RECOMMANDATION */
-        .recommendation-box { background-color: var(--primary-light); border: 1px solid #c2e0c8; border-radius: 8px; padding: 1.5rem; margin: 1.8rem 0; }
-        .recommendation-box h3 { color: var(--primary-color); font-size: 1.05rem; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
-        .recommendation-box p { color: #2d3748; margin-bottom: 1rem; font-size: 0.92rem; }
-        .btn-orange { display: inline-block; background-color: var(--secondary-color); color: var(--white); padding: 0.6rem 1.2rem; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 0.88rem; transition: background 0.2s; }
-        .btn-orange:hover { background-color: #b45309; }
-
-        /* TABLEAU RECOMMANDATIONS */
-        .table-responsive { overflow-x: auto; margin: 1.5rem 0; }
-        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
-        th, td { padding: 0.8rem; border: 1px solid var(--border-color); }
-        th { background-color: var(--primary-light); color: var(--primary-color); }
-
-        /* AVERTISSEMENT */
-        .medical-disclaimer { background-color: #fffbe3; border: 1px solid #ffe58f; padding: 1rem; border-radius: 6px; font-size: 0.85rem; margin-top: 2rem; color: #856404; }
-
-        /* SIDEBAR */
-        aside .widget { background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 1.5rem; }
-        aside h3 { color: var(--primary-color); font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 2px solid var(--primary-light); padding-bottom: 0.5rem; }
-        .partner-badge { display: inline-block; background-color: #fef3c7; color: #d97706; font-size: 0.75rem; font-weight: bold; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.8rem; }
-        .sidebar-menu { list-style: none; padding: 0; }
-        .sidebar-menu li { margin-bottom: 0.7rem; font-size: 0.9rem; }
-        .sidebar-menu a { color: #4a5568; text-decoration: none; transition: color 0.2s; }
-        .sidebar-menu a:hover { color: var(--secondary-color); }
-
-        footer { background-color: var(--primary-color); color: var(--white); text-align: center; padding: 2rem 1rem; margin-top: 3rem; }
+        <link rel="stylesheet" href="style.css">
     </style>
 </head>
 <body>
