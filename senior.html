@@ -3,93 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soin du Chien et Chat Âgé : Vitalité Senior & Vieillissement - VetNature</title>
-    <meta name="description" content="Accompagner le vieillissement de votre chien ou chat senior : solutions naturelles pour la vitalité, le soutien cérébral, articulaire et rénal.">
-    <style>
-        :root {
-            --primary-color: #2c5e3b;
-            --primary-light: #eaf2eb;
-            --secondary-color: #d97706;
-            --text-color: #333333;
-            --bg-color: #f4f7f4;
-            --white: #ffffff;
-            --border-color: #e2e8f0;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); }
-
-        /* HEADER */
-        header { background-color: var(--white); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
-        .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
-        .logo { font-size: 1.8rem; font-weight: bold; color: var(--primary-color); text-decoration: none; }
-        .logo span { color: var(--secondary-color); }
-
-        /* BANNIÈRE HERO DE L'ACCUEIL */
-        .hero { background: linear-gradient(135deg, #1b432c 0%, #2c5e3b 100%); color: var(--white); padding: 3rem 1rem; text-align: center; }
-        .hero-container { max-width: 800px; margin: 0 auto; }
-        .hero h1 { font-size: 2.2rem; margin-bottom: 0.8rem; font-weight: 700; color: var(--white); border: none; padding: 0; }
-        .hero p { font-size: 1.1rem; opacity: 0.9; color: var(--white); margin: 0; }
-
-        /* NAVIGATION FILTRES / TAGS (IDENTIQUE À L'ACCUEIL) */
-        .category-nav { max-width: 1200px; margin: 1.5rem auto 0 auto; padding: 0 1rem; display: flex; gap: 0.6rem; overflow-x: auto; white-space: nowrap; }
-        .tag-btn { background: var(--white); color: #4a5568; text-decoration: none; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; border: 1px solid var(--border-color); transition: all 0.2s; }
-        .tag-btn:hover { border-color: var(--secondary-color); color: var(--secondary-color); }
-        .tag-btn.active { background-color: var(--secondary-color); color: var(--white); border-color: var(--secondary-color); }
-
-        /* LAYOUT PRINCIPAL */
-        .main-container { max-width: 1200px; margin: 1.5rem auto 3rem auto; display: grid; grid-template-columns: 3fr 1fr; gap: 2rem; padding: 0 1rem; }
-        @media (max-width: 768px) { .main-container { grid-template-columns: 1fr; } }
-
-        /* CARTE DE CONTENU PRINCIPAL */
-        .card { background: var(--white); padding: 2.5rem; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        
-        .article-title { color: var(--primary-color); font-size: 1.9rem; margin-bottom: 0.5rem; line-height: 1.3; font-weight: 700; }
-        .article-meta { font-size: 0.85rem; color: #a0aec0; margin-bottom: 1.5rem; }
-
-        h2 { color: var(--primary-color); font-size: 1.3rem; margin: 1.8rem 0 0.8rem 0; border-bottom: 2px solid var(--primary-light); padding-bottom: 0.3rem; }
-        p { margin-bottom: 1rem; color: #4a5568; font-size: 0.98rem; }
-        ul, ol { margin-bottom: 1.2rem; padding-left: 1.5rem; color: #4a5568; }
-        li { margin-bottom: 0.4rem; }
-
-        /* BLOC DE RECOMMANDATION (EXACTEMENT COMME SUR L'ACCUEIL) */
-        .recommendation-box { background-color: var(--primary-light); border: 1px solid #c2e0c8; border-radius: 8px; padding: 1.5rem; margin: 1.8rem 0; }
-        .recommendation-box h3 { color: var(--primary-color); font-size: 1.05rem; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
-        .recommendation-box p { color: #2d3748; margin-bottom: 1rem; font-size: 0.92rem; }
-        .btn-orange { display: inline-block; background-color: var(--secondary-color); color: var(--white); padding: 0.6rem 1.2rem; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 0.88rem; transition: background 0.2s; }
-        .btn-orange:hover { background-color: #b45309; }
-
-        /* TABLEAU RECOMMANDATIONS */
-        .table-responsive { overflow-x: auto; margin: 1.5rem 0; }
-        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
-        th, td { padding: 0.8rem; border: 1px solid var(--border-color); }
-        th { background-color: var(--primary-light); color: var(--primary-color); }
-
-        /* SIDEBAR (WIDGETS STYLE INDEX) */
-        aside .widget { background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 1.5rem; }
-        aside h3 { color: var(--primary-color); font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 2px solid var(--primary-light); padding-bottom: 0.5rem; }
-        
-        .partner-badge { display: inline-block; background-color: #fef3c7; color: #d97706; font-size: 0.75rem; font-weight: bold; padding: 0.2rem 0.5rem; border-radius: 4px; margin-bottom: 0.8rem; }
-        
-        .sidebar-menu { list-style: none; padding: 0; }
-        .sidebar-menu li { margin-bottom: 0.7rem; font-size: 0.9rem; }
-        .sidebar-menu a { color: #4a5568; text-decoration: none; transition: color 0.2s; }
-        .sidebar-menu a:hover { color: var(--secondary-color); }
-
-        /* FOOTER */
-        footer { background-color: var(--primary-color); color: var(--white); text-align: center; padding: 2rem 1rem; margin-top: 3rem; }
-    </style>
+    <title>Soins pour Animaux Seniors : Préserver la Vitalité et le Confort du Grand Âge - VetNature</title>
+    <meta name="description" content="Guide complet sur la prise en charge naturelle des chiens et chats âgés : articulation, tonus, digestion et fonctions cognitives.">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="header-container">
-            <a href="/" class="logo">Vet<span>Nature</span></a>
-            <div><strong>Guide Naturopathie & Phytothérapie Vétérinaire</strong></div>
+            <a href="index.html" class="logo">Vet<span>Nature</span></a>
+            <div><strong>Guide Naturopathie & Phytothérapie Animale</strong></div>
         </div>
     </header>
 
-    <!-- BANNIÈRE EN-TÊTE HERO -->
     <section class="hero">
         <div class="hero-container">
             <h1>Conseils & Soins Naturels pour Animaux</h1>
@@ -97,86 +23,66 @@
         </div>
     </section>
 
-    <!-- BARRE DE CATEGORIES / FILTRES DU HAUT (BOUTON ARTHROSE ORANGE D'ORIGINE) -->
     <div class="category-nav">
-        <a href="arthrose.html" class="tag-btn active">Arthrose & Mobilité</a>
+        <a href="arthrose.html" class="tag-btn">Arthrose & Mobilité</a>
         <a href="digestion.html" class="tag-btn">Digestion & Transit</a>
         <a href="stress.html" class="tag-btn">Stress & Comportement</a>
-        <a href="yeux-oreilles.html" class="tag-btn">Soin des Yeux</a>
-        <a href="dentaire.html" class="tag-btn">Hygiène Dentaire</a>
+        <a href="yeux-oreilles.html" class="tag-btn">Soin des Yeux & Oreilles</a>
+        <a href="hygiene-dentaire.html" class="tag-btn">Hygiène Dentaire</a>
         <a href="top-complements.html" class="tag-btn">Top 5 Compléments</a>
         <a href="allergies-peau.html" class="tag-btn">Allergies & Peau</a>
-        <a href="senior.html" class="tag-btn">Chiot & Senior</a>
+        <a href="chiot-chaton.html" class="tag-btn">Chiot & Chaton</a>
+        <a href="senior.html" class="tag-btn active">Seniors & Grand Âge</a>
+        <a href="chute-poils.html" class="tag-btn">Chute de Poils & Pelage</a>
+        <a href="vermifuge.html" class="tag-btn">Vermifuges & Vers</a>
     </div>
 
     <div class="main-container">
-        <main>
-            <div class="card">
-                <article>
-                    <h1 class="article-title">Chien et Chat Senior : Symptômes, Alimentation et Soins Naturels pour le Vieillissement</h1>
-                    <div class="article-meta">Publié le 28 Septembre 2026 • Temps de lecture : 8 min • Par Rédaction VetNature</div>
+        <main class="content">
+            <article class="card">
+                <h1 class="article-title">Soins pour Animaux Seniors : Préserver la Vitalité et le Confort du Grand Âge</h1>
+                <div class="article-meta">Publié le 28 Septembre 2026 • Temps de lecture : 9 min • Par Rédaction VetNature</div>
 
-                    <p>Avec l'âge, nos compagnons rencontrent de nouveaux défis : raideurs articulaires, baisse de tonus, perte d'appétit ou déclin cognitif. Une prise en charge globale permet d'améliorer leur confort de vie et de prolonger leur vitalité.</p>
+                <p>Un chien ou un chat entre dans la catégorie "senior" autour de 7 à 9 ans (selon son gabarit). Avec l'âge, l'organisme subit un ralentissement général : métabolisme plus lent, baisse de l'efficacité rénale, apparition de raideurs articulaires et déclin cognitif. Pourtant, la vieillesse n'est pas une fatalité. Un accompagnement préventif combinant alimentation adaptée, phytothérapie et aménagement de l'habitat permet de prolonger significativement la durée de vie en bonne santé de votre compagnon.</p>
 
-                    <!-- BLOC RECOMMANDATION -->
-                    <div class="recommendation-box">
-                        <h3>🔍 Recommandation N°1 : La formule Vitalité & Cerveau Senior</h3>
-                        <p>Pour soutenir la circulation cérébrale, stimuler la vitalité et réduire la fatigue chez l'animal âgé, nous recommandons les solutions naturelles ciblées.</p>
-                        <a href="#" class="btn-orange">Voir les soins Senior sur HomeoAnimo</a>
+                <div class="recommendation-box">
+                    <div>
+                        <h3>👴 Recommandation Vitalité Senior : Complexe Grand Âge HomeoAnimo</h3>
+                        <p>Pour soutenir le cœur, préserver la fonction rénale et maintenir l'énergie globale de votre animal âgé, découvrez la formule naturelle ciblée.</p>
+                        <a href="https://www.homeoanimo.com/pages/search-results-page?q=senior&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn-orange">Voir les soins Senior sur HomeoAnimo</a>
                     </div>
+                </div>
 
-                    <h2>1. Identifier les signes du vieillissement</h2>
-                    <p>Le statut « senior » s'installe généralement vers 7 à 9 ans chez le chien (selon sa taille) et vers 10 à 11 ans chez le chat. Les principaux signes d'alerte sont :</p>
-                    <ul>
-                        <li><b>Ralentissement général :</b> Difficulté à se lever le matin, réticence à monter les marches.</li>
-                        <li><b>Troubles du sommeil et désorientation :</b> Vocalisations nocturnes, perte des habitudes de propreté.</li>
-                        <li><b>Perte de masse musculaire :</b> Fonte musculaire au niveau du dos et des cuisses.</li>
-                    </ul>
+                <h2>1. Anticiper les désordres liés au vieillissement</h2>
+                <p>L'observation attentive du senior permet d'intervenir dès les premiers symptômes :</p>
+                <ul>
+                    <li><b>Insuffisance rénale débutante :</b> L'animal boit et urine en quantité excessive (polyuro-polydipsie), perd l'appétit ou vomit à jeun.</li>
+                    <li><b>Raideurs et arthrose :</b> Difficulté à se lever le matin, hésitation à sauter sur le canapé ou à monter les escaliers.</li>
+                    <li><b>Dysfonction cognitive (Alzheimer du chien/chat) :</b> Désorientation, miaulements ou aboiements nocturnes sans raison, perte des habitudes de propreté.</li>
+                </ul>
 
-                    <h2>2. Plantes et nutriments pour la vitalité senior</h2>
-                    <ul>
-                        <li><b>Ginkgo Biloba :</b> Favorise la micro-circulation cérébrale et aide à maintenir les fonctions cognitives chez l'animal âgé.</li>
-                        <li><b>Ginseng Végétal & Eleuthérocoque :</b> Adaptogènes reconnus pour stimuler la vitalité et réduire la fatigue chronique.</li>
-                        <li><b>Huile de Poissons Riches en Oméga-3 (EPA/DHA) :</b> Protège les articulations et soutient la fonction cardiaque et rénale.</li>
-                    </ul>
+                <h2>2. La phytothérapie et les nutriments du grand âge</h2>
+                <p>Certains actifs naturels protègent les organes vitaux et stimulent la vitalité :</p>
+                <ul>
+                    <li><b>Les antioxydants (Resvératrol, Curcuma, Vitamine E) :</b> Neutralisent les radicaux libres responsables du vieillissement cellulaire.</li>
+                    <li><b>Le Ginkgo Biloba :</b> Favorise la microcirculation sanguine cérébrale et aide à maintenir les facultés cognitives.</li>
+                    <li><b>Les Omega-3 (EPA/DHA) :</b> Protègent la fonction cardiaque, les reins et apaisent l'inflammation articulaire.</li>
+                </ul>
 
-                    <h2>3. Produits recommandés pour chiens et chats seniors</h2>
-                    <div class="table-responsive">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Produit</th>
-                                    <th>Bénéfices Principal</th>
-                                    <th>Prix Moyen</th>
-                                    <th>Lien Direct</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Tonique Vitalité Senior & Ginkgo Bio</td>
-                                    <td>Soutien de la mémoire, de la lucidité et du tonus général</td>
-                                    <td>~21.90 €</td>
-                                    <td><a href="#" target="_blank" class="btn-orange" style="padding:0.4rem 0.8rem; font-size:0.8rem;">Voir l'offre</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Coussin Orthopédique à Mémoire de Forme</td>
-                                    <td>Soulagement des points de pression et de l'arthrose</td>
-                                    <td>~39.90 €</td>
-                                    <td><a href="#" target="_blank" class="btn-orange" style="padding:0.4rem 0.8rem; font-size:0.8rem;">Voir l'offre</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div class="recommendation-box">
+                    <div>
+                        <p><b>Avis & Conseil santé :</b> Effectuez un bilan sanguin annuel chez un docteur vétérinaire dès les 8 ans de votre animal. Un dépistage précoce des paramètres rénaux et hépatiques permet d'adapter la complémentation avant l'apparition de symptômes cliniques graves.</p>
                     </div>
-                </article>
-            </div>
+                </div>
+            </article>
         </main>
 
-        <aside>
+        <aside class="sidebar">
             <div class="widget">
                 <span class="partner-badge">Offre Partenaire</span>
                 <h3>Soins Naturels HomeoAnimo</h3>
-                <p style="font-size:0.88rem; color:#4a5568; margin-bottom:1rem;">Découvrez des remèdes naturels et homéopathiques sur-mesure pour la santé globale de votre animal.</p>
-                <a href="#" class="btn-orange" style="width:100%; text-align:center;">Visiter la boutique</a>
+                <p>Découvrez des remèdes naturels et homéopathiques sur-mesure pour la santé globale de votre animal.</p>
+                <a href="https://www.homeoanimo.com/pages/search-results-page?q=senior&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn-orange" style="display:block; text-align:center; margin-top:10px;">Visiter la boutique</a>
             </div>
 
             <div class="widget">
@@ -186,9 +92,13 @@
                     <li><a href="digestion.html">• Digestion & Transit</a></li>
                     <li><a href="stress.html">• Stress & Comportement</a></li>
                     <li><a href="yeux-oreilles.html">• Soin des Yeux</a></li>
-                    <li><a href="dentaire.html">• Hygiène Dentaire</a></li>
+                    <li><a href="hygiene-dentaire.html">• Hygiène Dentaire</a></li>
                     <li><a href="top-complements.html">• Top 5 Compléments 2026</a></li>
                     <li><a href="allergies-peau.html">• Allergies & Peau</a></li>
+                    <li><a href="chiot-chaton.html">• Chiot & Chaton</a></li>
+                    <li><a href="senior.html">• Seniors & Grand Âge</a></li>
+                    <li><a href="chute-poils.html">• Chute de Poils & Pelage</a></li>
+                    <li><a href="vermifuge.html">• Vermifuges & Vers</a></li>
                 </ul>
             </div>
         </aside>
