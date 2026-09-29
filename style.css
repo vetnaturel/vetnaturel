@@ -101,3 +101,26 @@ footer { background-color: var(--primary-color); color: var(--white); text-align
     color: #ffffff;
     border-color: #e67e22;
 }
+
+/* Style du Footer */
+footer {
+    background-color: #2d5a3f;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 40px;
+    clear: both;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer p {
+    margin: 5px 0;
+    color: #ffffff;
+    font-size: 0.9em;
+}
+
+footer p i {
+    font-size: 0.85em;
+    opacity: 0.85;
+}
