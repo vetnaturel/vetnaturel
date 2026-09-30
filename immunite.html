@@ -3,181 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booster l'Immunité Chien et Chat : Infection & Fatigue - VetNature</title>
+    <title>Booster l'Immunité Chien et Chat : Échinacée, Propolis & Soins Naturels | VetNaturel</title>
     <meta name="description" content="Découvrez comment renforcer le système immunitaire de votre chien ou chat grâce aux plantes, vitamines et produits naturels contre les infections.">
-    <style>
-        :root {
-            --primary-color: #2c5e3b;
-            --primary-light: #eaf2eb;
-            --secondary-color: #d97706;
-            --text-color: #333333;
-            --bg-color: #f4f7f4;
-            --white: #ffffff;
-            --border-color: #e2e8f0;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); }
-
-        /* HEADER & NAVIGATION */
-        header { background-color: var(--white); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
-        .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
-        .logo { font-size: 1.8rem; font-weight: bold; color: var(--primary-color); text-decoration: none; }
-        .logo span { color: var(--secondary-color); }
-
-        /* SUBNAV HORIZONTALE */
-        .subnav { background-color: var(--primary-color); overflow-x: auto; white-space: nowrap; }
-        .subnav-container { max-width: 1200px; margin: 0 auto; display: flex; padding: 0 1rem; }
-        .subnav a { color: var(--white); text-decoration: none; padding: 0.8rem 1.2rem; font-size: 0.9rem; display: inline-block; transition: background 0.35s; }
-        .subnav a:hover, .subnav a.active { background-color: rgba(255, 255, 255, 0.2); font-weight: bold; }
-
-        /* LAYOUT PRINCIPAL */
-        .main-container { max-width: 1200px; margin: 2rem auto; display: grid; grid-template-columns: 3fr 1fr; gap: 2rem; padding: 0 1rem; }
-        @media (max-width: 768px) { .main-container { grid-template-columns: 1fr; } }
-
-        /* CONTENU ARTICLE */
-        .article-page { background: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-
-        h1 { color: var(--primary-color); font-size: 2rem; margin-bottom: 1rem; line-height: 1.2; }
-        h2 { color: var(--primary-color); font-size: 1.4rem; margin: 1.8rem 0 0.8rem 0; border-bottom: 2px solid var(--primary-light); padding-bottom: 0.3rem; }
-        p { margin-bottom: 1.2rem; }
-        ul, ol { margin-bottom: 1.2rem; padding-left: 1.5rem; }
-        li { margin-bottom: 0.4rem; }
-
-        /* BLOCS CONSEIL ET AVERTISSEMENTS */
-        .vet-tip { background-color: var(--primary-light); border-left: 4px solid var(--primary-color); padding: 1rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0; }
-        .medical-disclaimer { background-color: #fffbe3; border: 1px solid #ffe58f; padding: 1rem; border-radius: 4px; font-size: 0.85rem; margin-top: 2rem; }
-
-        /* TABLEAUX COMPARATIFS */
-        .table-responsive { overflow-x: auto; margin: 1.5rem 0; }
-        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; }
-        th, td { padding: 0.8rem; border: 1px solid var(--border-color); }
-        th { background-color: var(--primary-light); color: var(--primary-color); }
-        .btn-table { display: inline-block; background-color: var(--secondary-color); color: var(--white); padding: 0.4rem 0.8rem; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.85rem; }
-        .btn-table:hover { background-color: #b45309; }
-
-        /* SIDEBAR */
-        aside .widget { background: var(--white); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 1.5rem; }
-        aside h3 { color: var(--primary-color); font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
-        .sidebar-menu { list-style: none; padding: 0; }
-        .sidebar-menu li { margin-bottom: 0.8rem; }
-        .sidebar-menu a { color: var(--text-color); text-decoration: none; transition: color 0.2s; }
-        .sidebar-menu a:hover { color: var(--secondary-color); }
-
-        /* FOOTER */
-        footer { background-color: var(--primary-color); color: var(--white); text-align: center; padding: 2rem 1rem; margin-top: 3rem; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="header-container">
-            <a href="/" class="logo">Vet<span>Nature</span></a>
+            <a href="index.html" class="logo">Vet<span>Naturel</span></a>
             <div><strong>Guide Naturopathie & Phytothérapie Vétérinaire</strong></div>
         </div>
     </header>
 
-    <!-- BARRE DE NAVIGATION VERS LES DIFFÉRENTES PAGES -->
-    <nav class="subnav">
-        <div class="subnav-container">
-            <a href="arthrose.html">1. Arthrose & Mobilité</a>
-            <a href="digestion.html">2. Digestion & Transit</a>
-            <a href="stress.html">3. Stress & Anxiété</a>
-            <a href="allergies-peau.html">4. Allergies & Peau</a>
-            <a href="yeux-oreilles.html">5. Yeux & Oreilles</a>
-            <a href="dentaire.html">6. Hygiène Dentaire</a>
-            <a href="urinaires.html">7. Voies Urinaires</a>
-            <a href="immunite.html" class="active">8. Système Immunitaire</a>
-            <a href="senior.html">9. Vitalité Senior</a>
-            <a href="puces-tiques.html">10. Puces & Tiques</a>
-            <a href="vermifuge.html">11. Vermifuges Naturels</a>
-            <a href="top-complements.html">12. Top 5 Compléments</a>
+    <section class="hero">
+        <div class="hero-container">
+            <p class="hero-title">Conseils & Soins Naturels pour Animaux</p>
+            <p>Guides indépendants et comparatifs pour la santé de vos compagnons au quotidien.</p>
         </div>
-    </nav>
+    </section>
+
+    <div class="category-nav">
+        <a href="arthrose.html" class="tag-btn">Arthrose & Mobilité</a>
+        <a href="digestion.html" class="tag-btn">Digestion & Transit</a>
+        <a href="stress.html" class="tag-btn">Stress & Comportement</a>
+        <a href="yeux-oreilles.html" class="tag-btn">Soin des Yeux & Oreilles</a>
+        <a href="hygiene-dentaire.html" class="tag-btn">Hygiène Dentaire</a>
+        <a href="top-complements.html" class="tag-btn">Top 5 Compléments</a>
+        <a href="allergies-peau.html" class="tag-btn">Allergies & Peau</a>
+        <a href="chiot-chaton.html" class="tag-btn">Chiot & Chaton</a>
+        <a href="senior.html" class="tag-btn">Seniors & Grand Âge</a>
+        <a href="chute-poils.html" class="tag-btn">Chute de Poils & Pelage</a>
+        <a href="vermifuge.html" class="tag-btn">Vermifuges & Vers</a>
+        <a href="immunite.html" class="tag-btn active">Immunité & Tonus</a>
+    </div>
 
     <div class="main-container">
-        <main>
-            <div class="article-page">
-                <article>
-                    <h1>Renforcer le Système Immunitaire du Chien et du Chat</h1>
-                    <p>Changements de saison, convalescence, baisse de forme ou vieillissement : le système immunitaire de nos animaux de compagnie est régulièrement sollicité. Soutenir leurs défenses naturelles aide à prévenir les infections virales ou bactériennes répétées.</p>
+        <main class="content">
+            <article class="card">
+                <h1 class="article-title">Renforcer le Système Immunitaire du Chien et du Chat : Défenses Naturelles et Tonus</h1>
+                <div class="article-meta">Publié le 30 Septembre 2026 • Temps de lecture : 9 min • Par Rédaction VetNaturel</div>
 
-                    <h2>1. Quand faut-il stimuler l'immunité de son animal ?</h2>
-                    <p>Certains moments clés nécessitent un coup de pouce nutritionnel :</p>
-                    <ul>
-                        <li><b>À l'automne et à l'approche de l'hiver :</b> Pour préparer l'organisme aux baisses de température et au coryza/toux du chenil.</li>
-                        <li><b>Pendant une convalescence :</b> Après une intervention chirurgicale, un traitement antibiotique ou une maladie.</li>
-                        <li><b>Chez l'animal âgé :</b> L'immunosénescence affaiblit progressivement les défenses naturelles.</li>
-                    </ul>
+                <p>Changements de saison, convalescence, baisse de forme ou vieillissement : le système immunitaire de nos animaux de compagnie est régulièrement sollicité. Soutenir leurs défenses naturelles aide à prévenir les infections virales ou bactériennes répétées.</p>
 
-                    <h2>2. Ingrédients naturels stimulateurs d'immunité</h2>
-                    <ul>
-                        <li><b>Échinacée (*Echinacea purpurea*) :</b> Plante immunostimulante majeure qui augmente la production de globules blancs.</li>
-                        <li><b>Propolis & Gelée Royale :</b> Produits de la ruche riches en vitamines, oligo-éléments et substances antibactériennes.</li>
-                        <li><b>Champignons Médicinaux (Reishi, Shiitaké) :</b> Riches en bêta-glucanes pour rééquilibrer la réponse immunitaire.</li>
-                        <li><b>Spiruline :</b> Micro-algue concentrée en nutriments essentiels pour lutter contre la fatigue physique.</li>
-                    </ul>
-
-                    <div class="vet-tip">
-                        <b>Le conseil du vétérinaire :</b> Effectuer une cure d'Échinacée ou de Propolis pendant 3 semaines aux changements de saison (printemps et automne) offre une excellente protection préventive.
+                <div class="recommendation-box">
+                    <div>
+                        <h3>🛡️ Recommandation Immunité & Tonus : Soins Naturels HomeoAnimo</h3>
+                        <p>Stimulez la résistance naturelle de votre animal face aux agressions extérieures et favorisez sa récupération grâce à des formules homéopathiques ciblées.</p>
+                        <a href="https://www.homeoanimo.com/pages/search-results-page?q=immunite&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn-orange">Découvrir les Soins Immunité sur HomeoAnimo</a>
                     </div>
+                </div>
 
-                    <h2>3. Compléments recommandés pour les défenses immunitaires</h2>
-                    <div class="table-responsive">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Produit</th>
-                                    <th>Bienfaits Principal</th>
-                                    <th>Prix Moyen</th>
-                                    <th>Lien Direct</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Complexe Échinacée & Propolis Bio</td>
-                                    <td>Stimulation globale des défenses avant l'hiver</td>
-                                    <td>~19.90 €</td>
-                                    <td><a href="#" target="_blank" rel="sponsored nofollow" class="btn-table">Voir l'offre</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Poudre de Spiruline Pure Bio</td>
-                                    <td>Apport en nutriments et tonifiant général pour animaux fatigués</td>
-                                    <td>~13.50 €</td>
-                                    <td><a href="#" target="_blank" rel="sponsored nofollow" class="btn-table">Voir l'offre</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <h2>1. Quand faut-il stimuler l'immunité de son animal ?</h2>
+                <p>Certains moments clés nécessitent un coup de pouce nutritionnel :</p>
+                <ul>
+                    <li><b>À l'automne et à l'approche de l'hiver :</b> Pour préparer l'organisme aux baisses de température et préserver les voies respiratoires (coryza, toux du chenil).</li>
+                    <li><b>Pendant une convalescence :</b> Après une intervention chirurgicale, un traitement médicamenteux lourd ou une maladie infectieuse.</li>
+                    <li><b>Chez l'animal âgé :</b> L'immunosénescence affaiblit progressivement les défenses naturelles, rendant le senior plus vulnérable.</li>
+                </ul>
 
-                    <div class="medical-disclaimer">
-                        <b>Avertissement médical :</b> Cet article est publié à titre informatif. Ne donnez pas de stimulants immunitaires aux animaux souffrant de maladies auto-immunes sans avis vétérinaire.
+                <h2>2. Ingrédients naturels stimulateurs d'immunité</h2>
+                <ul>
+                    <li><b>Échinacée (<i>Echinacea purpurea</i>) :</b> Plante immunostimulante majeure qui soutient la réponse immunitaire naturelle.</li>
+                    <li><b>Propolis & Gelée Royale :</b> Trésors de la ruche riches en vitamines, oligo-éléments et composés assainissants.</li>
+                    <li><b>Champignons Médicinaux (Reishi, Shiitaké) :</b> Source de bêta-glucanes pour équilibrer la vitalité générale.</li>
+                    <li><b>Spiruline :</b> Micro-algue concentrée en nutriments essentiels pour lutter contre la fatigue physique.</li>
+                </ul>
+
+                <div class="recommendation-box">
+                    <div>
+                        <p><b>Le conseil vétérinaire :</b> Effectuer une cure d'Échinacée ou de Propolis pendant 3 semaines aux changements de saison (printemps et automne) offre un soutien préventif optimal.</p>
                     </div>
-                </article>
-            </div>
+                </div>
+
+                <h2>3. Compléments recommandés pour les défenses immunitaires</h2>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Produit</th>
+                                <th>Bénéfices Principaux</th>
+                                <th>Prix Moyen</th>
+                                <th>Lien Direct</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Complexe Échinacée & Propolis Bio</td>
+                                <td>Stimulation globale des défenses avant l'hiver</td>
+                                <td>~19.90 €</td>
+                                <td><a href="#" target="_blank" class="btn-orange" style="padding:0.4rem 0.8rem; font-size:0.8rem;">Voir l'offre</a></td>
+                            </tr>
+                            <tr>
+                                <td>Poudre de Spiruline Pure Bio</td>
+                                <td>Apport en nutriments et tonifiant général</td>
+                                <td>~13.50 €</td>
+                                <td><a href="#" target="_blank" class="btn-orange" style="padding:0.4rem 0.8rem; font-size:0.8rem;">Voir l'offre</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="recommendation-box">
+                    <div>
+                        <p><b>Avertissement médical :</b> Ne donnez pas de stimulants immunitaires aux animaux souffrant de maladies auto-immunes sans avis préalable d'un docteur vétérinaire.</p>
+                    </div>
+                </div>
+            </article>
         </main>
 
-        <aside>
+        <aside class="sidebar">
             <div class="widget">
-                <h3>Articles Populaires</h3>
-                <ul class="sidebar-menu">
-                    <li><a href="arthrose.html">▸ Arthrose & Mobilité</a></li>
-                    <li><a href="digestion.html">▸ Digestion & Microbiote</a></li>
-                    <li><a href="stress.html">▸ Stress & Anxiété</a></li>
-                    <li><a href="allergies-peau.html">▸ Allergies & Peau</a></li>
-                    <li><a href="top-complements.html">▸ Top 5 Compléments</a></li>
-                </ul>
+                <span class="partner-badge">Offre Partenaire</span>
+                <h3>Soins Naturels HomeoAnimo</h3>
+                <p>Découvrez des remèdes naturels et homéopathiques sur-mesure pour la santé globale de votre animal.</p>
+                <a href="https://www.homeoanimo.com/pages/search-results-page?q=immunite&tab=products&page=1&rfsn=9341704.a70bd81" target="_blank" rel="sponsored nofollow" class="btn-orange" style="display:block; text-align:center; margin-top:10px;">Visiter la boutique</a>
             </div>
 
             <div class="widget">
-                <h3>À propos de VetNature</h3>
-                <p style="font-size: 0.85rem;">VetNature vous propose des guides rédigés sur la base de données vétérinaires et de naturopathie animale pour soigner vos animaux au naturel.</p>
+                <h3>Nos Guides Santé</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="arthrose.html">• Arthrose & Mobilité</a></li>
+                    <li><a href="digestion.html">• Digestion & Transit</a></li>
+                    <li><a href="stress.html">• Stress & Comportement</a></li>
+                    <li><a href="yeux-oreilles.html">• Soin des Yeux & Oreilles</a></li>
+                    <li><a href="hygiene-dentaire.html">• Hygiène Dentaire</a></li>
+                    <li><a href="top-complements.html">• Top 5 Compléments 2026</a></li>
+                    <li><a href="allergies-peau.html">• Allergies & Peau</a></li>
+                    <li><a href="chiot-chaton.html">• Chiot & Chaton</a></li>
+                    <li><a href="senior.html">• Seniors & Grand Âge</a></li>
+                    <li><a href="chute-poils.html">• Chute de Poils & Pelage</a></li>
+                    <li><a href="vermifuge.html">• Vermifuges & Vers</a></li>
+                    <li><a href="immunite.html">• Immunité & Tonus</a></li>
+                </ul>
             </div>
         </aside>
     </div>
 
     <footer>
-        <p>&copy; 2026 VetNature. Tous droits réservés.</p>
+        <p style="font-size:0.85em; opacity:0.8; margin-bottom:8px;"><i>Avertissement : Les conseils publiés sur VetNaturel sont donnés à titre informatif et ne remplacent en aucun cas l'avis, le diagnostic ou la prescription d'un docteur vétérinaire.</i></p>
+        <p>&copy; 2026 VetNaturel - Tous droits réservés.</p>
     </footer>
 
 </body>
