@@ -150,3 +150,87 @@ html, body {
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch;
 }
+
+/* ==========================================================================
+   BOUTONS D'AFFILIATION & D'ACTION (Haut Contraste & Relief)
+   ========================================================================== */
+
+/* Bouton principal Orange (HomeoAnimo, Amazon, SantéVet...) */
+.btn-orange {
+    display: inline-block;
+    background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(211, 84, 0, 0.35);
+    transition: all 0.25s ease-in-out;
+    border: none;
+}
+
+.btn-orange:hover {
+    background: linear-gradient(135deg, #d35400 0%, #b93800 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(211, 84, 0, 0.5);
+    color: #ffffff !important;
+}
+
+/* Bouton secondaire Vert (Bulle Bleue, Assur O'Poil, Soins bio) */
+.btn-orange[style*="background-color: #27ae60"],
+.btn-orange[style*="background-color: #2e7d32"] {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%) !important;
+    box-shadow: 0 4px 14px rgba(39, 174, 96, 0.35) !important;
+}
+
+.btn-orange[style*="background-color: #27ae60"]:hover,
+.btn-orange[style*="background-color: #2e7d32"]:hover {
+    background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%) !important;
+    box-shadow: 0 6px 18px rgba(39, 174, 96, 0.5) !important;
+}
+
+/* ==========================================================================
+   BARRE DE NAVIGATION & TAGS (Fond Coloré & Contraste)
+   ========================================================================== */
+
+.category-nav {
+    background-color: #f0f4f1;
+    padding: 12px 15px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.category-nav .tag-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #e8f5e9;
+    color: #1b5e20 !important;
+    border: 1px solid #c8e6c9;
+    border-radius: 20px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease-in-out;
+}
+
+.category-nav .tag-btn:hover {
+    background-color: #2e7d32;
+    color: #ffffff !important;
+    border-color: #2e7d32;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(46, 125, 50, 0.25);
+}
+
+.category-nav .tag-btn.active {
+    background-color: #2e7d32;
+    color: #ffffff !important;
+    border-color: #2e7d32;
+    box-shadow: 0 3px 8px rgba(46, 125, 50, 0.3);
+}
