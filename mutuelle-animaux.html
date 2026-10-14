@@ -7,7 +7,24 @@
     <meta name="description" content="Guide et comparatif complet des meilleures assurances santé pour chien et chat. Remboursement des soins naturels, vaccins, chirurgies et médecine douce.">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Optimisations spécifiques au tableau sur mobile */
+        /* Force le style vert des boutons d'action */
+        .btn-green-fix {
+            display: inline-block;
+            background-color: #27ae60 !important;
+            color: #ffffff !important;
+            padding: 10px 18px;
+            border-radius: 25px;
+            text-decoration: none !important;
+            font-weight: bold;
+            font-size: 0.9em;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            transition: background 0.2s ease;
+        }
+        .btn-green-fix:hover {
+            background-color: #2e7d32 !important;
+        }
+
+        /* Responsive Mobile */
         @media (max-width: 768px) {
             .responsive-table table, 
             .responsive-table thead, 
@@ -17,13 +34,11 @@
             .responsive-table tr {
                 display: block;
             }
-
             .responsive-table thead tr {
                 position: absolute;
                 top: -9999px;
                 left: -9999px;
             }
-
             .responsive-table tr {
                 background: #ffffff;
                 border: 1px solid #c8e6c9;
@@ -32,23 +47,18 @@
                 padding: 12px;
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
             }
-
             .responsive-table td {
                 border: none !important;
-                position: relative;
                 padding: 8px 0 !important;
                 text-align: left !important;
             }
-
             .responsive-table td:last-child {
                 text-align: center !important;
                 margin-top: 10px;
                 padding-top: 10px !important;
                 border-top: 1px dashed #e0e0e0 !important;
             }
-
-            .responsive-table td .btn-green,
-            .responsive-table td .btn-orange {
+            .responsive-table td .btn-green-fix {
                 display: block;
                 width: 100%;
                 box-sizing: border-box;
@@ -114,7 +124,7 @@
                             <td style="padding: 12px; border: 1px solid #ddd;">Jusqu'à 100%</td>
                             <td style="padding: 12px; border: 1px solid #ddd;">Forfait prévention inclus (phytothérapie, vaccins, détartrage). Traitement des demandes très rapide et reconnu par l'ensemble des vétérinaires.</td>
                             <td style="padding: 12px; border: 1px solid #ddd;">
-                                <a href="./go/santevet/" target="_blank" rel="sponsored nofollow" class="btn-green">Devis Gratuit →</a>
+                                <a href="./go/santevet/" target="_blank" rel="sponsored nofollow" class="btn-green-fix">Devis Gratuit →</a>
                             </td>
                         </tr>
                         <tr>
@@ -122,7 +132,7 @@
                             <td style="padding: 12px; border: 1px solid #ddd;">Jusqu'à 90%</td>
                             <td style="padding: 12px; border: 1px solid #ddd;">Souscription ultra-simple 100% en ligne, téléconseil vétérinaire (Liv'Vet) inclus et formules économiques adaptées à tous.</td>
                             <td style="padding: 12px; border: 1px solid #ddd;">
-                                <a href="./go/patolo/" target="_blank" rel="sponsored nofollow" class="btn-green">Voir l'offre →</a>
+                                <a href="./go/patolo/" target="_blank" rel="sponsored nofollow" class="btn-green-fix">Voir l'offre →</a>
                             </td>
                         </tr>
                         <tr>
@@ -130,7 +140,7 @@
                             <td style="padding: 12px; border: 1px solid #ddd;">80% à 100%</td>
                             <td style="padding: 12px; border: 1px solid #ddd;">Excellente couverture des maladies chroniques et remboursement étendu des médecines douces (ostéopathie, hydrothérapie).</td>
                             <td style="padding: 12px; border: 1px solid #ddd;">
-                                <a href="./go/bullebleue/" target="_blank" rel="sponsored nofollow" class="btn-green">Voir l'offre →</a>
+                                <a href="./go/bullebleue/" target="_blank" rel="sponsored nofollow" class="btn-green-fix">Voir l'offre →</a>
                             </td>
                         </tr>
                         <tr>
@@ -138,7 +148,7 @@
                             <td style="padding: 12px; border: 1px solid #ddd;">80%</td>
                             <td style="padding: 12px; border: 1px solid #ddd;">Tarifs mensuels très compétitifs. Idéal pour assurer la sécurité financière face aux chirurgies et accidents graves.</td>
                             <td style="padding: 12px; border: 1px solid #ddd;">
-                                <a href="./go/carrefour/" target="_blank" rel="sponsored nofollow" class="btn-green">En savoir plus →</a>
+                                <a href="./go/carrefour/" target="_blank" rel="sponsored nofollow" class="btn-green-fix">En savoir plus →</a>
                             </td>
                         </tr>
                         <tr>
@@ -146,7 +156,7 @@
                             <td style="padding: 12px; border: 1px solid #ddd;">60% à 100%</td>
                             <td style="padding: 12px; border: 1px solid #ddd;">Large palette de formules adaptables à tous les budgets avec service d'assistance et de conseils 24/7.</td>
                             <td style="padding: 12px; border: 1px solid #ddd;">
-                                <a href="./go/assuropoil/" target="_blank" rel="sponsored nofollow" class="btn-green">Voir l'offre →</a>
+                                <a href="./go/assuropoil/" target="_blank" rel="sponsored nofollow" class="btn-green-fix">Voir l'offre →</a>
                             </td>
                         </tr>
                     </tbody>
@@ -156,7 +166,7 @@
             <div class="recommendation-box">
                 <h3>💡 Notre Recommandation Naturopathie</h3>
                 <p>Si vous privilégiez la prévention naturelle (traitements à base de plantes, cures articulaires, ostéopathie), optez impérativement pour un contrat incluant un <b>forfait prévention annuel</b>. Ce forfait permet d'amortir directement le coût de vos produits et bilans naturopathiques.</p>
-                <p><a href="./go/santevet/" target="_blank" rel="sponsored nofollow" class="btn-green">Simuler mon tarif sur SantéVet →</a></p>
+                <p><a href="./go/santevet/" target="_blank" rel="sponsored nofollow" class="btn-green-fix">Simuler mon tarif sur SantéVet →</a></p>
             </div>
 
             <h2>Comment Choisir la Meilleure Assurance Animaux ?</h2>
@@ -178,11 +188,14 @@
                 <h3>Coup de Cœur</h3>
                 <p><b>CBD Vétérinaire Bio - Nordic Oil</b></p>
                 <p>Le complément naturel d'excellence pour soulager l'arthrose et apaiser le stress des chiens et chats.</p>
-                <p><a href="https://www.nordicoil.fr" target="_blank" rel="sponsored nofollow" class="btn-green">Découvrir Nordic Oil</a></p>
+                <p><a href="https://www.nordicoil.fr" target="_blank" rel="sponsored nofollow" class="btn-green-fix">Découvrir Nordic Oil</a></p>
             </div>
         </aside>
     </main>
 
-    <!-- Widget Chatbot QCM VetNaturel -->
-    <div id="vet-bot-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; font-family: sans-serif;">
-        <button id="bot-toggle-btn" onclick="toggleBot()" style="background: #2e7d32; color: #fff; border: none; padding:
+    <footer>
+        <p>© 2026 VetNaturel - Guide indépendant sur les soins naturels et la santé animale.</p>
+    </footer>
+
+</body>
+</html>
