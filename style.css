@@ -255,7 +255,7 @@ html, body {
 
     /* 2. Bannière verte réduite en hauteur */
     .hero {
-        padding: 12px 10px !important;
+        padding: 10px !important;
     }
     .hero-title {
         font-size: 1em !important;
@@ -267,29 +267,20 @@ html, body {
         margin: 0 !important;
     }
 
-    /* 3. Menu catégories en carrousel horizontal défilant */
+    /* 3. Revenir aux boutons sur plusieurs lignes mais en version très compacte */
     .category-nav {
         display: flex !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch;
-        padding: 8px 10px !important;
-        gap: 6px !important;
-        white-space: nowrap !important;
-        background: #f4f6f7 !important;
-        border-bottom: 1px solid #e0e0e0 !important;
+        flex-wrap: wrap !important; /* Permet le retour à la ligne */
+        justify-content: center !important;
+        padding: 10px 5px !important;
+        gap: 5px !important; /* Réduit l'espace entre les boutons */
     }
     
     .category-nav .tag-btn {
-        flex: 0 0 auto !important;
-        font-size: 0.78em !important;
-        padding: 5px 10px !important;
+        font-size: 0.72em !important; /* Réduit la taille du texte */
+        padding: 4px 8px !important;  /* Réduit les marges internes des boutons */
         margin: 0 !important;
-        border-radius: 15px !important;
-    }
-
-    /* Masque la barre de défilement laide pour un rendu épuré */
-    .category-nav::-webkit-scrollbar {
-        display: none !important;
+        border-radius: 12px !important;
     }
 }
+
