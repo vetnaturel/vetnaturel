@@ -234,3 +234,62 @@ html, body {
     border-color: #2e7d32;
     box-shadow: 0 3px 8px rgba(46, 125, 50, 0.3);
 }
+
+/* ==========================================
+   OPTIMISATION MOBILE EXCLUSIVE (Max 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    
+    /* 1. Header ultra-compact */
+    .header-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 8px 12px !important;
+        text-align: center !important;
+    }
+    .header-container div {
+        font-size: 0.75em !important;
+        margin-top: 2px !important;
+        opacity: 0.8;
+    }
+
+    /* 2. Bannière verte réduite en hauteur */
+    .hero {
+        padding: 12px 10px !important;
+    }
+    .hero-title {
+        font-size: 1em !important;
+        margin-bottom: 3px !important;
+    }
+    .hero p {
+        font-size: 0.8em !important;
+        line-height: 1.2 !important;
+        margin: 0 !important;
+    }
+
+    /* 3. Menu catégories en carrousel horizontal défilant */
+    .category-nav {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        padding: 8px 10px !important;
+        gap: 6px !important;
+        white-space: nowrap !important;
+        background: #f4f6f7 !important;
+        border-bottom: 1px solid #e0e0e0 !important;
+    }
+    
+    .category-nav .tag-btn {
+        flex: 0 0 auto !important;
+        font-size: 0.78em !important;
+        padding: 5px 10px !important;
+        margin: 0 !important;
+        border-radius: 15px !important;
+    }
+
+    /* Masque la barre de défilement laide pour un rendu épuré */
+    .category-nav::-webkit-scrollbar {
+        display: none !important;
+    }
+}
